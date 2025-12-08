@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b12ce1e3165124eb031e13224a64f7, type: 3}
+  m_Name: Rikurby
+  m_EditorClassIdentifier: 
+  id: rikurby
+  category: 0
+  idleAnimation: {fileID: 7400000, guid: 4910ad2aa03061e49b7614d42b0c11fc, type: 2}
+  runAnimation: {fileID: 7400000, guid: c5e92b5cdeb19b24f9bd9aff1e732175, type: 2}
+  defaultSprite: {fileID: 21300000, guid: b7dd4f4ffe6073844a090b2d6e808091, type: 3}
+  dialoguePortrait: {fileID: -8881019586594327243, guid: 1faf034679f4b3a468147877ffff1e4d, type: 3}
+  displayName: Rikurby

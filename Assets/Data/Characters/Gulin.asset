@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b12ce1e3165124eb031e13224a64f7, type: 3}
+  m_Name: Gulin
+  m_EditorClassIdentifier: 
+  id: gulin
+  category: 0
+  idleAnimation: {fileID: 7400000, guid: 22750ae28470dd34eb6996a105663498, type: 2}
+  runAnimation: {fileID: 7400000, guid: 5514d7543d5e92248aec0b6e6ae998f0, type: 2}
+  defaultSprite: {fileID: 21300000, guid: d444bbad6a91b2249a2ebbbe18df40f5, type: 3}
+  dialoguePortrait: {fileID: -1672985441917910794, guid: 009d0a74551aa7943891a8f925330ca3, type: 3}
+  displayName: Gulin

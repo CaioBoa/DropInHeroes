@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e20546c827df8144198403e794378aa8, type: 3}
+  m_Name: GameDataCatalog
+  m_EditorClassIdentifier: 
+  characters:
+    allData:
+    - {fileID: 11400000, guid: 67626a84333a0c24e88a5e9ab2d089f0, type: 2}
+    - {fileID: 11400000, guid: 0a86f2be6b3cf744fa2840658c0bc1d3, type: 2}
+    - {fileID: 11400000, guid: 0b21cc3c9aaa6c2488553b9aa35e038a, type: 2}
+    - {fileID: 11400000, guid: b8b9b9f657dcbe8438fca7c2d5949d73, type: 2}
+  dialogues:
+    allData:
+    - {fileID: 11400000, guid: 81c0fdbb37f93e04a95aa958f319cea3, type: 2}
+    - {fileID: 11400000, guid: 609db06b8444d674db0b9cd280181f5c, type: 2}
+  battles:
+    allData: []
