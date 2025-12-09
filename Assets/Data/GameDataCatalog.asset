@@ -16,11 +16,16 @@ MonoBehaviour:
     allData:
     - {fileID: 11400000, guid: 67626a84333a0c24e88a5e9ab2d089f0, type: 2}
     - {fileID: 11400000, guid: 0a86f2be6b3cf744fa2840658c0bc1d3, type: 2}
+    - {fileID: 11400000, guid: d0809f7d4a1159140b7df32eea8b8d94, type: 2}
+    - {fileID: 11400000, guid: 68f1e920c618d6945a5f5310060f4b95, type: 2}
     - {fileID: 11400000, guid: 0b21cc3c9aaa6c2488553b9aa35e038a, type: 2}
+    - {fileID: 11400000, guid: 0ecc5301e49dfef4fb0ceadee8f0a99f, type: 2}
+    - {fileID: 11400000, guid: 2dfd423cfcb6db349a6b4eaec24d15a5, type: 2}
     - {fileID: 11400000, guid: b8b9b9f657dcbe8438fca7c2d5949d73, type: 2}
   dialogues:
     allData:
     - {fileID: 11400000, guid: 81c0fdbb37f93e04a95aa958f319cea3, type: 2}
     - {fileID: 11400000, guid: 609db06b8444d674db0b9cd280181f5c, type: 2}
   battles:
-    allData: []
+    allData:
+    - {fileID: 11400000, guid: de6a6f6b0af074946ae79ecd10a253b1, type: 2}

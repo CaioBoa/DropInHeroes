@@ -16,7 +16,7 @@ public class BattleData : ScriptableObject, IGameData
     [SerializeField] private string id;
     [SerializeField] private DataCategory category = DataCategory.Battle;
     
-    [Header("Dialogue Content")]
+    [Header("Battle Content")]
     public EnemyData[] enemies;
     
     // Interface implementation

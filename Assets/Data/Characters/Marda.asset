@@ -17,5 +17,5 @@ MonoBehaviour:
   idleAnimation: {fileID: 7400000, guid: b788050e613cd5343b920a7b47292d63, type: 2}
   runAnimation: {fileID: 7400000, guid: 7f2dc399a03b30348a6c3246b9f898ca, type: 2}
   defaultSprite: {fileID: 21300000, guid: 40834198f377f214e91026fc88cc23c2, type: 3}
-  dialoguePortrait: {fileID: -2275520714934895960, guid: 9c4fb0834c3fb1248b6676ce3b5b101f, type: 3}
+  dialoguePortrait: {fileID: -5141962160476360904, guid: ea3a6b044ebabb149a55f87ed1b1018f, type: 3}
   displayName: Marda

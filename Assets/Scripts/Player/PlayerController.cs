@@ -5,13 +5,12 @@ using UnityEngine.TextCore.Text;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
-    
+
     private Vector2 moveInput;
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private CharacterManager characterManager;
-    private bool canMove = true;
 
     private void Awake()
     {
@@ -21,29 +20,17 @@ public class PlayerController : MonoBehaviour
         characterManager = GetComponent<CharacterManager>();
     }
 
-    private void OnEnable()
-    {
-        // Inscrever nos eventos do DialogueManager
-        if (DialogueManager.Instance != null)
-        {
-            DialogueManager.Instance.OnDialogueStart += DisableMovement;
-            DialogueManager.Instance.OnDialogueEnd += EnableMovement;
-        }
-    }
-
-    private void OnDisable()
-    {
-        // Desinscrever dos eventos
-        if (DialogueManager.Instance != null)
-        {
-            DialogueManager.Instance.OnDialogueStart -= DisableMovement;
-            DialogueManager.Instance.OnDialogueEnd -= EnableMovement;
-        }
-    }
-
     private void FixedUpdate()
     {
-        rb.linearVelocity = moveInput * moveSpeed;
+        // VERIFICAR SE PODE MOVER (via GameStateManager)
+        if (GameStateManager.Instance != null && GameStateManager.Instance.CanPlayerMove())
+        {
+            rb.linearVelocity = moveInput * moveSpeed;
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 
     private void Update()
@@ -60,7 +47,8 @@ public class PlayerController : MonoBehaviour
 
     private void FlipSprite()
     {
-        if (!canMove) return;
+        // Apenas flipar se puder se mover
+        if (GameStateManager.Instance == null || !GameStateManager.Instance.CanPlayerMove()) return;
 
         if (moveInput.x > 0.01f)
         {
@@ -75,14 +63,7 @@ public class PlayerController : MonoBehaviour
     // Chamado automaticamente pelo PlayerInput component
     public void OnMovement(InputValue value)
     {
-        if (canMove)
-        {
-            moveInput = value.Get<Vector2>();
-        }
-        else
-        {
-            moveInput = Vector2.zero;
-        }
+        moveInput = value.Get<Vector2>();
     }
 
     public void OnSwitchCharacter(InputValue value)
@@ -91,20 +72,5 @@ public class PlayerController : MonoBehaviour
         {
             characterManager.SwitchToNextCharacter();
         }
-    }
-    
-    private void DisableMovement()
-    {
-        canMove = false;
-        moveInput = Vector2.zero;  // Limpar input
-        rb.linearVelocity = Vector2.zero;  // Parar imediatamente
-        animator.SetBool("isMoving", false);  // Voltar para idle
-        Debug.Log("[PlayerController] Movimento bloqueado");
-    }
-
-    private void EnableMovement()
-    {
-        canMove = true;
-        Debug.Log("[PlayerController] Movimento liberado");
     }
 }

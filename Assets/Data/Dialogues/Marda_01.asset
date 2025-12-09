@@ -16,17 +16,17 @@ MonoBehaviour:
   category: 1
   lines:
   - text: "S\xF3 mais um viado tocando baixo..."
-    leftCharacterId: gulin
+    leftCharacterId: guliver
     rightCharacterId: 
     isLeftSpeaking: 1
     isSingleDialogue: 1
   - text: Falou comigo?
-    leftCharacterId: gulin
+    leftCharacterId: guliver
     rightCharacterId: marda
     isLeftSpeaking: 0
     isSingleDialogue: 0
   - text: "n\xE3o..."
-    leftCharacterId: gulin
+    leftCharacterId: guliver
     rightCharacterId: marda
     isLeftSpeaking: 1
     isSingleDialogue: 0

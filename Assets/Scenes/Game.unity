@@ -119,6 +119,69 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &33064238
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 33064240}
+  - component: {fileID: 33064239}
+  m_Layer: 0
+  m_Name: GameStateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &33064239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33064238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d238d94dec6fa42bea592de37c8a30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateConfigs:
+  - state: 0
+    allowPlayerMovement: 1
+    allowPlayerInteraction: 1
+    allowPause: 1
+    showInteractionIndicators: 1
+    detectInteractables: 1
+    freezeTime: 0
+    showHUD: 1
+    allowUIInput: 1
+  - state: 1
+    allowPlayerMovement: 0
+    allowPlayerInteraction: 1
+    allowPause: 1
+    showInteractionIndicators: 0
+    detectInteractables: 1
+    freezeTime: 0
+    showHUD: 1
+    allowUIInput: 1
+--- !u!4 &33064240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33064238}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.13146828, y: 0.80382884, z: -0.036043413}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &108488029
 GameObject:
   m_ObjectHideFlags: 0
@@ -14875,10 +14938,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   availableCharacterIDs:
-  - gulin
+  - guliver
   - marda
   - rikurby
   - darulito
+  - hami
+  - hannamuller
+  - marlon
+  - pedro
   currentCharacterIndex: 0
 --- !u!1 &1067965319
 GameObject:
@@ -15102,8 +15169,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7004487095921577949, guid: ed87a23c51fad1147bd3b5d9c5c63384, type: 3}
+      propertyPath: gameEvents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004487095921577949, guid: ed87a23c51fad1147bd3b5d9c5c63384, type: 3}
       propertyPath: gameEvents.Array.data[0].eventId
       value: Rikurby_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004487095921577949, guid: ed87a23c51fad1147bd3b5d9c5c63384, type: 3}
+      propertyPath: gameEvents.Array.data[1].eventId
+      value: Rikurby_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004487095921577949, guid: ed87a23c51fad1147bd3b5d9c5c63384, type: 3}
+      propertyPath: gameEvents.Array.data[1].eventType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7250873218369655137, guid: ed87a23c51fad1147bd3b5d9c5c63384, type: 3}
       propertyPath: m_SizeDelta.x
@@ -16928,3 +17007,4 @@ SceneRoots:
   - {fileID: 3245464339648807182}
   - {fileID: 1510538498}
   - {fileID: 122184477}
+  - {fileID: 33064240}

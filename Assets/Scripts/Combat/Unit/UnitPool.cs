@@ -31,7 +31,7 @@ public class UnitPool : MonoBehaviour
         return unit;
     }
 
-    public GameObject SpawnUnit(CharacterData data, Vector3 position)
+    public GameObject SpawnUnit(CharacterData data, Vector2 position)
     {
         GameObject unit;
 
@@ -45,30 +45,37 @@ public class UnitPool : MonoBehaviour
             unit = CreateUnit();
         }
 
-        unit.transform.position = position;
-        unit.SetActive(true);
+        // Posicionar em 2D (Vector2)
+        unit.transform.position = new Vector3(position.x, position.y, 0f);
 
-        // Inicializar com dados de combate
-        UnitController controller = unit.GetComponent<UnitController>();
-        if (controller != null)
+        // Aplicar sprite do CharacterData
+        if (data != null)
         {
-            controller.Initialize(data);
+            SpriteRenderer renderer = unit.GetComponent<SpriteRenderer>();
+            if (renderer != null)
+            {
+                renderer.sprite = data.defaultSprite;
+            }
+
+            // Aplicar animações (se houver Animator)
+            Animator animator = unit.GetComponent<Animator>();
+            if (animator != null)
+            {
+                // TODO: Aplicar AnimatorController ou clips específicos do personagem
+                // Depende da estrutura do seu Animator
+                // animator.runtimeAnimatorController = data.animatorController;
+            }
         }
 
+        unit.SetActive(true);
         activeUnits.Add(unit);
+
         return unit;
     }
 
     public void ReturnUnit(GameObject unit)
     {
         if (unit == null) return;
-
-        // Resetar unidade
-        UnitController controller = unit.GetComponent<UnitController>();
-        if (controller != null)
-        {
-            controller.ResetUnit();
-        }
 
         unit.SetActive(false);
         activeUnits.Remove(unit);

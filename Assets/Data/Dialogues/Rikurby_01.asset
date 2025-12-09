@@ -16,22 +16,22 @@ MonoBehaviour:
   category: 1
   lines:
   - text: Boa tarde gordinho!
-    leftCharacterId: gulin
+    leftCharacterId: guliver
     rightCharacterId: rikurby
     isLeftSpeaking: 1
     isSingleDialogue: 0
   - text: "Voc\xEA \xE9 um PELEGO DE BOSTA"
-    leftCharacterId: gulin
+    leftCharacterId: guliver
     rightCharacterId: rikurby
     isLeftSpeaking: 0
     isSingleDialogue: 0
   - text: "Nem fudendo gord\xE3o"
-    leftCharacterId: gulin
+    leftCharacterId: guliver
     rightCharacterId: rikurby
     isLeftSpeaking: 1
     isSingleDialogue: 0
   - text: Some daqui peleguinho
-    leftCharacterId: gulin
+    leftCharacterId: guliver
     rightCharacterId: rikurby
     isLeftSpeaking: 0
     isSingleDialogue: 0

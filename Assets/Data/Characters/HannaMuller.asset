@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b12ce1e3165124eb031e13224a64f7, type: 3}
+  m_Name: HannaMuller
+  m_EditorClassIdentifier: 
+  id: hannamuller
+  category: 0
+  idleAnimation: {fileID: 7400000, guid: 426f09ebec7d3434e9e89acfd98f6310, type: 2}
+  runAnimation: {fileID: 7400000, guid: 789f7d657c5396b4a8cc0887ae3557ab, type: 2}
+  defaultSprite: {fileID: 21300000, guid: 3999c873153224d4d87fa53cfed1912f, type: 3}
+  dialoguePortrait: {fileID: 7916209177894942756, guid: 63e973065381ff74a8530f3b03e03b23, type: 3}
+  displayName: Hanna Muller

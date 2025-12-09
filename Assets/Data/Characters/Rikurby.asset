@@ -17,5 +17,5 @@ MonoBehaviour:
   idleAnimation: {fileID: 7400000, guid: 4910ad2aa03061e49b7614d42b0c11fc, type: 2}
   runAnimation: {fileID: 7400000, guid: c5e92b5cdeb19b24f9bd9aff1e732175, type: 2}
   defaultSprite: {fileID: 21300000, guid: b7dd4f4ffe6073844a090b2d6e808091, type: 3}
-  dialoguePortrait: {fileID: -8881019586594327243, guid: 1faf034679f4b3a468147877ffff1e4d, type: 3}
+  dialoguePortrait: {fileID: 2182338449887127638, guid: 08a75d5f1a4e90b45b6a073b7c8684b6, type: 3}
   displayName: Rikurby

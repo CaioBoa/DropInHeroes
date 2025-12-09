@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1faf034679f4b3a468147877ffff1e4d
+guid: 08a75d5f1a4e90b45b6a073b7c8684b6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8881019586594327243
-    second: Rikurby_0
+      213: 2182338449887127638
+    second: Rikurby 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rikurby_0
+      name: Rikurby 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 200
-        width: 200
-        height: 200
+        y: 617
+        width: 600
+        height: 600
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 53532c95db740c480800000000000000
-      internalID: -8881019586594327243
+      spriteID: 658e235f149394e10800000000000000
+      internalID: 2182338449887127638
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1be754680ffd21c4d9f117f09f31cd99
+    spriteID: bbbd6ab75cbc8a648bdb79bbfceda9d0
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Rikurby_0: -8881019586594327243
+      Rikurby 1_0: 2182338449887127638
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

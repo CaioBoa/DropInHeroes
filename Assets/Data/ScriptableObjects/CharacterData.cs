@@ -10,10 +10,11 @@ public class CharacterData : ScriptableObject, IGameData
     [Header("Visual")]
     public AnimationClip idleAnimation;
     public AnimationClip runAnimation;
+
+    [Header("Portraits & Name")]
     public Sprite defaultSprite;
     public Sprite dialoguePortrait;
     public string displayName;
-    public CombatData combatData;
     
     // Interface implementation
     public string ID => id;

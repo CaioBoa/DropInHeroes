@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 public class DataManager : MonoBehaviour
 {
@@ -134,6 +135,8 @@ public class DataManager : MonoBehaviour
     // === ACESSO A DADOS ===
 
     public static CharacterData GetCharacter(string id) => Instance.catalog.GetCharacter(id);
+
+    public static List<CharacterData> GetAllCharacters() => Instance.catalog.GetAllCharacters();
 
     public static DialogueData GetDialogue(string id) => Instance.catalog.GetDialogue(id);
 
