@@ -22,10 +22,17 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 0ecc5301e49dfef4fb0ceadee8f0a99f, type: 2}
     - {fileID: 11400000, guid: 2dfd423cfcb6db349a6b4eaec24d15a5, type: 2}
     - {fileID: 11400000, guid: b8b9b9f657dcbe8438fca7c2d5949d73, type: 2}
+    - {fileID: 11400000, guid: ecacd36fe9f7d5f449475167b80e7797, type: 2}
   dialogues:
     allData:
+    - {fileID: 11400000, guid: 94339dd2063f3224aac00f3f840277cd, type: 2}
+    - {fileID: 11400000, guid: aff0a034341b1be4a9dc97b2449bf57e, type: 2}
+    - {fileID: 11400000, guid: 80602d402442d8e46bbe37880b75ea00, type: 2}
     - {fileID: 11400000, guid: 81c0fdbb37f93e04a95aa958f319cea3, type: 2}
+    - {fileID: 11400000, guid: 90fcdce202f17a94d9ea4bc791c628de, type: 2}
+    - {fileID: 11400000, guid: ef28c721d1eb894449ef8f4b897adb62, type: 2}
     - {fileID: 11400000, guid: 609db06b8444d674db0b9cd280181f5c, type: 2}
+    - {fileID: 11400000, guid: 796887cd0717b384a83c04c965940698, type: 2}
   battles:
     allData:
     - {fileID: 11400000, guid: de6a6f6b0af074946ae79ecd10a253b1, type: 2}

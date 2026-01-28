@@ -134,6 +134,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Guliver_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 14
+        width: 850
+        height: 1225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbda503154e810647807d67bdd24659d
+      internalID: -162364808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Guliver_0: -1687662815032365482
+      Guliver_1: -162364808
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

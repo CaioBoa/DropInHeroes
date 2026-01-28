@@ -134,6 +134,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Pedro_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 850
+        height: 1225
+      alignment: 9
+      pivot: {x: 0.5101976, y: 0.5582015}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cf4fac4932101d4bb745be160d7dbb6
+      internalID: 1145779338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Pedro_0: -6470145383457220403
+      Pedro_1: 1145779338
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

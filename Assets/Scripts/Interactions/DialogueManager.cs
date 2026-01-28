@@ -33,7 +33,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (dialogue == null || dialogue.lines.Length == 0)
         {
-            Debug.LogWarning("DialogueData vazio ou inválido!");
+            DebugManager.LogWarning("DialogueData vazio ou inválido!", DebugCategory.Interaction);
             return;
         }
 

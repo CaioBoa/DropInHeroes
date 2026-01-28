@@ -84,13 +84,14 @@ public class DialogueUI : MonoBehaviour
     {
         if (line == null) return;
 
-        if (line.isSingleDialogue)
+        if (line.isLeftSpeaking)
         {
-            rightCharacterPortrait.gameObject.SetActive(false);
-            rightCharacterNameText.gameObject.SetActive(false);
-            if (rightCharacterNameBackground != null)
+            // Apenas personagem esquerdo
+            leftCharacterPortrait.gameObject.SetActive(true);
+            leftCharacterNameText.gameObject.SetActive(true);
+            if (leftCharacterNameBackground != null)
             {
-                rightCharacterNameBackground.gameObject.SetActive(false);
+                leftCharacterNameBackground.gameObject.SetActive(true);
             }
         }
         else
@@ -103,14 +104,61 @@ public class DialogueUI : MonoBehaviour
             }
         }
 
-        if (line.leftCharacterId != null)
+        if (line.isSingleDialogue)
+        {
+            if (line.isLeftSpeaking)
+            {
+                // Apenas personagem esquerdo
+                rightCharacterPortrait.gameObject.SetActive(false);
+                rightCharacterNameText.gameObject.SetActive(false);
+                if (rightCharacterNameBackground != null)
+                {
+                    rightCharacterNameBackground.gameObject.SetActive(false);
+                }
+            }
+            else
+            {
+                // Apenas personagem direito
+                leftCharacterPortrait.gameObject.SetActive(false);
+                leftCharacterNameText.gameObject.SetActive(false);
+                if (leftCharacterNameBackground != null)
+                {
+                    leftCharacterNameBackground.gameObject.SetActive(false);
+                }
+            }
+        }
+        else // Diálogo entre dois personagens
+        {
+            if (line.isLeftSpeaking)
+            {
+                // Personagem esquerdo falando
+                rightCharacterPortrait.gameObject.SetActive(true);
+                rightCharacterNameText.gameObject.SetActive(true);
+                if (rightCharacterNameBackground != null)
+                {
+                    rightCharacterNameBackground.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                // Personagem direito falando
+                leftCharacterPortrait.gameObject.SetActive(true);
+                leftCharacterNameText.gameObject.SetActive(true);
+                if (leftCharacterNameBackground != null)
+                {
+                    leftCharacterNameBackground.gameObject.SetActive(true);
+                }
+            }
+        }
+
+        if (line.leftCharacterId != "")
         {
             leftCharacter = DataManager.GetCharacter(line.leftCharacterId);
             leftCharacterNameText.text = leftCharacter.displayName;
             leftCharacterPortrait.sprite = leftCharacter.dialoguePortrait;
         }
 
-        if (line.rightCharacterId != null && !line.isSingleDialogue)
+        if (line.rightCharacterId != "")
         {
             rightCharacter = DataManager.GetCharacter(line.rightCharacterId);
             rightCharacterNameText.text = rightCharacter.displayName;

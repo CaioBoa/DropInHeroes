@@ -134,6 +134,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Valin_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 37
+        width: 850
+        height: 1225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95760acfe46dc8e4383f206f319c0660
+      internalID: 1705393487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Valin_0: 8323024177867714431
+      Valin_1: 1705393487
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

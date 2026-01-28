@@ -118,7 +118,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 655
-        width: 600
+        width: 850
         height: 600
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -130,6 +130,28 @@ TextureImporter:
       bones: []
       spriteID: 95d4654c6a197dfc0800000000000000
       internalID: -3470144842421088935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Averaru_1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 32
+        width: 850
+        height: 1225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d02f5ac062c536945a47fe48026dd668
+      internalID: -1910983794
       vertices: []
       indices: 
       edges: []
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Averaru_0: -3470144842421088935
+      Averaru_1: -1910983794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6ab7adc60f3f146af7376887274afd, type: 3}
+  m_Name: StatDefinitionCatalog
+  m_EditorClassIdentifier: 
+  statDefinitions:
+  - type: 0
+    definition:
+      id: attack
+      displayName: Attack
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 1
+    definition:
+      id: defense
+      displayName: Defense
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 2
+    definition:
+      id: speed
+      displayName: Speed
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 3
+    definition:
+      id: range
+      displayName: Range
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 4
+    definition:
+      id: maxHealth
+      displayName: Maximum Health
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 3
+    definition:
+      id: maxEnergy
+      displayName: Maximum Energy
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  resourceDefinitions:
+  - type: 0
+    definition:
+      id: health
+      displayName: Health
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 1
+    definition:
+      id: energy
+      displayName: Energy
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0

@@ -46,14 +46,14 @@ public class GameStateManager : MonoBehaviour
         {
             if (!configLookup.ContainsKey(state))
             {
-                Debug.LogError($"[GameStateManager] Config ausente para estado {state}.");
+                DebugManager.LogError($"Config ausente para estado {state}.", DebugCategory.State);
             }
         }
 
         // Inicializar pilha com Gameplay (estado base imutável)
         stateStack.Push(GameState.Gameplay);
         ApplyStateEffects(GameState.Gameplay);
-        Debug.Log($"[GameStateManager] Inicializado em {GameState.Gameplay}");
+        DebugManager.Log($"Inicializado em {GameState.Gameplay}", DebugCategory.State);
     }
 
     // === STACK LOGIC ===
@@ -62,7 +62,7 @@ public class GameStateManager : MonoBehaviour
     {
         if (stateStack.Count == 0)
         {
-            Debug.LogError("[GameStateManager] Pilha vazia!");
+            DebugManager.LogError("Pilha vazia!", DebugCategory.State);
             return GameState.Gameplay;
         }
         return stateStack.Peek();
@@ -79,7 +79,7 @@ public class GameStateManager : MonoBehaviour
         ApplyStateEffects(newState);
 
         OnStateChanged?.Invoke(previousState, newState);
-        Debug.Log($"[GameStateManager] {previousState} → {newState} (Stack: {stateStack.Count})");
+        DebugManager.Log($"{previousState} → {newState} (Stack: {stateStack.Count})", DebugCategory.State);
     }
 
     /// <summary>
@@ -90,7 +90,7 @@ public class GameStateManager : MonoBehaviour
     {
         if (stateStack.Count <= 1)
         {
-            Debug.LogWarning("[GameStateManager] Não é possível remover Gameplay (estado base)");
+            DebugManager.LogWarning("Não é possível remover Gameplay (estado base)", DebugCategory.State);
             return;
         }
 
@@ -100,7 +100,7 @@ public class GameStateManager : MonoBehaviour
         ApplyStateEffects(newState);
 
         OnStateChanged?.Invoke(oldState, newState);
-        Debug.Log($"[GameStateManager] {oldState} → {newState} (Stack: {stateStack.Count})");
+        DebugManager.Log($"{oldState} → {newState} (Stack: {stateStack.Count})", DebugCategory.State);
     }
 
     // === APPLY EFFECTS ===
@@ -109,7 +109,7 @@ public class GameStateManager : MonoBehaviour
     {
         if (!configLookup.TryGetValue(state, out GameStateConfig config))
         {
-            Debug.LogWarning($"[GameStateManager] Config não encontrado para {state}");
+            DebugManager.LogWarning($"Config não encontrado para {state}", DebugCategory.State);
             return;
         }
 

@@ -16,6 +16,8 @@ MonoBehaviour:
   category: 0
   idleAnimation: {fileID: 7400000, guid: 94eb4d99fa186ca41a09761c9ed61843, type: 2}
   runAnimation: {fileID: 7400000, guid: c8b8d67f3df1d3f40ab33afa3e3b933e, type: 2}
+  dragAnimation: {fileID: 7400000, guid: 6350d198262c67444aabbdaa50e8c0c9, type: 2}
   defaultSprite: {fileID: 21300000, guid: 9d64cefe40be6a54b953ed55725ec491, type: 3}
   dialoguePortrait: {fileID: -6470145383457220403, guid: 75319765dd237a2418c949754c32033e, type: 3}
+  cardPortrait: {fileID: 1145779338, guid: 75319765dd237a2418c949754c32033e, type: 3}
   displayName: Pedro

@@ -30,7 +30,7 @@ MonoBehaviour:
     rightCharacterId: rikurby
     isLeftSpeaking: 1
     isSingleDialogue: 0
-  - text: Some daqui peleguinho
+  - text: Vou te comer na porrada peleguinho
     leftCharacterId: guliver
     rightCharacterId: rikurby
     isLeftSpeaking: 0

@@ -16,6 +16,8 @@ MonoBehaviour:
   category: 0
   idleAnimation: {fileID: 7400000, guid: 76bb8907d285a0b48a1d6908779c89e4, type: 2}
   runAnimation: {fileID: 7400000, guid: c2755653f0080e748a8c5829ea93c0de, type: 2}
+  dragAnimation: {fileID: 7400000, guid: 229ff8d3d5ab51a4f97a8dce837ee61e, type: 2}
   defaultSprite: {fileID: 21300000, guid: 943ec26672e80104487947b0d0f6311e, type: 3}
   dialoguePortrait: {fileID: -7342989410181261220, guid: 9739926056abc954aae3c92ca1d57cfe, type: 3}
+  cardPortrait: {fileID: 595383591, guid: 9739926056abc954aae3c92ca1d57cfe, type: 3}
   displayName: Hami

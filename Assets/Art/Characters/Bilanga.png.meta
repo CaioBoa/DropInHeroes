@@ -134,6 +134,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Bilanga_1
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 39
+        width: 823
+        height: 1220
+      alignment: 9
+      pivot: {x: -1.8314221, y: 2.8609822}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8819b61fb0a7e0e44b9327e7bd30b23b
+      internalID: -1074659764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Bilanga_0: 2674539414115397379
+      Bilanga_1: -1074659764
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

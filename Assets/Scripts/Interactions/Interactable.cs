@@ -51,25 +51,25 @@ public abstract class Interactable : MonoBehaviour
         // Prevenir múltiplas execuções simultâneas
         if (isExecutingEvents)
         {
-            Debug.LogWarning($"[Interactable] Eventos já estão sendo executados em {gameObject.name}");
+            DebugManager.LogWarning($"Eventos já estão sendo executados em {gameObject.name}", DebugCategory.Interaction);
             return;
         }
 
         if (gameEvents == null || gameEvents.Length == 0)
         {
-            Debug.LogWarning($"[Interactable] Nenhum evento configurado em {gameObject.name}");
+            DebugManager.LogWarning($"Nenhum evento configurado em {gameObject.name}", DebugCategory.Interaction);
             return;
         }
 
         isExecutingEvents = true;
 
-        Debug.Log($"[Interactable] Iniciando cadeia de {gameEvents.Length} evento(s) em {gameObject.name}");
+        DebugManager.Log($"Iniciando cadeia de {gameEvents.Length} evento(s) em {gameObject.name}", DebugCategory.Interaction);
 
         // Executar eventos em sequência
         for (int i = 0; i < gameEvents.Length; i++)
         {
             GameEvent currentEvent = gameEvents[i];
-            Debug.Log($"[Interactable] Executando evento {i + 1}/{gameEvents.Length}: {currentEvent.eventType} (ID: {currentEvent.eventId})");
+            DebugManager.Log($"Executando evento {i + 1}/{gameEvents.Length}: {currentEvent.eventType} (ID: {currentEvent.eventId})", DebugCategory.Interaction);
 
             // Aguardar evento terminar
             EventResult result = await currentEvent.TriggerEvent(currentEvent.getEventType());
@@ -78,28 +78,27 @@ public abstract class Interactable : MonoBehaviour
             switch (result)
             {
                 case EventResult.Success:
-                    Debug.Log($"[Interactable] Evento {i + 1} completado com sucesso");
-                    // Continuar para próximo evento
+                    DebugManager.Log($"Evento {i + 1} completado com sucesso", DebugCategory.Interaction);
                     break;
 
                 case EventResult.Failed:
-                    Debug.LogWarning($"[Interactable] Evento {i + 1} falhou. Interrompendo cadeia.");
+                    DebugManager.LogWarning($"Evento {i + 1} falhou. Interrompendo cadeia.", DebugCategory.Interaction);
                     isExecutingEvents = false;
                     return;
 
                 case EventResult.Cancelled:
-                    Debug.LogWarning($"[Interactable] Evento {i + 1} cancelado. Interrompendo cadeia.");
+                    DebugManager.LogWarning($"Evento {i + 1} cancelado. Interrompendo cadeia.", DebugCategory.Interaction);
                     isExecutingEvents = false;
                     return;
 
                 case EventResult.Error:
-                    Debug.LogError($"[Interactable] Erro no evento {i + 1}. Interrompendo cadeia.");
+                    DebugManager.LogError($"Erro no evento {i + 1}. Interrompendo cadeia.", DebugCategory.Interaction);
                     isExecutingEvents = false;
                     return;
             }
         }
 
-        Debug.Log($"[Interactable] Cadeia de eventos completa!");
+        DebugManager.Log("Cadeia de eventos completa!", DebugCategory.Interaction);
         isExecutingEvents = false;
     }
 

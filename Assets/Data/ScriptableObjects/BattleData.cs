@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyData
 {
     public string characterId;
-    public Vector3 spawnPosition;
+    public Vector2 spawnPosition;
     public int level;
     
 }

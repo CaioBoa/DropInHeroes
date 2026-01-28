@@ -123,7 +123,7 @@ public class PlayerInteraction : MonoBehaviour
         }
         else
         {
-            Debug.Log("[PlayerInteraction] Nenhum objeto interagível próximo");
+            DebugManager.Log("Nenhum objeto interagível próximo", DebugCategory.Interaction);
         }
     }
 

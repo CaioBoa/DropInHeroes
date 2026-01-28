@@ -16,6 +16,8 @@ MonoBehaviour:
   category: 0
   idleAnimation: {fileID: 7400000, guid: 426f09ebec7d3434e9e89acfd98f6310, type: 2}
   runAnimation: {fileID: 7400000, guid: 789f7d657c5396b4a8cc0887ae3557ab, type: 2}
+  dragAnimation: {fileID: 7400000, guid: 64ee772f93a7173419399b8487233220, type: 2}
   defaultSprite: {fileID: 21300000, guid: 3999c873153224d4d87fa53cfed1912f, type: 3}
   dialoguePortrait: {fileID: 7916209177894942756, guid: 63e973065381ff74a8530f3b03e03b23, type: 3}
+  cardPortrait: {fileID: 987628180, guid: 63e973065381ff74a8530f3b03e03b23, type: 3}
   displayName: Hanna Muller

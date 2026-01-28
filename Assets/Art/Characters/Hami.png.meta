@@ -134,6 +134,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Hami_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 850
+        height: 1225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f144b71ff399e345853f3224f2430f9
+      internalID: 595383591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Hami_0: -7342989410181261220
+      Hami_1: 595383591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

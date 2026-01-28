@@ -134,6 +134,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Marlon_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 850
+        height: 1225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b95aed0860d8041b3c2088d90d0126
+      internalID: -966669915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Marlon_0: -345753705840969610
+      Marlon_1: -966669915
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

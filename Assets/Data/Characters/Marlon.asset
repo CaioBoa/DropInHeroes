@@ -16,6 +16,8 @@ MonoBehaviour:
   category: 0
   idleAnimation: {fileID: 7400000, guid: f25831611be6b8e4ebd7a8cc522239d9, type: 2}
   runAnimation: {fileID: 7400000, guid: cfea8bc0c77ea65449a0c9211b6f593e, type: 2}
+  dragAnimation: {fileID: 7400000, guid: b80473ed1ccb58d449f6156abbf647a6, type: 2}
   defaultSprite: {fileID: 21300000, guid: 1eaa8264737f43d46bf19d6e707c92c4, type: 3}
   dialoguePortrait: {fileID: -345753705840969610, guid: 6d5bf9a0e854fee44a7daf17db4121d0, type: 3}
+  cardPortrait: {fileID: -966669915, guid: 6d5bf9a0e854fee44a7daf17db4121d0, type: 3}
   displayName: Marlon

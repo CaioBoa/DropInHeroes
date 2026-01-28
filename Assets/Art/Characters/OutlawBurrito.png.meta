@@ -134,6 +134,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: OutlawBurrito_1
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 0
+        width: 682
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659762572448a0148860b640a1f215a4
+      internalID: 1935414158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       OutlawBurrito_0: 895978181745936823
+      OutlawBurrito_1: 1935414158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

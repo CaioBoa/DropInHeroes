@@ -40,7 +40,7 @@ public class GameEvent
                 return TriggerUnlockCharacter();
 
             default:
-                Debug.LogWarning($"[GameEvent] Tipo de evento desconhecido: {type}");
+                DebugManager.LogWarning($"Tipo de evento desconhecido: {type}", DebugCategory.Interaction);
                 return EventResult.Error;
         }
     }
@@ -51,13 +51,13 @@ public class GameEvent
 
         if (dialogue == null)
         {
-            Debug.LogError($"[GameEvent] Diálogo com ID '{eventId}' não encontrado!");
+            DebugManager.LogError($"Diálogo com ID '{eventId}' não encontrado!", DebugCategory.Interaction);
             return EventResult.Error;
         }
 
         if (DialogueManager.Instance == null)
         {
-            Debug.LogError("[GameEvent] DialogueManager não encontrado!");
+            DebugManager.LogError("DialogueManager não encontrado!", DebugCategory.Interaction);
             return EventResult.Error;
         }
 
@@ -89,12 +89,12 @@ public class GameEvent
 
         if (playerWon)
         {
-            Debug.Log("[GameEvent] Vitória!");
+            DebugManager.Log("Vitória!", DebugCategory.Interaction);
             return EventResult.Success;
         }
         else
         {
-            Debug.Log("[GameEvent] Derrota...");
+            DebugManager.Log("Derrota...", DebugCategory.Interaction);
             return EventResult.Failed;
         }
     }
@@ -102,7 +102,7 @@ public class GameEvent
     private EventResult TriggerUnlockCharacter()
     {
         // TODO: Implementar unlock de personagem
-        Debug.LogWarning($"[GameEvent] UnlockCharacter ainda não implementado para '{eventId}'");
+        DebugManager.LogWarning($"UnlockCharacter ainda não implementado para '{eventId}'", DebugCategory.Interaction);
         return EventResult.Success;
     }
 

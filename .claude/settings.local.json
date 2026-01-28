@@ -2,7 +2,14 @@
   "permissions": {
     "allow": [
       "Bash(find:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(if exist \"c:\\Users\\cailu\\DropInHeroes\\Assets\\Scripts\\Combat\\Preparation\\DragPreview.cs.meta\" del \"c:\\Users\\cailu\\DropInHeroes\\Assets\\Scripts\\Combat\\Preparation\\DragPreview.cs.meta\")",
+      "Bash(tree:*)",
+      "Bash(findstr:*)",
+      "Bash(move:*)",
+      "Bash(move \"c:\\Users\\cailu\\DropInHeroes\\Assets\\Scripts\\Combat\\Preparation\\PlacementGrid.cs.meta\" \"c:\\Users\\cailu\\DropInHeroes\\Assets\\Scripts\\Combat\\Preparation\\Board\\PlacementGrid.cs.meta\")",
+      "Bash(grep:*)",
+      "Bash(del \"c:\\Users\\cailu\\DropInHeroes\\Assets\\Scripts\\Combat\\Preparation\\Board\\SwapHandler.cs\")"
     ],
     "deny": [],
     "ask": []

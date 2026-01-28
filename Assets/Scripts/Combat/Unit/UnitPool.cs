@@ -22,7 +22,7 @@ public class UnitPool : MonoBehaviour
             availableUnits.Enqueue(unit);
         }
 
-        Debug.Log($"[UnitPool] Pré-carregadas {preloadCount} unidades");
+        DebugManager.Log($"Pré-carregadas {preloadCount} unidades", DebugCategory.Pool);
     }
 
     private GameObject CreateUnit()
@@ -33,6 +33,11 @@ public class UnitPool : MonoBehaviour
 
     public GameObject SpawnUnit(CharacterData data, Vector2 position)
     {
+        return SpawnUnit(data, position, UnitConfig.Player);
+    }
+
+    public GameObject SpawnUnit(CharacterData data, Vector2 position, UnitConfig config)
+    {
         GameObject unit;
 
         if (availableUnits.Count > 0)
@@ -41,29 +46,24 @@ public class UnitPool : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("[UnitPool] Pool vazio! Criando nova unidade...");
+            DebugManager.LogWarning("Pool vazio! Criando nova unidade...", DebugCategory.Pool);
             unit = CreateUnit();
         }
 
         // Posicionar em 2D (Vector2)
         unit.transform.position = new Vector3(position.x, position.y, 0f);
 
-        // Aplicar sprite do CharacterData
+        // Initialize UnitController with character data and config
         if (data != null)
         {
-            SpriteRenderer renderer = unit.GetComponent<SpriteRenderer>();
-            if (renderer != null)
+            UnitController controller = unit.GetComponent<UnitController>();
+            if (controller != null)
             {
-                renderer.sprite = data.defaultSprite;
+                controller.Initialize(data, config);
             }
-
-            // Aplicar animações (se houver Animator)
-            Animator animator = unit.GetComponent<Animator>();
-            if (animator != null)
+            else
             {
-                // TODO: Aplicar AnimatorController ou clips específicos do personagem
-                // Depende da estrutura do seu Animator
-                // animator.runtimeAnimatorController = data.animatorController;
+                DebugManager.LogError("UnitController não encontrado no prefab!", DebugCategory.Pool);
             }
         }
 
@@ -76,6 +76,13 @@ public class UnitPool : MonoBehaviour
     public void ReturnUnit(GameObject unit)
     {
         if (unit == null) return;
+
+        // Reset UnitController to pool state
+        UnitController controller = unit.GetComponent<UnitController>();
+        if (controller != null)
+        {
+            controller.ResetToPool();
+        }
 
         unit.SetActive(false);
         activeUnits.Remove(unit);

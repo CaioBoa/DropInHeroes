@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ea3a6b044ebabb149a55f87ed1b1018f
+guid: 36ecd9a7dc191ce408a13fcdbb260b8d
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -117,7 +117,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 660
+        y: 657
         width: 600
         height: 600
       alignment: 0
@@ -134,11 +134,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Marda_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 40
+        width: 850
+        height: 1225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb151b0be132c64d80c8dde4d53648a
+      internalID: 49433616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7aa862df01a2fce469a57607a2e7c652
+    spriteID: 17431f2e372c61e4d8f39fd331bc7f7f
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Marda 1_0: -5141962160476360904
+      Marda_0: 49433616
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

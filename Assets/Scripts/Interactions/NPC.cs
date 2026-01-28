@@ -29,7 +29,7 @@ public class NPC : Interactable
 
         if (characterData == null)
         {
-            Debug.LogWarning($"CharacterData '{characterID}' não encontrado!");
+            DebugManager.LogWarning($"CharacterData '{characterID}' não encontrado!", DebugCategory.Character);
             return;
         }
 
@@ -54,6 +54,6 @@ public class NPC : Interactable
             spriteRenderer.sprite = characterData.defaultSprite;
         }
 
-        Debug.Log($"Visual carregado: {characterData.displayName}");
+        DebugManager.Log($"Visual carregado: {characterData.displayName}", DebugCategory.Character);
     }
 }

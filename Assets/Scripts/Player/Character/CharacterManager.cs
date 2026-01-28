@@ -27,7 +27,7 @@ public class CharacterManager : MonoBehaviour
     {
         if (index < 0)
         {
-            Debug.LogWarning($"Índice {index} inválido!");
+            DebugManager.LogWarning($"Índice {index} inválido!", DebugCategory.Character);
             return;
         }
 
@@ -49,7 +49,7 @@ public class CharacterManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"✗ Personagem '{characterID}' não encontrado no Catalog!");
+            DebugManager.LogError($"Personagem '{characterID}' não encontrado no Catalog!", DebugCategory.Character);
         }
     }
 

@@ -1,37 +1,64 @@
 using UnityEngine;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 /// <summary>
-/// Gerencia a fase de preparação de combate onde o jogador posiciona unidades aliadas
+/// Orquestrador da fase de preparação de combate
+/// Responsabilidade ÚNICA: coordenar componentes especializados
+/// Versão refatorada: ~180 linhas (anteriormente 632 linhas)
 /// </summary>
 public class PreparationManager : MonoBehaviour
 {
     public static PreparationManager Instance { get; private set; }
 
+    [Header("Configuration")]
+    [SerializeField] private PreparationConfig config;
+
+    // Propriedade pública para acesso ao config
+    public PreparationConfig Config => config;
+
     [Header("References")]
     [SerializeField] private CarouselController carouselController;
     [SerializeField] private UnitPool unitPool;
-    [SerializeField] private PositionIndicator positionIndicator;
     [SerializeField] private Camera mainCamera;
 
-    [Header("Battle Field Settings")]
-    [SerializeField] private Vector2 battleFieldCenter = Vector2.zero;
-    [SerializeField] private Vector2 battleFieldSize = new Vector2(10f, 6f);
-    [SerializeField] private float swapDetectionRadius = 1.5f;
+    [Header("Placement")]
+    [SerializeField] private PlacementGrid placementGrid;
 
-    [Header("Limits")]
-    [SerializeField] private int maxUnitsOnField = 4;
+    [Header("Combat Transition")]
+    [SerializeField] private RectTransform preCombatUI;
+    [SerializeField] private CanvasGroup preCombatCanvasGroup;
+    [SerializeField] private Camera battleCamera;
+
+    [Header("Transition Settings")]
+    [SerializeField] private float transitionDuration = 0.8f;
+    [SerializeField] private float slideDistance = 300f;
+    [SerializeField] private float zoomAmount = 0.5f;
+
+    // === GLOBAL DRAG EVENTS (mantidos para compatibilidade) ===
+    public event System.Action OnGlobalDragStarted;
+    public event System.Action OnGlobalDragEnded;
+
+    // Componentes especializados (injetados via Awake)
+    private BoardManager boardManager;
+    private PlacementValidator placementValidator;
+    private DragCoordinator dragCoordinator;
+    private UIFeedbackController uiFeedbackController;
+
+    // Acesso público ao BoardManager para sistema de combate
+    public BoardManager Board => boardManager;
 
     // State
-    private List<BattleFieldUnit> fieldUnits = new List<BattleFieldUnit>();
-    private Rect battleFieldBounds;
     private TaskCompletionSource<bool> confirmationTCS;
+
+    // Transition state
+    private float originalCameraSize;
+    private Vector2 originalUIPosition;
 
     // === INITIALIZATION ===
 
     private void Awake()
     {
+        // Singleton pattern
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -40,271 +67,313 @@ public class PreparationManager : MonoBehaviour
 
         Instance = this;
 
-        // Calcular bounds do campo de batalha
-        battleFieldBounds = new Rect(
-            battleFieldCenter.x - battleFieldSize.x / 2f,
-            battleFieldCenter.y - battleFieldSize.y / 2f,
-            battleFieldSize.x,
-            battleFieldSize.y
+        // Carregar config se não foi atribuído
+        if (config == null)
+        {
+            config = Resources.Load<PreparationConfig>("PreparationConfig");
+            if (config == null)
+            {
+                DebugManager.LogWarning("PreparationConfig não encontrado! Usando valores padrão.", DebugCategory.Initialization);
+                // Criar config temporário com valores padrão
+                config = ScriptableObject.CreateInstance<PreparationConfig>();
+            }
+        }
+
+        // Inicializar placement grid
+        if (placementGrid != null)
+        {
+            placementGrid.Initialize();
+        }
+
+        // Inicializar componentes especializados
+        InitializeComponents();
+
+        DebugManager.Log("PreparationManager inicializado", DebugCategory.Initialization);
+    }
+
+    private void InitializeComponents()
+    {
+        // BoardManager
+        boardManager = new BoardManager(config.maxUnitsOnField);
+
+        // PlacementValidator
+        placementValidator = new PlacementValidator(placementGrid, config.swapDetectionRadius);
+
+        // DragCoordinator
+        dragCoordinator = new DragCoordinator(
+            unitPool,
+            boardManager,
+            placementValidator,
+            config,
+            mainCamera
         );
 
-        Debug.Log("[PreparationManager] Inicializado");
+        // UIFeedbackController
+        uiFeedbackController = new UIFeedbackController(
+            placementGrid,
+            boardManager,
+            placementValidator
+        );
+
+        // Inscrever em eventos
+        SubscribeToEvents();
+    }
+
+    private void SubscribeToEvents()
+    {
+        // Eventos do DragCoordinator
+        dragCoordinator.OnDragStarted += HandleDragStarted;
+        dragCoordinator.OnDragUpdated += HandleDragUpdated;
+        dragCoordinator.OnDragCompleted += HandleDragCompleted;
+        dragCoordinator.OnDragCancelled += HandleDragCancelled;
+    }
+
+    private void OnDestroy()
+    {
+        // Desinscrever eventos do DragCoordinator
+        if (dragCoordinator != null)
+        {
+            dragCoordinator.OnDragStarted -= HandleDragStarted;
+            dragCoordinator.OnDragUpdated -= HandleDragUpdated;
+            dragCoordinator.OnDragCompleted -= HandleDragCompleted;
+            dragCoordinator.OnDragCancelled -= HandleDragCancelled;
+        }
+
+        // Desinscrever evento de combate
+        if (CombatController.Instance != null)
+        {
+            CombatController.Instance.OnCombatEnded -= HandleCombatEnded;
+        }
     }
 
     private void Start()
     {
-        // Inicializar carousel com todos os personagens
         InitializeCarousel();
+        InitializeTransition();
 
-        // Desativar indicador inicialmente
-        if (positionIndicator != null)
+        // Inscrever no evento de fim de combate para reset automático
+        if (CombatController.Instance != null)
         {
-            positionIndicator.Hide();
+            CombatController.Instance.OnCombatEnded += HandleCombatEnded;
         }
+    }
+
+    private void InitializeTransition()
+    {
+        if (battleCamera != null)
+            originalCameraSize = battleCamera.orthographicSize;
+
+        if (preCombatUI != null)
+            originalUIPosition = preCombatUI.anchoredPosition;
     }
 
     private void InitializeCarousel()
     {
         if (carouselController == null)
         {
-            Debug.LogWarning("[PreparationManager] CarouselController não atribuído!");
+            DebugManager.LogWarning("CarouselController não atribuído!", DebugCategory.Initialization);
             return;
         }
 
-        // Obter todos os personagens do DataManager
-        List<CharacterData> allCharacters = DataManager.GetAllCharacters();
+        var allCharacters = DataManager.GetAllCharacters();
         carouselController.Initialize(allCharacters);
-        Debug.Log($"[PreparationManager] Carousel inicializado com {allCharacters.Count} personagens");
+        DebugManager.Log($"Carousel inicializado com {allCharacters.Count} personagens", DebugCategory.Initialization);
     }
 
-    // === PHASE MANAGEMENT ===
+    // === PUBLIC API (interface inalterada para compatibilidade) ===
 
-    public async Task StartPreparationPhase()
+    /// <summary>
+    /// Inicia drag do carousel
+    /// </summary>
+    public void StartDraggingFromRoulette(CharacterData characterData, Vector2 screenPos)
     {
-        Debug.Log("[PreparationManager] Iniciando fase de preparação...");
-
-        confirmationTCS = new TaskCompletionSource<bool>();
-
-        // Limpar unidades anteriores se houver
-        ClearAllUnits();
-
-        // TODO: Mostrar UI de preparação
-        // TODO: Ativar interação com carousel
-
-        Debug.Log("[PreparationManager] Fase de preparação iniciada. Aguardando jogador...");
-    }
-
-    public void ConfirmPositioning()
-    {
-        // Chamado pelo botão "Iniciar Batalha" (a ser implementado)
-        confirmationTCS?.TrySetResult(true);
-    }
-
-    // === DRAG AND DROP CALLBACKS ===
-
-    public void OnDragStart(CharacterData characterData)
-    {
-        if (positionIndicator != null)
+        if (characterData == null)
         {
-            positionIndicator.Show();
-        }
-
-        Debug.Log($"[PreparationManager] Drag iniciado: {characterData.displayName}");
-    }
-
-    public void OnDragUpdate(Vector2 screenPos)
-    {
-        if (positionIndicator == null) return;
-
-        // Converter screen → world position
-        Vector2 worldPos = ScreenToWorldPosition(screenPos);
-
-        // Atualizar posição do indicador
-        positionIndicator.UpdatePosition(worldPos);
-
-        // Detectar unidade próxima
-        BattleFieldUnit nearUnit;
-        bool hasNearUnit = GetUnitNearPosition(worldPos, out nearUnit);
-
-        // Validar posição
-        bool isValid = IsPositionValid(worldPos);
-
-        // Atualizar estado visual do indicador
-        if (!isValid)
-        {
-            positionIndicator.SetState(PositionIndicatorState.Invalid);
-        }
-        else if (hasNearUnit)
-        {
-            positionIndicator.SetState(PositionIndicatorState.Swap);
-        }
-        else
-        {
-            positionIndicator.SetState(PositionIndicatorState.Valid);
-        }
-    }
-
-    public void OnDragEnd(CharacterData characterData, Vector2 screenPos)
-    {
-        if (positionIndicator != null)
-        {
-            positionIndicator.Hide();
-        }
-
-        Vector2 worldPos = ScreenToWorldPosition(screenPos);
-
-        // Validar posição
-        if (!IsPositionValid(worldPos))
-        {
-            Debug.Log("[PreparationManager] Posição inválida, drag cancelado");
+            DebugManager.LogError("CharacterData é null!", DebugCategory.Drag);
             return;
         }
 
-        // Detectar unidade próxima para swap
-        BattleFieldUnit nearUnit;
-        if (GetUnitNearPosition(worldPos, out nearUnit))
-        {
-            // Swap com unidade existente
-            SwapUnits(nearUnit, characterData);
-        }
-        else
-        {
-            // Spawn nova unidade se não exceder limite
-            if (fieldUnits.Count < maxUnitsOnField)
-            {
-                SpawnUnitAtPosition(characterData, worldPos);
-            }
-            else
-            {
-                Debug.LogWarning("[PreparationManager] Limite de unidades atingido (4)");
-            }
-        }
+        dragCoordinator.StartDragFromCarousel(characterData, screenPos);
     }
 
-    // === UNIT MANAGEMENT ===
-
-    private void SpawnUnitAtPosition(CharacterData characterData, Vector2 position)
+    /// <summary>
+    /// Inicia drag do board (re-posicionamento)
+    /// </summary>
+    public void StartDraggingFromBoard(UnitController unit)
     {
-        if (unitPool == null)
+        if (unit == null)
         {
-            Debug.LogError("[PreparationManager] UnitPool não atribuído!");
+            DebugManager.LogError("UnitController é null!", DebugCategory.Drag);
             return;
         }
 
-        // Spawnar unidade via pool
-        GameObject unitInstance = unitPool.SpawnUnit(characterData, position);
-
-        if (unitInstance == null)
-        {
-            Debug.LogError("[PreparationManager] Falha ao spawnar unidade!");
-            return;
-        }
-
-        // Criar wrapper BattleFieldUnit
-        BattleFieldUnit battleUnit = unitInstance.AddComponent<BattleFieldUnit>();
-        battleUnit.Initialize(characterData, unitInstance, position);
-
-        // Adicionar à lista
-        fieldUnits.Add(battleUnit);
-
-        Debug.Log($"[PreparationManager] Unidade spawnada: {characterData.displayName} em {position}");
+        dragCoordinator.StartDragFromBoard(unit);
     }
 
-    private void SwapUnits(BattleFieldUnit existingUnit, CharacterData newCharacterData)
+    /// <summary>
+    /// Atualiza posição durante drag
+    /// </summary>
+    public void UpdateDragging(Vector2 screenPos)
     {
-        Vector2 position = existingUnit.CurrentPosition;
-
-        // Remover unidade antiga
-        RemoveUnit(existingUnit);
-
-        // Spawnar nova unidade na mesma posição
-        SpawnUnitAtPosition(newCharacterData, position);
-
-        Debug.Log($"[PreparationManager] Unidade trocada por {newCharacterData.displayName}");
+        dragCoordinator.UpdateDrag(screenPos);
     }
 
-    private void RemoveUnit(BattleFieldUnit unit)
+    /// <summary>
+    /// Finaliza drag
+    /// </summary>
+    public void FinishDragging(Vector2 screenPos)
+    {
+        dragCoordinator.FinishDrag(screenPos);
+    }
+
+    // === EVENT HANDLERS (delegação para componentes) ===
+
+    private void HandleDragStarted(UnitController unit)
+    {
+        uiFeedbackController.ShowDragFeedback();
+
+        OnGlobalDragStarted?.Invoke();
+        DebugManager.Log($"Drag iniciado: {unit?.GetCharacterData()?.displayName}", DebugCategory.Drag);
+    }
+
+    private void HandleDragUpdated(UnitController unit)
     {
         if (unit == null) return;
 
-        // Retornar ao pool
-        if (unitPool != null && unit.UnitInstance != null)
-        {
-            unitPool.ReturnUnit(unit.UnitInstance);
-        }
-
-        // Remover da lista
-        fieldUnits.Remove(unit);
-
-        // Destruir wrapper
-        Destroy(unit);
-
-        Debug.Log("[PreparationManager] Unidade removida");
+        uiFeedbackController.UpdateFootprintStates(unit);
     }
 
-    private void ClearAllUnits()
+    private void HandleDragCompleted(UnitController unit)
     {
-        for (int i = fieldUnits.Count - 1; i >= 0; i--)
-        {
-            RemoveUnit(fieldUnits[i]);
-        }
+        uiFeedbackController.HideDragFeedback();
 
-        fieldUnits.Clear();
-        Debug.Log("[PreparationManager] Todas as unidades removidas");
+        OnGlobalDragEnded?.Invoke();
+        DebugManager.Log($"Drag concluído: {unit?.GetCharacterData()?.displayName}", DebugCategory.Drag);
     }
 
-    // === HELPER METHODS ===
-
-    public bool GetUnitNearPosition(Vector2 position, out BattleFieldUnit nearestUnit)
+    private void HandleDragCancelled()
     {
-        nearestUnit = null;
-        float closestDistance = float.MaxValue;
+        uiFeedbackController.HideDragFeedback();
 
-        foreach (var unit in fieldUnits)
-        {
-            float distance = Vector2.Distance(position, unit.CurrentPosition);
-
-            if (distance < swapDetectionRadius && distance < closestDistance)
-            {
-                closestDistance = distance;
-                nearestUnit = unit;
-            }
-        }
-
-        return nearestUnit != null;
+        OnGlobalDragEnded?.Invoke();
+        DebugManager.Log("Drag cancelado", DebugCategory.Drag);
     }
+
+    // === HELPER METHODS (mantidos para compatibilidade) ===
 
     public bool IsPositionValid(Vector2 position)
     {
-        // Verificar se está dentro do battleFieldBounds
-        return battleFieldBounds.Contains(position);
+        return placementValidator.IsPositionValid(position);
     }
 
     public Vector2 ScreenToWorldPosition(Vector2 screenPos)
     {
         if (mainCamera == null)
         {
-            Debug.LogWarning("[PreparationManager] MainCamera não encontrada!");
+            DebugManager.LogWarning("MainCamera não encontrada!", DebugCategory.Drag);
             return Vector2.zero;
         }
 
-        Vector3 worldPos = mainCamera.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, mainCamera.nearClipPlane));
+        Vector3 worldPos = mainCamera.ScreenToWorldPoint(
+            new Vector3(screenPos.x, screenPos.y, mainCamera.nearClipPlane)
+        );
         return new Vector2(worldPos.x, worldPos.y);
     }
 
-    // === DEBUG ===
+    public bool IsAnyDragInProgress => dragCoordinator != null && dragCoordinator.IsDragging;
 
-    private void OnDrawGizmosSelected()
+    // === PHASE MANAGEMENT ===
+
+    public async Task StartPreparationPhase()
     {
-        // Desenhar battleFieldBounds no editor
-        Rect bounds = new Rect(
-            battleFieldCenter.x - battleFieldSize.x / 2f,
-            battleFieldCenter.y - battleFieldSize.y / 2f,
-            battleFieldSize.x,
-            battleFieldSize.y
-        );
+        DebugManager.Log("Iniciando fase de preparação...", DebugCategory.State);
 
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireCube(new Vector3(bounds.center.x, bounds.center.y, 0f), new Vector3(bounds.width, bounds.height, 0.1f));
+        confirmationTCS = new TaskCompletionSource<bool>();
+        await confirmationTCS.Task;
+
+        DebugManager.Log("Fase de preparação concluída", DebugCategory.State);
+    }
+
+    public async void ConfirmPositioning()
+    {
+        await PlayCombatTransition();
+        confirmationTCS?.TrySetResult(true);
+    }
+
+    // === COMBAT TRANSITION ===
+
+    private async Task PlayCombatTransition()
+    {
+        float elapsed = 0f;
+
+        while (elapsed < transitionDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / transitionDuration);
+            float smoothT = Mathf.SmoothStep(0f, 1f, t);
+
+            // Slide down + Fade UI
+            if (preCombatUI != null && preCombatCanvasGroup != null)
+            {
+                preCombatUI.anchoredPosition = originalUIPosition + Vector2.down * slideDistance * smoothT;
+                preCombatCanvasGroup.alpha = 1f - smoothT;
+            }
+
+            // Zoom da câmera
+            if (battleCamera != null)
+            {
+                battleCamera.orthographicSize = Mathf.Lerp(originalCameraSize, originalCameraSize - zoomAmount, smoothT);
+            }
+
+            await Task.Yield();
+        }
+
+        // Desligar UI para poupar recursos
+        if (preCombatUI != null)
+            preCombatUI.gameObject.SetActive(false);
+    }
+
+    private void ResetTransition()
+    {
+        if (preCombatUI != null)
+        {
+            preCombatUI.anchoredPosition = originalUIPosition;
+            preCombatUI.gameObject.SetActive(true);
+        }
+
+        if (preCombatCanvasGroup != null)
+            preCombatCanvasGroup.alpha = 1f;
+
+        if (battleCamera != null)
+            battleCamera.orthographicSize = originalCameraSize;
+    }
+
+    private void HandleCombatEnded(Team winner)
+    {
+        ResetTransition();
+    }
+
+    // === LEGACY CALLBACKS (mantidos para compatibilidade) ===
+
+    public void OnDragStart(CharacterData characterData)
+    {
+        uiFeedbackController.ShowDragFeedback();
+
+        DebugManager.Log($"Drag iniciado (legacy): {characterData.displayName}", DebugCategory.Drag);
+    }
+
+    public void OnDragEnd(CharacterData characterData, Vector2 screenPos)
+    {
+        uiFeedbackController.HideDragFeedback();
+
+        Vector2 worldPos = ScreenToWorldPosition(screenPos);
+
+        if (!IsPositionValid(worldPos))
+        {
+            DebugManager.Log("Posição inválida, drag cancelado (legacy)", DebugCategory.Drag);
+            return;
+        }
+
+        DebugManager.Log($"Drag concluído (legacy): {characterData.displayName}", DebugCategory.Drag);
     }
 }

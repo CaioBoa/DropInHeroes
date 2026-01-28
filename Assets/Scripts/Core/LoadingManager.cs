@@ -40,11 +40,11 @@ public class LoadingManager : MonoBehaviour
         }
         catch (OperationCanceledException)
         {
-            Debug.LogWarning("[LoadingManager] Carregamento cancelado");
+            DebugManager.LogWarning("Carregamento cancelado", DebugCategory.Initialization);
         }
         catch (Exception e)
         {
-            Debug.LogError($"[LoadingManager] Erro durante carregamento: {e.Message}");
+            DebugManager.LogError($"Erro durante carregamento: {e.Message}", DebugCategory.Initialization);
             UpdateProgress(0f, $"ERRO: {e.Message}");
         }
     }
@@ -72,7 +72,7 @@ public class LoadingManager : MonoBehaviour
             throw new TimeoutException("DataManager demorou demais para inicializar!");
         }
 
-        Debug.Log("[LoadingManager] ✓ DataManager pronto!");
+        DebugManager.Log("DataManager pronto!", DebugCategory.Initialization);
 
         // === FASE 3: Pre-carregar recursos de batalha ===
         await PreloadBattleScene(cancellationToken);
@@ -99,7 +99,7 @@ public class LoadingManager : MonoBehaviour
 
     private async Task PreloadBattleScene(CancellationToken cancellationToken)
     {
-        Debug.Log($"[LoadingManager] Pré-carregando {battleSceneName}...");
+        DebugManager.Log($"Pré-carregando {battleSceneName}...", DebugCategory.Initialization);
 
         // Carregar scene de forma aditiva
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(battleSceneName, LoadSceneMode.Additive);
@@ -118,11 +118,11 @@ public class LoadingManager : MonoBehaviour
         if (battleManager != null)
         {
             battleManager.Initialize();
-            Debug.Log("[LoadingManager] BattleManager inicializado!");
+            DebugManager.Log("BattleManager inicializado!", DebugCategory.Initialization);
         }
         else
         {
-            Debug.LogError("[LoadingManager] BattleManager não encontrado na Battle scene!");
+            DebugManager.LogError("BattleManager não encontrado na Battle scene!", DebugCategory.Initialization);
         }
 
         // DESATIVAR todos os root objects APÓS inicializar
@@ -131,7 +131,7 @@ public class LoadingManager : MonoBehaviour
             rootObj.SetActive(false);
         }
 
-        Debug.Log($"[LoadingManager] {battleSceneName} pré-carregada e desativada!");
+        DebugManager.Log($"{battleSceneName} pré-carregada e desativada!", DebugCategory.Initialization);
     }
 
     /// <summary>
@@ -152,7 +152,7 @@ public class LoadingManager : MonoBehaviour
 
             // Atualizar progresso
             float sceneProgress = asyncLoad.progress / 0.9f;
-            Debug.Log($"[LoadingManager] Carregando cena: {sceneProgress * 100:F0}%");
+            DebugManager.Log($"Carregando cena: {sceneProgress * 100:F0}%", DebugCategory.Initialization);
 
             // Aguardar próximo frame
             await Task.Yield();
@@ -180,10 +180,10 @@ public class LoadingManager : MonoBehaviour
         if (loadingScene.IsValid() && loadingScene.name != sceneName)
         {
             await SceneManager.UnloadSceneAsync(loadingScene);
-            Debug.Log($"[LoadingManager] Scene '{loadingScene.name}' descarregada");
+            DebugManager.Log($"Scene '{loadingScene.name}' descarregada", DebugCategory.Initialization);
         }
 
-        Debug.Log("[LoadingManager] ✓ Cena carregada!");
+        DebugManager.Log("Cena carregada!", DebugCategory.Initialization);
     }
 
     // Callback de progresso (evento do DataManager)
@@ -204,7 +204,7 @@ public class LoadingManager : MonoBehaviour
             loadingUI.UpdateProgress(progress, message);
         }
 
-        Debug.Log($"[Loading] {progress * 100:F0}% - {message}");
+        DebugManager.Log($"{progress * 100:F0}% - {message}", DebugCategory.Initialization);
     }
 
     private void OnDestroy()

@@ -16,6 +16,20 @@ MonoBehaviour:
   category: 0
   idleAnimation: {fileID: 7400000, guid: b788050e613cd5343b920a7b47292d63, type: 2}
   runAnimation: {fileID: 7400000, guid: 7f2dc399a03b30348a6c3246b9f898ca, type: 2}
+  dragAnimation: {fileID: 7400000, guid: 6c18fec0d413a1e4b8ea5ea785143602, type: 2}
+  attackAnimation: {fileID: 7400000, guid: 7f6a0fb33d944a74d8c2d17c9d94b4ad, type: 2}
+  deathAnimation: {fileID: 7400000, guid: d89f0123b53c94545a0b36a3457ad81e, type: 2}
+  deathIdleAnimation: {fileID: 7400000, guid: 75b642b45227ce3439d0fe4d48c09a99, type: 2}
+  supremeAnimation: {fileID: 7400000, guid: 018e5d632364ec9499dc80a4ab3b46ab, type: 2}
+  stunAnimation: {fileID: 7400000, guid: 1fda703b0b81c324eaccd20200d12b44, type: 2}
+  victoryAnimation: {fileID: 7400000, guid: 7ae7a2ae7cf86d94da5f522e7301bd4a, type: 2}
   defaultSprite: {fileID: 21300000, guid: 40834198f377f214e91026fc88cc23c2, type: 3}
-  dialoguePortrait: {fileID: -5141962160476360904, guid: ea3a6b044ebabb149a55f87ed1b1018f, type: 3}
+  dialoguePortrait: {fileID: -5141962160476360904, guid: 36ecd9a7dc191ce408a13fcdbb260b8d, type: 3}
+  cardPortrait: {fileID: 49433616, guid: 36ecd9a7dc191ce408a13fcdbb260b8d, type: 3}
   displayName: Marda
+  baseAttack: 10
+  baseDefense: 0
+  baseSpeed: 3
+  baseRange: 20
+  baseMaxHealth: 100
+  baseMaxEnergy: 50
