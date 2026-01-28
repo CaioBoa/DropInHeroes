@@ -23,6 +23,8 @@ public class StatsModule : IUnitModule
     public float MaxEnergy => GetStat(StatType.MaxEnergy);
     public float CurrentEnergy => GetResource(ResourceType.Energy);
     public float EnergyRegeneration => GetStat(StatType.EnergyRegeneration);
+    public float CritRate => GetStat(StatType.CritRate);
+    public float CritDamage => GetStat(StatType.CritDamage);
 
     // === IUnitModule ===
 
@@ -64,6 +66,8 @@ public class StatsModule : IUnitModule
         CreateStat(StatType.MaxHealth, data?.baseMaxHealth ?? 100f);
         CreateStat(StatType.MaxEnergy, data?.baseMaxEnergy ?? 50f);
         CreateStat(StatType.EnergyRegeneration, data?.baseEnergyRegeneration ?? 5f);
+        CreateStat(StatType.CritRate, data?.baseCritRate ?? 0.05f);
+        CreateStat(StatType.CritDamage, data?.baseCritDamage ?? 1.5f);
     }
 
     private void CreateStat(StatType type, float baseValue)
@@ -124,6 +128,19 @@ public class StatsModule : IUnitModule
             resource.Remove(-amount);
     }
 
+    public void ApplyDamage(DamageResult result)
+    {
+        if (IsDead) return;
+
+        resources[ResourceType.Health].Remove(result.finalDamage);
+
+        controller.GetModule<VisualModule>()?.PlayDamageFlash();
+        controller.GetModule<SkillsModule>()?.NotifyDamageTaken(result.finalDamage);
+
+        string critTag = result.isCritical ? " [CRIT]" : "";
+        DebugManager.Log($"ApplyDamage: Raw:{result.rawDamage} Final:{result.finalDamage}{critTag} - HP: {CurrentHealth}/{MaxHealth}", DebugCategory.Combat);
+    }
+
     public void TakeDamage(float damage)
     {
         if (IsDead) return;
@@ -131,8 +148,8 @@ public class StatsModule : IUnitModule
         float finalDamage = Mathf.Max(0, damage - Defense);
         resources[ResourceType.Health].Remove(finalDamage);
 
-        // Feedback visual
         controller.GetModule<VisualModule>()?.PlayDamageFlash();
+        controller.GetModule<SkillsModule>()?.NotifyDamageTaken(finalDamage);
 
         DebugManager.Log($"TakeDamage({damage}) - Final:{finalDamage} - HP: {CurrentHealth}/{MaxHealth}", DebugCategory.Combat);
     }
@@ -140,6 +157,7 @@ public class StatsModule : IUnitModule
     public void Heal(float amount)
     {
         resources[ResourceType.Health].Add(amount);
+        controller.GetModule<SkillsModule>()?.NotifyHealReceived(amount);
         DebugManager.Log($"Heal({amount}) - HP: {CurrentHealth}/{MaxHealth}", DebugCategory.Combat);
     }
 
@@ -150,6 +168,7 @@ public class StatsModule : IUnitModule
         IsDead = true;
         DebugManager.Log("Unidade morreu!", DebugCategory.Combat);
 
+        controller.GetModule<SkillsModule>()?.NotifyUnitDeath();
         controller.GetModule<CombatModule>()?.SetState(CombatState.Dead);
         OnDeath?.Invoke();
         CombatController.Instance?.OnUnitDied(controller);
@@ -189,6 +208,8 @@ public class StatsModule : IUnitModule
         stats[StatType.MaxHealth].SetBaseValue(data.baseMaxHealth);
         stats[StatType.MaxEnergy].SetBaseValue(data.baseMaxEnergy);
         stats[StatType.EnergyRegeneration].SetBaseValue(data.baseEnergyRegeneration);
+        stats[StatType.CritRate].SetBaseValue(data.baseCritRate);
+        stats[StatType.CritDamage].SetBaseValue(data.baseCritDamage);
 
         // Resetar recursos para novo máximo
         foreach (var resource in resources.Values)

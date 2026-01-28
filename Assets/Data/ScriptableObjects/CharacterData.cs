@@ -17,12 +17,19 @@ public class CharacterData : ScriptableObject, IGameData
     public AnimationClip supremeAnimation;
     public AnimationClip stunAnimation;
     public AnimationClip victoryAnimation;
+    public AnimationClip extraAnimation1;
+    public AnimationClip extraAnimation2;
 
     [Header("Portraits & Name")]
     public Sprite defaultSprite;
     public Sprite dialoguePortrait;
     public Sprite cardPortrait;
     public string displayName;
+
+    [Header("Skills")]
+    public ActiveSkill baseSkill;
+    public ActiveSkill supremeSkill;
+    public PassiveSkill passiveSkill;
 
     [Header("Base Stats")]
     public float baseAttack = 10f;
@@ -32,6 +39,8 @@ public class CharacterData : ScriptableObject, IGameData
     public float baseMaxHealth = 100f;
     public float baseMaxEnergy = 50f;
     public float baseEnergyRegeneration = 5f;
+    public float baseCritRate = 0.05f;
+    public float baseCritDamage = 1.5f;
 
     // Interface implementation
     public string ID => id;

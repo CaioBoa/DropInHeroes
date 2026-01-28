@@ -6,5 +6,7 @@ public enum StatType
     Range,
     MaxHealth,
     MaxEnergy,
-    EnergyRegeneration
+    EnergyRegeneration,
+    CritRate,
+    CritDamage
 }

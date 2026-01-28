@@ -27,6 +27,7 @@ public class UnitController : MonoBehaviour
         RegisterModule(new DragModule());
         RegisterModule(new FootprintModule());
         RegisterModule(new StatsModule());
+        RegisterModule(new SkillsModule());
         RegisterModule(new CombatModule());
         RegisterModule(new HealthBarModule());
         RegisterModule(new EnergyBarModule());

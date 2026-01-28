@@ -10,6 +10,7 @@ public class CombatModule : IUnitModule
     private UnitController controller;
     private VisualModule visualModule;
     private StatsModule stats;
+    private SkillsModule skills;
     private NavMeshAgent agent;
     private Transform transform;
     private List<UnitController> allTargets;
@@ -24,9 +25,9 @@ public class CombatModule : IUnitModule
     // Attack animation control
     private bool isAttacking;
     private float attackEndTime;
-    private bool damageApplied;
 
     public CombatState State => currentState;
+    public UnitController CurrentTarget => currentTarget;
 
     public void Initialize(UnitController unitController)
     {
@@ -34,9 +35,7 @@ public class CombatModule : IUnitModule
         transform = controller.transform;
         stats = controller.GetModule<StatsModule>();
         visualModule = controller.GetModule<VisualModule>();
-
-        if (visualModule != null)
-            visualModule.OnAttackHit += ApplyDamage;
+        skills = controller.GetModule<SkillsModule>();
     }
 
     public void OnEnabled() { }
@@ -47,15 +46,10 @@ public class CombatModule : IUnitModule
         StopMovement();
         currentTarget = null;
         allTargets = null;
-
-        // Limpar estado de animação
         isAttacking = false;
-        damageApplied = false;
 
-        if (visualModule != null)
-            visualModule.OnAttackHit -= ApplyDamage;
+        skills?.ClearSkills();
 
-        // Destruir NavMeshAgent para reutilização no pool
         if (agent != null)
         {
             Object.Destroy(agent);
@@ -67,6 +61,7 @@ public class CombatModule : IUnitModule
     {
         controller = null;
         stats = null;
+        skills = null;
         allTargets = null;
         currentTarget = null;
     }
@@ -75,13 +70,14 @@ public class CombatModule : IUnitModule
     {
         allTargets = enemies;
 
-        // Energia começa em 0
         stats?.PrepareForCombat();
 
         agent = controller.gameObject.AddComponent<NavMeshAgent>();
         ConfigureNavMeshAgent();
 
         nextAttackTime = Time.time + Random.Range(0f, 0.5f);
+
+        skills?.InitializeSkills();
 
         SetState(CombatState.LookingForTarget);
     }
@@ -205,11 +201,10 @@ public class CombatModule : IUnitModule
     {
         float range = stats?.Range ?? 1.5f;
 
-        // Flip para olhar o alvo durante ataque
         if (currentTarget != null)
             visualModule?.FaceTowards(currentTarget.transform.position);
 
-        // Aguardar animação em progresso
+        // Aguardar animação em progresso (interrupção por prioridade é feita via InterruptCurrentSkill)
         if (isAttacking)
         {
             if (Time.time >= attackEndTime)
@@ -242,7 +237,13 @@ public class CombatModule : IUnitModule
             }
         }
 
-        // Iniciar ataque
+        // Supreme pronto: ignorar nextAttackTime, executar imediatamente
+        if (skills != null && skills.IsSupremeReady)
+        {
+            StartAttack();
+            return;
+        }
+
         if (Time.time >= nextAttackTime)
             StartAttack();
     }
@@ -309,36 +310,36 @@ public class CombatModule : IUnitModule
 
     private void StartAttack()
     {
-        float speedMult = (stats?.Speed ?? 3f) / 12f;
-        float duration = visualModule?.PlayAttackAnimation(speedMult) ?? 0.5f;
+        float duration = skills?.ExecuteSkill(currentTarget) ?? 0.5f;
 
         isAttacking = true;
-        damageApplied = false;
         attackEndTime = Time.time + duration;
         nextAttackTime = Time.time + duration;
-    }
-
-    private void ApplyDamage()
-    {
-        if (!isAttacking || damageApplied) return;
-        if (currentTarget == null || !IsTargetValid(currentTarget)) return;
-
-        damageApplied = true;
-
-        float damage = stats?.Attack ?? 10f;
-        currentTarget.GetModule<StatsModule>()?.TakeDamage(damage);
-
-        DebugManager.Log($"{controller.GetCharacterData()?.displayName} atacou {currentTarget.GetCharacterData()?.displayName} por {damage}", DebugCategory.Combat);
     }
 
     private void FinishAttack()
     {
         isAttacking = false;
         visualModule?.ResetAnimatorSpeed();
+        skills?.OnSkillFinished();
+    }
 
-        // Fallback: se Animation Event não disparou, aplicar dano agora
-        if (!damageApplied)
-            ApplyDamage();
+    /// <summary>
+    /// Interrompe a skill atual para executar uma de maior prioridade.
+    /// Chamado pelo SkillsModule quando supreme fica disponível.
+    /// </summary>
+    public void InterruptCurrentSkill()
+    {
+        if (!isAttacking)
+        {
+            StartAttack();
+            return;
+        }
+
+        isAttacking = false;
+        visualModule?.ResetAnimatorSpeed();
+        skills?.OnSkillInterrupted();
+        StartAttack();
     }
 
     private void StopMovement()

@@ -23,13 +23,19 @@ MonoBehaviour:
   supremeAnimation: {fileID: 7400000, guid: 4b8ebb7b9ffdc3340a84513eed2acf98, type: 2}
   stunAnimation: {fileID: 7400000, guid: 09b386719cf5e7a40be8bf84e579517d, type: 2}
   victoryAnimation: {fileID: 7400000, guid: 2593d7f04e1ec874fa2d2ba7d5a6cddf, type: 2}
+  extraAnimation1: {fileID: 0}
+  extraAnimation2: {fileID: 0}
   defaultSprite: {fileID: 21300000, guid: d444bbad6a91b2249a2ebbbe18df40f5, type: 3}
   dialoguePortrait: {fileID: -1687662815032365482, guid: 2b223f1eede939446946eb9a9a1ae673, type: 3}
   cardPortrait: {fileID: -162364808, guid: 2b223f1eede939446946eb9a9a1ae673, type: 3}
   displayName: Guliver
+  baseSkill: {fileID: 11400000, guid: d469abc48e176884c826fe411fff8d71, type: 2}
+  supremeSkill: {fileID: 11400000, guid: 2dd12e5ab259fbb468c3dd1278bf14a7, type: 2}
+  passiveSkill: {fileID: 11400000, guid: b3999f1c4082fb24ea673c4b1fc866e7, type: 2}
   baseAttack: 10
   baseDefense: 0
   baseSpeed: 3
   baseRange: 1.5
   baseMaxHealth: 100
   baseMaxEnergy: 50
+  baseEnergyRegeneration: 5

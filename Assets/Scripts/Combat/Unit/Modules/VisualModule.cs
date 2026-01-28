@@ -14,11 +14,13 @@ public class VisualModule : IUnitModule
     private SpriteRenderer spriteRenderer;
     private AnimatorOverrideController animatorOverride;
     private AnimationClip attackClip;
+    private AnimationClip supremeClip;
 
     // Animator parameters (cached hash para performance)
     private static readonly int IsDraggingHash = Animator.StringToHash("isDragging");
     private static readonly int IsMovingHash = Animator.StringToHash("isMoving");
     private static readonly int AttackTriggerHash = Animator.StringToHash("Attack");
+    private static readonly int SupremeTriggerHash = Animator.StringToHash("Supreme");
     private static readonly int DeathTriggerHash = Animator.StringToHash("Death");
     private static readonly int IsDeadHash = Animator.StringToHash("isDead");
     private static readonly int IsWinnerHash = Animator.StringToHash("isWinner");
@@ -124,6 +126,10 @@ public class VisualModule : IUnitModule
                 case "Placeholder_Victory":
                     newClip = characterData.victoryAnimation;
                     break;
+                case "Placeholder_Supreme":
+                    newClip = characterData.supremeAnimation;
+                    supremeClip = newClip;
+                    break;
             }
 
             if (newClip != null)
@@ -193,6 +199,21 @@ public class VisualModule : IUnitModule
         animator.SetTrigger(AttackTriggerHash);
 
         float duration = attackClip != null ? attackClip.length / speedMultiplier : 0.5f;
+        return duration;
+    }
+
+    /// <summary>
+    /// Inicia animação supreme com velocidade ajustada.
+    /// Retorna duração real da animação (considerando speedMultiplier).
+    /// </summary>
+    public float PlaySupremeAnimation(float speedMultiplier)
+    {
+        if (animator == null) return 0.5f;
+
+        animator.speed = speedMultiplier;
+        animator.SetTrigger(SupremeTriggerHash);
+
+        float duration = supremeClip != null ? supremeClip.length / speedMultiplier : 0.5f;
         return duration;
     }
 

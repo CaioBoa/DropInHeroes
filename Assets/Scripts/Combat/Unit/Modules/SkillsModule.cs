@@ -1,172 +1,237 @@
 using UnityEngine;
-using System.Collections.Generic;
 
-/// <summary>
-/// Módulo responsável por habilidades/skills da unidade
-/// PLACEHOLDER - será implementado na fase de combate
-/// </summary>
 public class SkillsModule : IUnitModule
 {
     private UnitController controller;
-    private List<Skill> availableSkills = new List<Skill>();
+    private StatsModule stats;
+    private VisualModule visual;
+    private CombatModule combat;
 
-    // === INTERFACE IMPLEMENTATION ===
+    // Runtime clones (estado independente por unidade)
+    private ActiveSkill baseSkill;
+    private ActiveSkill supremeSkill;
+    private PassiveSkill passiveSkill;
+
+    // Hook system
+    private PassiveHooks hooks = new PassiveHooks();
+
+    // Skill execution state
+    private ActiveSkill executingSkill;
+    private bool supremeReady;
+
+    public PassiveHooks Hooks => hooks;
+    public bool IsSupremeReady => supremeReady;
+    public bool HasPendingPriority => supremeReady && (executingSkill == null || executingSkill.skillType < ActiveSkillType.Supreme);
+
+    // === IUnitModule ===
 
     public void Initialize(UnitController unitController)
     {
         controller = unitController;
-        availableSkills.Clear();
-
-        // TODO: Carregar skills do CharacterData
-        // CharacterData data = controller.GetCharacterData();
-        // foreach (var skillData in data.skills)
-        // {
-        //     availableSkills.Add(new Skill(skillData));
-        // }
-
-        DebugManager.Log("SkillsModule inicializado (placeholder)", DebugCategory.Combat);
+        stats = controller.GetModule<StatsModule>();
+        visual = controller.GetModule<VisualModule>();
     }
 
-    public void OnEnabled()
-    {
-        // Futuro: ativar indicadores de skill
-    }
-
-    public void OnDisabled()
-    {
-        // Futuro: desativar indicadores
-    }
+    public void OnEnabled() { }
+    public void OnDisabled() { }
 
     public void Cleanup()
     {
-        availableSkills.Clear();
+        ClearSkills();
         controller = null;
+        stats = null;
+        visual = null;
+        combat = null;
     }
 
-    // === PUBLIC API ===
+    // === COMBAT LIFECYCLE ===
+
+    public void InitializeSkills()
+    {
+        combat = controller.GetModule<CombatModule>();
+
+        CharacterData data = controller.GetCharacterData();
+        if (data == null) return;
+
+        baseSkill = data.baseSkill != null ? Object.Instantiate(data.baseSkill) : null;
+        supremeSkill = data.supremeSkill != null ? Object.Instantiate(data.supremeSkill) : null;
+        passiveSkill = data.passiveSkill != null ? Object.Instantiate(data.passiveSkill) : null;
+
+        supremeReady = false;
+        executingSkill = null;
+
+        SkillContext ctx = BuildContext(null);
+
+        passiveSkill?.Initialize(ctx);
+        baseSkill?.Initialize(ctx);
+        supremeSkill?.Initialize(ctx);
+
+        var energy = stats?.GetResourceObject(ResourceType.Energy);
+        if (energy != null)
+            energy.OnValueChanged += OnEnergyChanged;
+
+        if (visual != null)
+            visual.OnAttackHit += HandleSkillHit;
+
+        hooks.InvokeBattleStart();
+    }
+
+    public void ClearSkills()
+    {
+        hooks.InvokeBattleEnd();
+        hooks.ClearAll();
+
+        baseSkill?.Clear();
+        supremeSkill?.Clear();
+        passiveSkill?.Clear();
+
+        if (baseSkill != null) Object.Destroy(baseSkill);
+        if (supremeSkill != null) Object.Destroy(supremeSkill);
+        if (passiveSkill != null) Object.Destroy(passiveSkill);
+
+        baseSkill = null;
+        supremeSkill = null;
+        passiveSkill = null;
+        executingSkill = null;
+        supremeReady = false;
+
+        var energy = stats?.GetResourceObject(ResourceType.Energy);
+        if (energy != null)
+            energy.OnValueChanged -= OnEnergyChanged;
+
+        if (visual != null)
+            visual.OnAttackHit -= HandleSkillHit;
+    }
+
+    // === SKILL EXECUTION ===
+
+    public ActiveSkill GetCurrentSkill()
+    {
+        if (supremeReady && supremeSkill != null)
+            return supremeSkill;
+        return baseSkill;
+    }
 
     /// <summary>
-    /// Usa uma habilidade em um alvo
+    /// Executa a skill de maior prioridade. Retorna duração da animação.
     /// </summary>
-    public void UseSkill(string skillId, UnitController target)
+    public float ExecuteSkill(UnitController target)
     {
-        // TODO: Implementar uso de skill
-        var skill = availableSkills.Find(s => s.Id == skillId);
-        if (skill == null)
+        ActiveSkill skill = GetCurrentSkill();
+        if (skill == null) return 0.5f;
+
+        executingSkill = skill;
+
+        hooks.InvokeBeforeAttack();
+
+        SkillContext ctx = BuildContext(target);
+        float duration = skill.Execute(ctx);
+
+        if (skill.skillType == ActiveSkillType.Supreme)
         {
-            DebugManager.LogWarning($"Skill não encontrada: {skillId}", DebugCategory.Combat);
-            return;
+            stats?.GetResourceObject(ResourceType.Energy)?.SetToMin();
+            supremeReady = false;
+            hooks.InvokeSupremeUsed();
         }
 
-        if (!CanUseSkill(skillId))
-        {
-            DebugManager.LogWarning($"Não pode usar skill: {skillId}", DebugCategory.Combat);
-            return;
-        }
-
-        // TODO: Executar efeito da skill
-        DebugManager.Log($"Usando skill: {skill.DisplayName} em {target?.GetCharacterData()?.displayName}", DebugCategory.Combat);
-
-        // TODO: Iniciar cooldown
-        skill.CurrentCooldown = skill.Cooldown;
+        return duration;
     }
 
-    /// <summary>
-    /// Verifica se pode usar uma skill
-    /// </summary>
-    public bool CanUseSkill(string skillId)
+    private void HandleSkillHit()
     {
-        var skill = availableSkills.Find(s => s.Id == skillId);
-        if (skill == null) return false;
+        if (executingSkill == null) return;
 
-        // TODO: Verificar cooldown, mana/energy, silenciado, etc
-        return skill.CurrentCooldown <= 0;
+        UnitController target = combat?.CurrentTarget;
+        SkillContext ctx = BuildContext(target);
+        executingSkill.OnHit(ctx);
+
+        hooks.InvokeAfterAttack();
     }
 
-    /// <summary>
-    /// Reduz cooldown de todas as skills (chamado a cada turno)
-    /// </summary>
-    public void ReduceCooldowns()
+    public void OnSkillFinished()
     {
-        foreach (var skill in availableSkills)
-        {
-            if (skill.CurrentCooldown > 0)
-            {
-                skill.CurrentCooldown--;
-                DebugManager.Log($"Cooldown de {skill.DisplayName}: {skill.CurrentCooldown}", DebugCategory.Combat);
-            }
-        }
+        executingSkill = null;
     }
 
-    /// <summary>
-    /// Adiciona uma nova skill à unidade
-    /// </summary>
-    public void LearnSkill(Skill skill)
+    public void OnSkillInterrupted()
     {
-        // TODO: Implementar aprendizado de skill
-        if (skill == null) return;
+        executingSkill = null;
+    }
 
-        if (!availableSkills.Exists(s => s.Id == skill.Id))
+    // === CROSS-REFERENCING ===
+
+    public ActiveSkill GetActive(ActiveSkillType type)
+    {
+        switch (type)
         {
-            availableSkills.Add(skill);
-            DebugManager.Log($"Skill aprendida: {skill.DisplayName}", DebugCategory.Combat);
+            case ActiveSkillType.Base: return baseSkill;
+            case ActiveSkillType.Supreme: return supremeSkill;
+            default: return null;
         }
     }
 
-    // === PROPERTIES ===
-
-    public List<Skill> AvailableSkills => availableSkills;
-}
-
-/// <summary>
-/// Representa uma habilidade/skill
-/// </summary>
-[System.Serializable]
-public class Skill
-{
-    public string Id;
-    public string DisplayName;
-    public string Description;
-    public SkillType Type;
-    public int Cooldown; // Em turnos
-    public int CurrentCooldown;
-    public int Damage;
-    public int Healing;
-    public TargetType TargetType;
-    public int Range; // Em tiles
-    public int ManaCost; // Ou energy cost
-
-    public Skill(string id, string name, SkillType type)
+    public T GetActive<T>(ActiveSkillType type) where T : ActiveSkill
     {
-        Id = id;
-        DisplayName = name;
-        Type = type;
-        CurrentCooldown = 0;
+        return GetActive(type) as T;
     }
-}
 
-/// <summary>
-/// Tipos de habilidades
-/// </summary>
-public enum SkillType
-{
-    Attack,     // Dano direto
-    Heal,       // Cura
-    Buff,       // Buff em aliado
-    Debuff,     // Debuff em inimigo
-    AoE,        // Área de efeito
-    Utility     // Utilidade (teleporte, escudo, etc)
-}
+    public PassiveSkill GetPassive() => passiveSkill;
 
-/// <summary>
-/// Tipos de alvo
-/// </summary>
-public enum TargetType
-{
-    Self,           // Em si mesmo
-    SingleAlly,     // Um aliado
-    SingleEnemy,    // Um inimigo
-    AllAllies,      // Todos aliados
-    AllEnemies,     // Todos inimigos
-    Area            // Área (requer posição)
+    public T GetPassive<T>() where T : PassiveSkill
+    {
+        return passiveSkill as T;
+    }
+
+    // === PASSIVE LIFECYCLE ===
+
+    public void DeactivatePassive()
+    {
+        passiveSkill?.Deactivate(BuildContext(null));
+    }
+
+    public void ReactivatePassive()
+    {
+        passiveSkill?.Reactivate(BuildContext(null));
+    }
+
+    // === HOOK NOTIFICATIONS ===
+
+    public void NotifyDamageTaken(float amount) => hooks.InvokeDamageTaken(amount);
+    public void NotifyDamageDealt(float amount) => hooks.InvokeDamageDealt(amount);
+    public void NotifyHealReceived(float amount) => hooks.InvokeHealReceived(amount);
+
+    public void NotifyUnitDeath()
+    {
+        hooks.InvokeUnitDeath();
+        DeactivatePassive();
+    }
+
+    // === PRIVATE ===
+
+    private void OnEnergyChanged(float currentEnergy)
+    {
+        if (supremeReady || supremeSkill == null) return;
+
+        var energy = stats?.GetResourceObject(ResourceType.Energy);
+        if (energy == null || !energy.IsFull) return;
+
+        supremeReady = true;
+        hooks.InvokeEnergyFull();
+
+        // Interromper skill de menor prioridade imediatamente
+        if (executingSkill != null && executingSkill.skillType < ActiveSkillType.Supreme)
+            combat?.InterruptCurrentSkill();
+    }
+
+    private SkillContext BuildContext(UnitController target)
+    {
+        return new SkillContext
+        {
+            owner = controller,
+            target = target,
+            ownerStats = stats,
+            ownerVisual = visual,
+            skills = this
+        };
+    }
 }
