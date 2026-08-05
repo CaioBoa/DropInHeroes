@@ -12,6 +12,20 @@
 /[Uu]ser[Ss]ettings/
 *.log
 
+# Claude Code personal/local settings (permissoes pessoais — nao commitar)
+.claude/settings.local.json
+
+# Capturas do fluxo de verificacao de UI (17 MB). Nao sao referenciadas por nada;
+# ficam em disco para consulta, mas nao entram no controle de versao.
+/[Aa]ssets/Screenshots/
+
+# Copias manuais de recuperacao de cena (Temp/__Backupscenes). Sao rede de seguranca
+# local do dev — mantidas em disco de proposito, mas duplicam cena e nao devem versionar.
+/[Aa]ssets/_Recovery/
+
+# Backup do projeto criado durante o F0.1 (caso seja gerado dentro da pasta).
+/DropInHeroes_backup_*/
+
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
 *.blend1
 *.blend1.meta
@@ -97,3 +111,8 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+# Solucao gerada pelo Unity (o *.sln ja e ignorado; o formato novo .slnx nao era)
+*.slnx
+
+# Rascunhos de arte fora de Assets/ (candidatos gerados durante a criacao de personagem)
+/_pedro_candidates/

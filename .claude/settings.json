@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-Process Unity, \"Unity Hub\", UnityShaderCompiler -ErrorAction SilentlyContinue)",
+      "PowerShell($base = 'c:\\\\Users\\\\cailu\\\\DropInHeroes\\\\Assets\\\\Scripts\\\\Combat\\\\Effects\\\\EffectVisual.cs'; foreach \\($p in @\\($base, \"$base.meta\"\\)\\) { if \\(Test-Path $p\\) { Remove-Item $p -Force; Write-Output \"removed: $p\" } else { Write-Output \"absent: $p\" } })",
+      "PowerShell($base = 'c:\\\\Users\\\\cailu\\\\DropInHeroes\\\\Assets\\\\Scripts\\\\Combat\\\\Effects\\\\Contact\\\\ContactEffects.cs'; foreach \\($p in @\\($base, \"$base.meta\"\\)\\) { if \\(Test-Path $p\\) { Remove-Item $p -Force; Write-Output \"removed: $p\" } else { Write-Output \"absent: $p\" } })",
+      "PowerShell($base = 'c:\\\\Users\\\\cailu\\\\DropInHeroes\\\\Assets\\\\Scripts\\\\Combat\\\\Effects\\\\Contact\\\\StatusContactEffect.cs'; foreach \\($p in @\\($base, \"$base.meta\"\\)\\) { if \\(Test-Path $p\\) { Remove-Item $p -Force; Write-Output \"removed: $p\" } else { Write-Output \"absent: $p\" } })",
+      "Bash(claude mcp *)",
+      "PowerShell(claude mcp add --scope user --transport stdio coplay-mcp --env MCP_TOOL_TIMEOUT=720000 -- uvx --python \">=3.11\" coplay-mcp-server@latest)",
+      "PowerShell(& \"$env:APPDATA\\\\npm\\\\claude.cmd\" mcp add --scope user --transport stdio coplay-mcp --env MCP_TOOL_TIMEOUT=720000 -- uvx --python \">=3.11\" coplay-mcp-server@latest)",
+      "PowerShell(& \"$env:APPDATA\\\\npm\\\\claude.cmd\" mcp list)",
+      "PowerShell(& \"$env:APPDATA\\\\npm\\\\claude.cmd\" mcp get coplay-mcp)",
+      "Read(//c/Users/cailu/**)",
+      "PowerShell(Write-Output \"=== uv/uvx ===\"; \\(Get-Command uvx -ErrorAction SilentlyContinue\\).Source; \\(Get-Command uv -ErrorAction SilentlyContinue\\).Source; Write-Output \"=== python ===\"; \\(Get-Command python -ErrorAction SilentlyContinue\\).Source; Write-Output \"=== mcp get \\(re-check\\) ===\"; & \"$env:APPDATA\\\\npm\\\\claude.cmd\" mcp get coplay-mcp)",
+      "PowerShell(& uvx --python \">=3.11\" coplay-mcp-server@latest --help 2>&1)",
+      "PowerShell($ErrorActionPreference='Continue')",
+      "mcp__coplay-mcp__check_compile_errors",
+      "mcp__coplay-mcp__get_unity_editor_state",
+      "mcp__coplay-mcp__get_unity_logs",
+      "mcp__coplay-mcp__list_unity_project_roots",
+      "mcp__coplay-mcp__set_unity_project_root",
+      "mcp__coplay-mcp__list_game_objects_in_hierarchy",
+      "PowerShell($p = \"C:\\\\Users\\\\cailu\\\\DropInHeroes\\\\Temp\\\\Coplay\"; if \\(Test-Path $p\\) { Get-ChildItem $p -Recurse | Select-Object FullName, LastWriteTime } else { \"PASTA NAO EXISTE: $p\" }; \"---\"; $t = \"C:\\\\Users\\\\cailu\\\\DropInHeroes\\\\Temp\"; if \\(Test-Path $t\\) { Get-ChildItem $t -Directory | Select-Object Name } else { \"Temp nao existe\" })",
+      "PowerShell($r = Test-NetConnection -ComputerName 127.0.0.1 -Port 8080 -WarningAction SilentlyContinue; \"Port 8080 TcpTestSucceeded: $\\($r.TcpTestSucceeded\\)\")",
+      "PowerShell($c = Get-Command claude -ErrorAction SilentlyContinue; if \\($c\\) { \"FOUND: $\\($c.Source\\)\" } else { \"not on PATH\" }; \"---npm prefix---\"; try { npm prefix -g } catch { \"npm nao encontrado\" })",
+      "PowerShell(try { $resp = Invoke-WebRequest -Uri \"http://127.0.0.1:8080/mcp\" -Method GET -TimeoutSec 5 -UseBasicParsing; \"HTTP $\\($resp.StatusCode\\)\"; $resp.Content.Substring\\(0,[Math]::Min\\(300,$resp.Content.Length\\)\\) } catch { \"GET err: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(Get-Command claude.cmd, claude.exe, claude.ps1 -ErrorAction SilentlyContinue)",
+      "PowerShell(\"---\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\('GLOBAL mcpServers:', list\\(d.get\\('mcpServers',{}\\).keys\\(\\)\\)\\); proj=d.get\\('projects',{}\\); import os; [print\\(k, '->', list\\(v.get\\('mcpServers',{}\\).keys\\(\\)\\)\\) for k,v in proj.items\\(\\) if 'DropInHeroes' in k or 'mcpServers' in v and v.get\\('mcpServers'\\)]\")",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); proj=d.get\\('projects',{}\\); v=proj.get\\('C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\cailu\\\\\\\\\\\\\\\\DropInHeroes',{}\\); print\\(json.dumps\\(v.get\\('mcpServers',{}\\), indent=2\\)\\); print\\('---enabledMcpjsonServers---'\\); print\\(v.get\\('enabledMcpjsonServers'\\)\\); print\\('---disabledMcpjsonServers---'\\); print\\(v.get\\('disabledMcpjsonServers'\\)\\)\")"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\cailu"
+    ]
+  }
+}

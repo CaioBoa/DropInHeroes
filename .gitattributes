@@ -1,0 +1,58 @@
+# DropInHeroes — atributos de arquivo
+#
+# Git LFS adotado em 2026-08-04 (decisao D1=A do plano Docs/plans/F0.1-reprodutibilidade.md):
+# vale para o que for commitado DAQUI EM DIANTE. O historico anterior permanece como blob
+# comum, e o .git segue em ~1,2 GB — custo aceito conscientemente.
+#
+# Criterio: binario grande e nao-diffavel vai para LFS. YAML do Unity (.unity/.prefab/.asset/
+# .anim/.controller/.mat) FICA no git normal — e texto, e diffavel, e somado da menos de 15 MB.
+
+# --- Imagens ---
+*.png   filter=lfs diff=lfs merge=lfs -text
+*.jpg   filter=lfs diff=lfs merge=lfs -text
+*.jpeg  filter=lfs diff=lfs merge=lfs -text
+*.gif   filter=lfs diff=lfs merge=lfs -text
+*.bmp   filter=lfs diff=lfs merge=lfs -text
+*.tga   filter=lfs diff=lfs merge=lfs -text
+*.tif   filter=lfs diff=lfs merge=lfs -text
+*.tiff  filter=lfs diff=lfs merge=lfs -text
+*.psd   filter=lfs diff=lfs merge=lfs -text
+*.exr   filter=lfs diff=lfs merge=lfs -text
+*.hdr   filter=lfs diff=lfs merge=lfs -text
+
+# --- Audio (entra no F4.6) ---
+*.wav   filter=lfs diff=lfs merge=lfs -text
+*.mp3   filter=lfs diff=lfs merge=lfs -text
+*.ogg   filter=lfs diff=lfs merge=lfs -text
+*.aif   filter=lfs diff=lfs merge=lfs -text
+*.aiff  filter=lfs diff=lfs merge=lfs -text
+
+# --- Video ---
+*.mp4   filter=lfs diff=lfs merge=lfs -text
+*.mov   filter=lfs diff=lfs merge=lfs -text
+*.webm  filter=lfs diff=lfs merge=lfs -text
+
+# --- Modelos ---
+*.fbx   filter=lfs diff=lfs merge=lfs -text
+*.blend filter=lfs diff=lfs merge=lfs -text
+*.obj   filter=lfs diff=lfs merge=lfs -text
+
+# --- Binarios diversos ---
+*.dll           filter=lfs diff=lfs merge=lfs -text
+*.so            filter=lfs diff=lfs merge=lfs -text
+*.dylib         filter=lfs diff=lfs merge=lfs -text
+*.bundle        filter=lfs diff=lfs merge=lfs -text
+*.unitypackage  filter=lfs diff=lfs merge=lfs -text
+*.zip           filter=lfs diff=lfs merge=lfs -text
+
+# --- Texto: garantir tratamento como texto e evitar merge automatico em cena/prefab ---
+# YAML do Unity nao deve ser auto-mergeado: um merge textual bem-sucedido pode produzir
+# cena corrompida. Marcar como -merge forca resolucao manual.
+*.unity     -merge text
+*.prefab    -merge text
+*.asset     text
+*.anim      text
+*.controller text
+*.mat       text
+*.meta      text
+*.cs        text diff=csharp

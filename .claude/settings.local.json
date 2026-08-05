@@ -9,9 +9,24 @@
       "Bash(move:*)",
       "Bash(move \"c:\\Users\\cailu\\DropInHeroes\\Assets\\Scripts\\Combat\\Preparation\\PlacementGrid.cs.meta\" \"c:\\Users\\cailu\\DropInHeroes\\Assets\\Scripts\\Combat\\Preparation\\Board\\PlacementGrid.cs.meta\")",
       "Bash(grep:*)",
-      "Bash(del \"c:\\Users\\cailu\\DropInHeroes\\Assets\\Scripts\\Combat\\Preparation\\Board\\SwapHandler.cs\")"
+      "Bash(del \"c:\\Users\\cailu\\DropInHeroes\\Assets\\Scripts\\Combat\\Preparation\\Board\\SwapHandler.cs\")",
+      "Bash(sleep:*)",
+      "PowerShell(Get-Process Unity -ErrorAction SilentlyContinue)",
+      "PowerShell",
+      "Edit",
+      "Write",
+      "ToolSearch",
+      "mcp__UnityMCP",
+      "mcp__ludo"
     ],
-    "deny": [],
+    "deny": [
+      "Bash(rm:*)",
+      "Bash(rmdir:*)"
+    ],
     "ask": []
-  }
+  },
+  "enabledMcpjsonServers": [
+    "UnityMCP"
+  ],
+  "enableAllProjectMcpServers": true
 }
