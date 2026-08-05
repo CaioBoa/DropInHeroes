@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: bbaf00cde5708d9409f29dd82b5484a9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7951646898608765544
+    second: VfxBite_006_0
+  - first:
+      213: -2002175562308513119
+    second: VfxBite_006_1
+  - first:
+      213: 4543824037368363283
+    second: VfxBite_006_2
+  - first:
+      213: 4995907062808192683
+    second: VfxBite_006_3
+  - first:
+      213: 1853844062791282503
+    second: VfxBite_006_4
+  - first:
+      213: 767997094432586396
+    second: VfxBite_006_5
+  - first:
+      213: 483051241323901903
+    second: VfxBite_006_6
+  - first:
+      213: 9123470276995388384
+    second: VfxBite_006_7
+  - first:
+      213: -495526936282471761
+    second: VfxBite_006_8
+  - first:
+      213: 4528706498846880273
+    second: VfxBite_006_9
+  - first:
+      213: 2919531428094011518
+    second: VfxBite_006_10
+  - first:
+      213: 2393836723191377115
+    second: VfxBite_006_11
+  - first:
+      213: -5867665887630820291
+    second: VfxBite_006_12
+  - first:
+      213: -5655251633139902298
+    second: VfxBite_006_13
+  - first:
+      213: -4647132703067474432
+    second: VfxBite_006_14
+  - first:
+      213: 4003338610306250390
+    second: VfxBite_006_15
+  - first:
+      213: 862595117071876550
+    second: VfxBite_006_16
+  - first:
+      213: 4476669545008764396
+    second: VfxBite_006_17
+  - first:
+      213: 5881266128949701287
+    second: VfxBite_006_18
+  - first:
+      213: -6051885929602012609
+    second: VfxBite_006_19
+  - first:
+      213: -5734295062129517519
+    second: VfxBite_006_20
+  - first:
+      213: -6327461385838029775
+    second: VfxBite_006_21
+  - first:
+      213: -3807857833349792361
+    second: VfxBite_006_22
+  - first:
+      213: 4923061427514834110
+    second: VfxBite_006_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5109375}
+  spritePixelsToUnits: 90
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 640
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      VfxBite_006_0: -7951646898608765544
+      VfxBite_006_1: -2002175562308513119
+      VfxBite_006_10: 2919531428094011518
+      VfxBite_006_11: 2393836723191377115
+      VfxBite_006_12: -5867665887630820291
+      VfxBite_006_13: -5655251633139902298
+      VfxBite_006_14: -4647132703067474432
+      VfxBite_006_15: 4003338610306250390
+      VfxBite_006_16: 862595117071876550
+      VfxBite_006_17: 4476669545008764396
+      VfxBite_006_18: 5881266128949701287
+      VfxBite_006_19: -6051885929602012609
+      VfxBite_006_2: 4543824037368363283
+      VfxBite_006_20: -5734295062129517519
+      VfxBite_006_21: -6327461385838029775
+      VfxBite_006_22: -3807857833349792361
+      VfxBite_006_23: 4923061427514834110
+      VfxBite_006_3: 4995907062808192683
+      VfxBite_006_4: 1853844062791282503
+      VfxBite_006_5: 767997094432586396
+      VfxBite_006_6: 483051241323901903
+      VfxBite_006_7: 9123470276995388384
+      VfxBite_006_8: -495526936282471761
+      VfxBite_006_9: 4528706498846880273
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,871 @@
+fileFormatVersion: 2
+guid: dc37bca8de8c3d34c9208743ba9184c2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7179945506998364477
+    second: EmptySlot_0
+  - first:
+      213: -4381169466265435083
+    second: EmptySlot_1
+  - first:
+      213: -4692701695937791187
+    second: EmptySlot_2
+  - first:
+      213: -1829976789771748559
+    second: EmptySlot_3
+  - first:
+      213: 5718274290346685625
+    second: EmptySlot_4
+  - first:
+      213: -8969312689963985367
+    second: EmptySlot_5
+  - first:
+      213: -2215123509537348565
+    second: EmptySlot_6
+  - first:
+      213: 526597650285310542
+    second: EmptySlot_7
+  - first:
+      213: -1873214397177569453
+    second: EmptySlot_8
+  - first:
+      213: -3232696788925779157
+    second: EmptySlot_9
+  - first:
+      213: 1801170046852819928
+    second: EmptySlot_10
+  - first:
+      213: -7369902196587086439
+    second: EmptySlot_11
+  - first:
+      213: 1702022770485312209
+    second: EmptySlot_12
+  - first:
+      213: 967248465637267661
+    second: EmptySlot_13
+  - first:
+      213: -5637780258318446195
+    second: EmptySlot_14
+  - first:
+      213: -6284550977756262670
+    second: EmptySlot_15
+  - first:
+      213: -8623005729460944608
+    second: EmptySlot_16
+  - first:
+      213: 309713560517530290
+    second: EmptySlot_17
+  - first:
+      213: -5571310368332630575
+    second: EmptySlot_18
+  - first:
+      213: -7237124631163995886
+    second: EmptySlot_19
+  - first:
+      213: 3004596294338830134
+    second: EmptySlot_20
+  - first:
+      213: 3869137086683109653
+    second: EmptySlot_21
+  - first:
+      213: -3358022220933439326
+    second: EmptySlot_22
+  - first:
+      213: -7722676588494186302
+    second: EmptySlot_23
+  - first:
+      213: -6391809253877003069
+    second: EmptySlot_24
+  - first:
+      213: -3480547878740096159
+    second: EmptySlot_25
+  - first:
+      213: 8040686150823118223
+    second: EmptySlot_26
+  - first:
+      213: -4679878467473564245
+    second: EmptySlot_27
+  - first:
+      213: -1518139000132962471
+    second: EmptySlot_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EmptySlot_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 431
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d39ac4bc56a44a360800000000000000
+      internalID: 7179945506998364477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 463
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53406763595f233c0800000000000000
+      internalID: -4381169466265435083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_2
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 463
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b31c8abac20eeb0800000000000000
+      internalID: -4692701695937791187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_3
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 463
+        width: 50
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13bf17a2ecd9a96e0800000000000000
+      internalID: -1829976789771748559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_4
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 463
+        width: 50
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b4fc5c9b246b5f40800000000000000
+      internalID: 5718274290346685625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_5
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 463
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9261b4341a9968380800000000000000
+      internalID: -8969312689963985367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_6
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 463
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b24e86087ec4241e0800000000000000
+      internalID: -2215123509537348565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_7
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 431
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e42bfccd5c9de4700800000000000000
+      internalID: 526597650285310542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 383
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f55143e610106e0800000000000000
+      internalID: -1873214397177569453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_9
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 71
+        width: 338
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b237885e5672323d0800000000000000
+      internalID: -3232696788925779157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_10
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 383
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8db6cb65d9a0ff810800000000000000
+      internalID: 1801170046852819928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 319
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99d3e07eff8d8b990800000000000000
+      internalID: -7369902196587086439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_12
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 319
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da376a21bcce9710800000000000000
+      internalID: 1702022770485312209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 247
+        width: 17
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc8d9d3da5b5c6d00800000000000000
+      internalID: 967248465637267661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_14
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 247
+        width: 17
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81183da9b492c1b0800000000000000
+      internalID: -5637780258318446195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 183
+        width: 17
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fe0106ce2ac8c8a0800000000000000
+      internalID: -6284550977756262670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_16
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 183
+        width: 17
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0218257c9fde45880800000000000000
+      internalID: -8623005729460944608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 119
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b2d4c4a7d25c4400800000000000000
+      internalID: 309713560517530290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_18
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 119
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d53512fcbabea2b0800000000000000
+      internalID: -5571310368332630575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2197d3ced71909b90800000000000000
+      internalID: -7237124631163995886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_20
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 55
+        width: 17
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63f5581296872b920800000000000000
+      internalID: 3004596294338830134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_21
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 15
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51959074eafe1b530800000000000000
+      internalID: 3869137086683109653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_22
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 0
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a0e465e498e561d0800000000000000
+      internalID: -3358022220933439326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_23
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 0
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c8149b2f8a83d490800000000000000
+      internalID: -7722676588494186302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_24
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 50
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cc4b9e495bbb47a0800000000000000
+      internalID: -6391809253877003069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_25
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 0
+        width: 50
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16b05ff152c92bfc0800000000000000
+      internalID: -3480547878740096159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_26
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 0
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85073ae371469f60800000000000000
+      internalID: 8040686150823118223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_27
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 0
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad1d32345bbd0fb0800000000000000
+      internalID: -4679878467473564245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EmptySlot_28
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 15
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95778617f9c7eeae0800000000000000
+      internalID: -1518139000132962471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EmptySlot_0: 7179945506998364477
+      EmptySlot_1: -4381169466265435083
+      EmptySlot_10: 1801170046852819928
+      EmptySlot_11: -7369902196587086439
+      EmptySlot_12: 1702022770485312209
+      EmptySlot_13: 967248465637267661
+      EmptySlot_14: -5637780258318446195
+      EmptySlot_15: -6284550977756262670
+      EmptySlot_16: -8623005729460944608
+      EmptySlot_17: 309713560517530290
+      EmptySlot_18: -5571310368332630575
+      EmptySlot_19: -7237124631163995886
+      EmptySlot_2: -4692701695937791187
+      EmptySlot_20: 3004596294338830134
+      EmptySlot_21: 3869137086683109653
+      EmptySlot_22: -3358022220933439326
+      EmptySlot_23: -7722676588494186302
+      EmptySlot_24: -6391809253877003069
+      EmptySlot_25: -3480547878740096159
+      EmptySlot_26: 8040686150823118223
+      EmptySlot_27: -4679878467473564245
+      EmptySlot_28: -1518139000132962471
+      EmptySlot_3: -1829976789771748559
+      EmptySlot_4: 5718274290346685625
+      EmptySlot_5: -8969312689963985367
+      EmptySlot_6: -2215123509537348565
+      EmptySlot_7: 526597650285310542
+      EmptySlot_8: -1873214397177569453
+      EmptySlot_9: -3232696788925779157
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
