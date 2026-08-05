@@ -116,3 +116,6 @@ InitTestScene*.unity*
 
 # Rascunhos de arte fora de Assets/ (candidatos gerados durante a criacao de personagem)
 /_pedro_candidates/
+
+# .meta da pasta de recuperacao (a pasta ja e ignorada)
+/[Aa]ssets/_Recovery.meta

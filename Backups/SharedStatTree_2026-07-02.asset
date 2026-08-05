@@ -1,0 +1,2805 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc8a9aea9d9bea4aab1140111e9e2a1, type: 3}
+  m_Name: SharedStatTree
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Data.StatTreeData
+  id: shared_stat_tree
+  category: 2
+  pointsPerTier: 0a0000000a0000000a000000
+  nodes:
+  - nodeId: center
+    tier: 0
+    normalizedPos: {x: 0, y: 0}
+    stat: 4
+    maxPoints: 0
+    grantPoints: 0
+    isNotable: 0
+  - nodeId: free0
+    tier: 0
+    normalizedPos: {x: 0.099135615, y: 0.14412503}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free1
+    tier: 0
+    normalizedPos: {x: -0.16357832, y: -0.048024513}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free2
+    tier: 0
+    normalizedPos: {x: -0.00056907535, y: -0.16074164}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free3
+    tier: 0
+    normalizedPos: {x: 0.1599459, y: -0.05524481}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free4
+    tier: 0
+    normalizedPos: {x: -0.10394245, y: 0.13951729}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free5
+    tier: 0
+    normalizedPos: {x: -0.0040314165, y: -0.3215094}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free6
+    tier: 0
+    normalizedPos: {x: 0.28704092, y: -0.38186488}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free7
+    tier: 0
+    normalizedPos: {x: 0.31118354, y: -0.10230385}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free8
+    tier: 0
+    normalizedPos: {x: 0.45933744, y: 0.14363432}
+    stat: 2
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free9
+    tier: 0
+    normalizedPos: {x: 0.1907046, y: 0.27253306}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free11
+    tier: 0
+    normalizedPos: {x: -0.19650193, y: 0.27236566}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free12
+    tier: 0
+    normalizedPos: {x: -0.44658327, y: 0.14714675}
+    stat: 6
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free13
+    tier: 0
+    normalizedPos: {x: -0.31569457, y: -0.10196912}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free14
+    tier: 0
+    normalizedPos: {x: -0.27777365, y: -0.38298792}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free15
+    tier: 0
+    normalizedPos: {x: -0.63122374, y: 0.010342003}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free16
+    tier: 0
+    normalizedPos: {x: -0.5272901, y: 0.3554613}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free17
+    tier: 0
+    normalizedPos: {x: -0.1788432, y: 0.6073668}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free18
+    tier: 0
+    normalizedPos: {x: 0.20503984, y: 0.59624064}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free19
+    tier: 0
+    normalizedPos: {x: 0.49444777, y: 0.39337552}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free20
+    tier: 0
+    normalizedPos: {x: 0.6506192, y: -0.03730281}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free21
+    tier: 0
+    normalizedPos: {x: 0.521594, y: -0.3595348}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free22
+    tier: 0
+    normalizedPos: {x: 0.21961212, y: -0.5905568}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free23
+    tier: 0
+    normalizedPos: {x: -0.21244787, y: -0.61009943}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free24
+    tier: 0
+    normalizedPos: {x: -0.509022, y: -0.3843372}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free37
+    tier: 0
+    normalizedPos: {x: -0.79046404, y: 0.42433715}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free38
+    tier: 0
+    normalizedPos: {x: -0.64809895, y: -0.6268398}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free39
+    tier: 0
+    normalizedPos: {x: 0.41204262, y: -0.79849523}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free40
+    tier: 0
+    normalizedPos: {x: 0.8908633, y: 0.14528693}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free42
+    tier: 0
+    normalizedPos: {x: -0.0006870623, y: 0.4806175}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free43
+    tier: 0
+    normalizedPos: {x: 0.26993117, y: 0.37871033}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free44
+    tier: 0
+    normalizedPos: {x: 0.44973516, y: 0.63876367}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free45
+    tier: 0
+    normalizedPos: {x: 0.4597153, y: -0.15010267}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free46
+    tier: 0
+    normalizedPos: {x: 0.7493478, y: -0.238073}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free47
+    tier: 0
+    normalizedPos: {x: -0.0061562774, y: -0.48745397}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free48
+    tier: 0
+    normalizedPos: {x: -0.0014631315, y: -0.78428984}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free49
+    tier: 0
+    normalizedPos: {x: -0.46178183, y: -0.14765285}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free50
+    tier: 0
+    normalizedPos: {x: -0.76344985, y: -0.24308793}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free51
+    tier: 0
+    normalizedPos: {x: -0.29019573, y: 0.39278936}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free52
+    tier: 0
+    normalizedPos: {x: -0.4721063, y: 0.6418392}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free53
+    tier: 0
+    normalizedPos: {x: -0.1592925, y: 0.8927502}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free54
+    tier: 0
+    normalizedPos: {x: -0.23012434, y: -0.9286369}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free55
+    tier: 0
+    normalizedPos: {x: 0.22128947, y: -0.92545396}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free56
+    tier: 0
+    normalizedPos: {x: 0.8322783, y: -0.48366943}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free57
+    tier: 0
+    normalizedPos: {x: 0.9591568, y: -0.05467182}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free58
+    tier: 0
+    normalizedPos: {x: 0.7422833, y: 0.5962932}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free59
+    tier: 0
+    normalizedPos: {x: 0.3469869, y: 0.89446235}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free60
+    tier: 0
+    normalizedPos: {x: -0.346108, y: 0.8900845}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free61
+    tier: 0
+    normalizedPos: {x: -0.7339668, y: 0.62191486}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free62
+    tier: 0
+    normalizedPos: {x: -0.9551157, y: -0.044906106}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free63
+    tier: 0
+    normalizedPos: {x: -0.8054363, y: -0.5014694}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free64
+    tier: 0
+    normalizedPos: {x: -1.0605375, y: -0.33538514}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: free65
+    tier: 0
+    normalizedPos: {x: -0.6441812, y: 0.8879679}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: free66
+    tier: 0
+    normalizedPos: {x: 0.6542914, y: 0.89695513}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: free67
+    tier: 0
+    normalizedPos: {x: 1.0545247, y: -0.3346389}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: free68
+    tier: 0
+    normalizedPos: {x: -0.0018913471, y: -1.1106871}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g0s0
+    tier: 1
+    normalizedPos: {x: -0.568281, y: 1.1428196}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g1s0
+    tier: 1
+    normalizedPos: {x: -0.50532013, y: 1.3496529}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g2s0
+    tier: 1
+    normalizedPos: {x: -0.44199443, y: 1.5452988}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g3s0
+    tier: 1
+    normalizedPos: {x: 0.5549043, y: 1.147122}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g4s0
+    tier: 1
+    normalizedPos: {x: 0.49987048, y: 1.3445765}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g5s0
+    tier: 1
+    normalizedPos: {x: 0.42909223, y: 1.5393758}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g6s0
+    tier: 1
+    normalizedPos: {x: -0.24372186, y: 1.2863289}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g7s0
+    tier: 1
+    normalizedPos: {x: -0.76345116, y: 1.3973057}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g8s0
+    tier: 1
+    normalizedPos: {x: 0.23653993, y: 1.2559141}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g9s0
+    tier: 1
+    normalizedPos: {x: 0.7596615, y: 1.422655}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g10s0
+    tier: 1
+    normalizedPos: {x: -0.21275662, y: 1.5939322}
+    stat: 22
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g11s0
+    tier: 1
+    normalizedPos: {x: -0.3711468, y: 1.7224807}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g12s0
+    tier: 1
+    normalizedPos: {x: 0.1935485, y: 1.5893412}
+    stat: 22
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g13s0
+    tier: 1
+    normalizedPos: {x: 0.36571172, y: 1.7224807}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g14s0
+    tier: 1
+    normalizedPos: {x: 0.31980163, y: 1.8946437}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g15s0
+    tier: 1
+    normalizedPos: {x: -0.32064566, y: 1.9015301}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g16s0
+    tier: 1
+    normalizedPos: {x: -0.26784888, y: 2.0553293}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g17s0
+    tier: 1
+    normalizedPos: {x: 0.26700482, y: 2.0622158}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g18s0
+    tier: 1
+    normalizedPos: {x: -0.0015697214, y: 2.0828755}
+    stat: 22
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g19s0
+    tier: 1
+    normalizedPos: {x: -0.0030211909, y: 1.7789557}
+    stat: 22
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g20s0
+    tier: 1
+    normalizedPos: {x: -0.0030551523, y: 1.4456689}
+    stat: 22
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g0s1
+    tier: 1
+    normalizedPos: {x: -1.2652564, y: -0.18189654}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g0s2
+    tier: 1
+    normalizedPos: {x: -0.21799175, y: -1.2595395}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g0s4
+    tier: 1
+    normalizedPos: {x: 0.9166977, y: 0.8908565}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g1s1
+    tier: 1
+    normalizedPos: {x: -1.4425105, y: -0.058102213}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g1s2
+    tier: 1
+    normalizedPos: {x: -0.39050168, y: -1.3898636}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g1s3
+    tier: 1
+    normalizedPos: {x: 1.201167, y: -0.8051962}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g1s4
+    tier: 1
+    normalizedPos: {x: 1.1328638, y: 0.8948922}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g2s1
+    tier: 1
+    normalizedPos: {x: -1.6049211, y: 0.061252773}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g2s2
+    tier: 1
+    normalizedPos: {x: -0.5542026, y: -1.5074426}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g2s3
+    tier: 1
+    normalizedPos: {x: 1.2624048, y: -0.99721897}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g2s4
+    tier: 1
+    normalizedPos: {x: 1.3344119, y: 0.89379454}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g3s1
+    tier: 1
+    normalizedPos: {x: -0.91817385, y: 0.8863164}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g3s4
+    tier: 1
+    normalizedPos: {x: 1.263782, y: -0.17735587}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g4s1
+    tier: 1
+    normalizedPos: {x: -1.1242998, y: 0.89090204}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g4s2
+    tier: 1
+    normalizedPos: {x: -1.1947259, y: -0.79396886}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g4s3
+    tier: 1
+    normalizedPos: {x: 0.38591832, y: -1.3816017}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g4s4
+    tier: 1
+    normalizedPos: {x: 1.4332367, y: -0.059907906}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g5s1
+    tier: 1
+    normalizedPos: {x: -1.3314366, y: 0.88378423}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g5s2
+    tier: 1
+    normalizedPos: {x: -1.2519652, y: -0.9931672}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g5s3
+    tier: 1
+    normalizedPos: {x: 0.55767924, y: -1.4975953}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g5s4
+    tier: 1
+    normalizedPos: {x: 1.5966302, y: 0.06760253}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g6s1
+    tier: 1
+    normalizedPos: {x: -1.3014475, y: 0.17112435}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g6s2
+    tier: 1
+    normalizedPos: {x: -0.5649183, y: -1.1848699}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g6s3
+    tier: 1
+    normalizedPos: {x: 0.9270434, y: -0.8860735}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g6s4
+    tier: 1
+    normalizedPos: {x: 1.1534774, y: 0.6265293}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g7s1
+    tier: 1
+    normalizedPos: {x: -1.5675979, y: -0.28887388}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g7s2
+    tier: 1
+    normalizedPos: {x: -0.2096789, y: -1.5801412}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g7s3
+    tier: 1
+    normalizedPos: {x: 1.438009, y: -0.6920226}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g7s4
+    tier: 1
+    normalizedPos: {x: 1.0984174, y: 1.1551149}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g8s1
+    tier: 1
+    normalizedPos: {x: -1.1200212, y: 0.6171525}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g8s2
+    tier: 1
+    normalizedPos: {x: -0.9330525, y: -0.87449294}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g8s3
+    tier: 1
+    normalizedPos: {x: 0.54336286, y: -1.1576189}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g8s4
+    tier: 1
+    normalizedPos: {x: 1.2688693, y: 0.15904522}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g9s1
+    tier: 1
+    normalizedPos: {x: -1.1182771, y: 1.1621056}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g9s2
+    tier: 1
+    normalizedPos: {x: -1.4507946, y: -0.7044344}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g9s3
+    tier: 1
+    normalizedPos: {x: 0.22163633, y: -1.5974699}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g9s4
+    tier: 1
+    normalizedPos: {x: 1.5877737, y: -0.28285623}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g10s1
+    tier: 1
+    normalizedPos: {x: -1.581665, y: 0.29020852}
+    stat: 23
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g10s2
+    tier: 1
+    normalizedPos: {x: -0.764766, y: -1.4145736}
+    stat: 20
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g10s3
+    tier: 1
+    normalizedPos: {x: 1.1090133, y: -1.1644632}
+    stat: 21
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g10s4
+    tier: 1
+    normalizedPos: {x: 1.4501741, y: 0.69489586}
+    stat: 23
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g11s1
+    tier: 1
+    normalizedPos: {x: -1.7528671, y: 0.17929417}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g11s2
+    tier: 1
+    normalizedPos: {x: -0.7121845, y: -1.6116709}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g11s3
+    tier: 1
+    normalizedPos: {x: 1.3127126, y: -1.1753616}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g11s4
+    tier: 1
+    normalizedPos: {x: 1.5234857, y: 0.8852576}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g12s1
+    tier: 1
+    normalizedPos: {x: -1.4517435, y: 0.675209}
+    stat: 23
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g12s2
+    tier: 1
+    normalizedPos: {x: -1.0907753, y: -1.1720392}
+    stat: 20
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g12s3
+    tier: 1
+    normalizedPos: {x: 0.7776071, y: -1.399569}
+    stat: 21
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g12s4
+    tier: 1
+    normalizedPos: {x: 1.571363, y: 0.30705807}
+    stat: 23
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g13s1
+    tier: 1
+    normalizedPos: {x: -1.5251653, y: 0.88008827}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g13s2
+    tier: 1
+    normalizedPos: {x: -1.3083156, y: -1.1785563}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g13s3
+    tier: 1
+    normalizedPos: {x: 0.71658146, y: -1.6084762}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g13s4
+    tier: 1
+    normalizedPos: {x: 1.7511876, y: 0.18446352}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g14s1
+    tier: 1
+    normalizedPos: {x: -1.7030891, y: 0.8896265}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g14s2
+    tier: 1
+    normalizedPos: {x: -1.3723685, y: -1.3448244}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g14s3
+    tier: 1
+    normalizedPos: {x: 0.85491836, y: -1.7207737}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g14s4
+    tier: 1
+    normalizedPos: {x: 1.9007373, y: 0.28132793}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g15s1
+    tier: 1
+    normalizedPos: {x: -1.9102415, y: 0.28265294}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g15s2
+    tier: 1
+    normalizedPos: {x: -0.85828346, y: -1.7268411}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g15s3
+    tier: 1
+    normalizedPos: {x: 1.3770989, y: -1.3498995}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g15s4
+    tier: 1
+    normalizedPos: {x: 1.7093775, y: 0.8925575}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g16s1
+    tier: 1
+    normalizedPos: {x: -2.040198, y: 0.38039222}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g16s2
+    tier: 1
+    normalizedPos: {x: -0.9913978, y: -1.8202341}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g16s3
+    tier: 1
+    normalizedPos: {x: 1.4247863, y: -1.5053589}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g16s4
+    tier: 1
+    normalizedPos: {x: 1.8719643, y: 0.88987136}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g17s1
+    tier: 1
+    normalizedPos: {x: -1.8787748, y: 0.89119637}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g17s2
+    tier: 1
+    normalizedPos: {x: -1.4281514, y: -1.5114263}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g17s3
+    tier: 1
+    normalizedPos: {x: 0.9961283, y: -1.8253093}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g17s4
+    tier: 1
+    normalizedPos: {x: 2.0437927, y: 0.38332334}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g18s1
+    tier: 1
+    normalizedPos: {x: -1.9814174, y: 0.642151}
+    stat: 23
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g18s2
+    tier: 1
+    normalizedPos: {x: -1.2230134, y: -1.6860045}
+    stat: 20
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g18s3
+    tier: 1
+    normalizedPos: {x: 1.2255532, y: -1.6841592}
+    stat: 21
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g18s4
+    tier: 1
+    normalizedPos: {x: 1.9804472, y: 0.6451371}
+    stat: 23
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g19s1
+    tier: 1
+    normalizedPos: {x: -1.692821, y: 0.5468542}
+    stat: 24
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g19s2
+    tier: 1
+    normalizedPos: {x: -1.0431997, y: -1.4409813}
+    stat: 20
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g19s3
+    tier: 1
+    normalizedPos: {x: 1.0480878, y: -1.4374297}
+    stat: 21
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g19s4
+    tier: 1
+    normalizedPos: {x: 1.6909537, y: 0.5526011}
+    stat: 23
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g20s1
+    tier: 1
+    normalizedPos: {x: -1.375857, y: 0.4438306}
+    stat: 23
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g20s2
+    tier: 1
+    normalizedPos: {x: -0.8472711, y: -1.1713666}
+    stat: 20
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g20s3
+    tier: 1
+    normalizedPos: {x: 0.85221434, y: -1.167775}
+    stat: 21
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g20s4
+    tier: 1
+    normalizedPos: {x: 1.3739687, y: 0.44964206}
+    stat: 23
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g39s4
+    tier: 2
+    normalizedPos: {x: 1.5378331, y: 1.1632272}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g38s4
+    tier: 2
+    normalizedPos: {x: 1.8340087, y: 1.5500761}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g32s0
+    tier: 2
+    normalizedPos: {x: 0.87465334, y: 2.2245662}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g37s4
+    tier: 2
+    normalizedPos: {x: 1.5120857, y: 2.0757208}
+    stat: 10
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g34s0
+    tier: 2
+    normalizedPos: {x: 1.1121758, y: 1.9356182}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g21s0
+    tier: 2
+    normalizedPos: {x: -0.5245404, y: 2.1841328}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g22s0
+    tier: 2
+    normalizedPos: {x: 0.47723824, y: 2.1864555}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g23s0
+    tier: 2
+    normalizedPos: {x: -0.5186579, y: 2.5237923}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g24s0
+    tier: 2
+    normalizedPos: {x: 0.48192298, y: 2.5204234}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g30s0
+    tier: 2
+    normalizedPos: {x: -0.0065760994, y: 2.874164}
+    stat: 22
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g31s0
+    tier: 2
+    normalizedPos: {x: 0.58538204, y: 1.831422}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g25s0
+    tier: 2
+    normalizedPos: {x: -0.15734407, y: 2.4136884}
+    stat: 22
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g26s0
+    tier: 2
+    normalizedPos: {x: 0.15765454, y: 2.4047973}
+    stat: 22
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g33s0
+    tier: 2
+    normalizedPos: {x: 0.9747668, y: 1.8401736}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g40s4
+    tier: 2
+    normalizedPos: {x: 1.4416168, y: 1.5095459}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g36s4
+    tier: 2
+    normalizedPos: {x: 1.4911312, y: 1.6702996}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g35s0
+    tier: 2
+    normalizedPos: {x: 1.2193326, y: 1.6824332}
+    stat: 10
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g27s0
+    tier: 2
+    normalizedPos: {x: -0.0048692194, y: 2.5604377}
+    stat: 22
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g28s0
+    tier: 2
+    normalizedPos: {x: -0.23511945, y: 2.719676}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g29s0
+    tier: 2
+    normalizedPos: {x: 0.23183653, y: 2.7089167}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g21s1
+    tier: 2
+    normalizedPos: {x: -2.2393258, y: 0.1760665}
+    stat: 6
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g21s2
+    tier: 2
+    normalizedPos: {x: -0.8594388, y: -2.0753179}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g21s3
+    tier: 2
+    normalizedPos: {x: 1.7141743, y: -1.4526724}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g21s4
+    tier: 2
+    normalizedPos: {x: 1.9151417, y: 1.173802}
+    stat: 2
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g22s1
+    tier: 2
+    normalizedPos: {x: -1.9319681, y: 1.1295325}
+    stat: 6
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g22s2
+    tier: 2
+    normalizedPos: {x: -1.67126, y: -1.4883662}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g22s3
+    tier: 2
+    normalizedPos: {x: 0.90408283, y: -2.0493934}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g22s4
+    tier: 2
+    normalizedPos: {x: 2.2269175, y: 0.22177166}
+    stat: 2
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g23s1
+    tier: 2
+    normalizedPos: {x: -2.5605433, y: 0.28662163}
+    stat: 6
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g23s2
+    tier: 2
+    normalizedPos: {x: -1.0638446, y: -2.3466504}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g23s3
+    tier: 2
+    normalizedPos: {x: 1.909062, y: -1.7309203}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g23s4
+    tier: 2
+    normalizedPos: {x: 2.2399948, y: 1.273168}
+    stat: 2
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g24s1
+    tier: 2
+    normalizedPos: {x: -2.2481427, y: 1.2371897}
+    stat: 6
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g24s2
+    tier: 2
+    normalizedPos: {x: -1.8713515, y: -1.7557983}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g24s3
+    tier: 2
+    normalizedPos: {x: 1.0965942, y: -2.3223326}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g24s4
+    tier: 2
+    normalizedPos: {x: 2.5459874, y: 0.32051802}
+    stat: 2
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g25s1
+    tier: 2
+    normalizedPos: {x: -2.344176, y: 0.5962276}
+    stat: 6
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g26s1
+    tier: 2
+    normalizedPos: {x: -2.2383802, y: 0.8930616}
+    stat: 6
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g27s1
+    tier: 2
+    normalizedPos: {x: -2.4366257, y: 0.7865878}
+    stat: 6
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g27s2
+    tier: 2
+    normalizedPos: {x: -1.5010481, y: -2.0742998}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g27s3
+    tier: 2
+    normalizedPos: {x: 1.5089265, y: -2.0685756}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g27s4
+    tier: 2
+    normalizedPos: {x: 2.4336162, y: 0.7995062}
+    stat: 2
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g28s1
+    tier: 2
+    normalizedPos: {x: -2.6592216, y: 0.61681414}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g28s2
+    tier: 2
+    normalizedPos: {x: -1.4083697, y: -2.338464}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g28s3
+    tier: 2
+    normalizedPos: {x: 1.7938114, y: -2.0620646}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g28s4
+    tier: 2
+    normalizedPos: {x: 2.5139096, y: 1.0640383}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g29s1
+    tier: 2
+    normalizedPos: {x: -2.5046916, y: 1.0575908}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g29s2
+    tier: 2
+    normalizedPos: {x: -1.7748101, y: -2.0552897}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g29s3
+    tier: 2
+    normalizedPos: {x: 1.4047012, y: -2.3278298}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g29s4
+    tier: 2
+    normalizedPos: {x: 2.6479743, y: 0.616612}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g30s1
+    tier: 2
+    normalizedPos: {x: -2.7355247, y: 0.8819113}
+    stat: 6
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g30s2
+    tier: 2
+    normalizedPos: {x: -1.684071, y: -2.3291132}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g30s3
+    tier: 2
+    normalizedPos: {x: 1.6947111, y: -2.3213825}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g30s4
+    tier: 2
+    normalizedPos: {x: 2.7314603, y: 0.89442015}
+    stat: 2
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g31s1
+    tier: 2
+    normalizedPos: {x: -1.5595593, y: 1.126776}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g31s2
+    tier: 2
+    normalizedPos: {x: -1.5535579, y: -1.1350362}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g31s3
+    tier: 2
+    normalizedPos: {x: 0.59940743, y: -1.828267}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g31s4
+    tier: 2
+    normalizedPos: {x: 1.9240123, y: 0.0051053064}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g32s1
+    tier: 2
+    normalizedPos: {x: -1.8454056, y: 1.5192735}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g32s2
+    tier: 2
+    normalizedPos: {x: -2.0151765, y: -1.2856038}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g32s3
+    tier: 2
+    normalizedPos: {x: 0.59995747, y: -2.3138204}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g32s4
+    tier: 2
+    normalizedPos: {x: 2.385971, y: -0.14441568}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g33s1
+    tier: 2
+    normalizedPos: {x: -1.4475561, y: 1.4998072}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g33s2
+    tier: 2
+    normalizedPos: {x: -1.8737209, y: -0.9132419}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g33s3
+    tier: 2
+    normalizedPos: {x: 0.2895326, y: -2.0642216}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g33s4
+    tier: 2
+    normalizedPos: {x: 2.0526621, y: -0.36251718}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g34s1
+    tier: 2
+    normalizedPos: {x: -1.4972011, y: 1.6558809}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g34s2
+    tier: 2
+    normalizedPos: {x: -2.0374968, y: -0.91222763}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g34s3
+    tier: 2
+    normalizedPos: {x: 0.23795834, y: -2.2196686}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g34s4
+    tier: 2
+    normalizedPos: {x: 2.1845636, y: -0.45960286}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g35s1
+    tier: 2
+    normalizedPos: {x: -1.2232947, y: 1.6795547}
+    stat: 18
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g35s2
+    tier: 2
+    normalizedPos: {x: -1.9753702, y: -0.64441156}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g35s3
+    tier: 2
+    normalizedPos: {x: 0.0024483781, y: -2.0778227}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g35s4
+    tier: 2
+    normalizedPos: {x: 1.9768836, y: -0.63975346}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: g36s0
+    tier: 2
+    normalizedPos: {x: -1.1277642, y: 1.9343011}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g36s1
+    tier: 2
+    normalizedPos: {x: -2.188128, y: -0.47483566}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g36s2
+    tier: 2
+    normalizedPos: {x: -0.22457305, y: -2.2277658}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g36s3
+    tier: 2
+    normalizedPos: {x: 2.049334, y: -0.9019996}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g37s0
+    tier: 2
+    normalizedPos: {x: -1.5068673, y: 2.0795121}
+    stat: 18
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g37s1
+    tier: 2
+    normalizedPos: {x: -2.443381, y: -0.7905114}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g37s2
+    tier: 2
+    normalizedPos: {x: -0.0032250667, y: -2.568075}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g37s3
+    tier: 2
+    normalizedPos: {x: 2.4413877, y: -0.7966466}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g38s0
+    tier: 2
+    normalizedPos: {x: -0.90746987, y: 2.2232459}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g38s1
+    tier: 2
+    normalizedPos: {x: -2.3948562, y: -0.17603445}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g38s2
+    tier: 2
+    normalizedPos: {x: -0.5726324, y: -2.3320413}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g38s3
+    tier: 2
+    normalizedPos: {x: 2.0409493, y: -1.2652465}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g39s0
+    tier: 2
+    normalizedPos: {x: -0.631078, y: 1.8220233}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g39s2
+    tier: 2
+    normalizedPos: {x: -0.56040543, y: -1.8449862}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g39s3
+    tier: 2
+    normalizedPos: {x: 1.581511, y: -1.1031096}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g40s0
+    tier: 2
+    normalizedPos: {x: -0.9901791, y: 1.8375344}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g40s1
+    tier: 2
+    normalizedPos: {x: -2.0535812, y: -0.373887}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g40s2
+    tier: 2
+    normalizedPos: {x: -0.2790037, y: -2.0686092}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: g40s3
+    tier: 2
+    normalizedPos: {x: 1.8811473, y: -0.90458417}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free139
+    tier: 2
+    normalizedPos: {x: -1.9150952, y: -0.05194761}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free140
+    tier: 1
+    normalizedPos: {x: 1.126907, y: -0.59423}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free141
+    tier: 1
+    normalizedPos: {x: -1.1288396, y: -0.603079}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free142
+    tier: 1
+    normalizedPos: {x: 0.21094923, y: -1.2471746}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free144
+    tier: 2
+    normalizedPos: {x: -1.5400957, y: -1.8374329}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free145
+    tier: 2
+    normalizedPos: {x: 1.2786703, y: -2.0372221}
+    stat: 1
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free146
+    tier: 2
+    normalizedPos: {x: 1.5349219, y: -1.8461194}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free147
+    tier: 2
+    normalizedPos: {x: -1.2838442, y: -2.0372221}
+    stat: 17
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free148
+    tier: 2
+    normalizedPos: {x: 2.2183895, y: 0.89936954}
+    stat: 2
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free149
+    tier: 2
+    normalizedPos: {x: 2.3134525, y: 0.5922432}
+    stat: 2
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free177
+    tier: 0
+    normalizedPos: {x: 0.00014301296, y: 1.1138371}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: free179
+    tier: 0
+    normalizedPos: {x: 1.0694379, y: 0.35127223}
+    stat: 2
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: free181
+    tier: 0
+    normalizedPos: {x: 0.66046494, y: -0.9097287}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: free182
+    tier: 0
+    normalizedPos: {x: -0.6644386, y: -0.9012085}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: free184
+    tier: 0
+    normalizedPos: {x: -1.0691519, y: 0.32571155}
+    stat: 6
+    maxPoints: 1
+    grantPoints: 20
+    isNotable: 1
+  - nodeId: free186
+    tier: 0
+    normalizedPos: {x: 0.7925285, y: 0.41091418}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free187
+    tier: 0
+    normalizedPos: {x: 0.15776803, y: 0.8880497}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free188
+    tier: 0
+    normalizedPos: {x: -0.89448655, y: 0.15530582}
+    stat: 16
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free189
+    tier: 0
+    normalizedPos: {x: -0.42587122, y: -0.7776647}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free190
+    tier: 0
+    normalizedPos: {x: 0.6136028, y: -0.64134026}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free191
+    tier: 0
+    normalizedPos: {x: 0.00014268467, y: 0.8113673}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free192
+    tier: 0
+    normalizedPos: {x: 0.74566704, y: 0.25328898}
+    stat: 2
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free193
+    tier: 0
+    normalizedPos: {x: 0.46023783, y: -0.6285598}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free194
+    tier: 0
+    normalizedPos: {x: -0.47699293, y: -0.62429965}
+    stat: 0
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free195
+    tier: 0
+    normalizedPos: {x: -0.76242226, y: 0.25328916}
+    stat: 6
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free197
+    tier: 2
+    normalizedPos: {x: 2.0623395, y: 1.7820258}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free198
+    tier: 2
+    normalizedPos: {x: -2.110291, y: 1.7258667}
+    stat: 7
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free199
+    tier: 2
+    normalizedPos: {x: 1.0346258, y: 2.5177116}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free200
+    tier: 2
+    normalizedPos: {x: -1.093809, y: 2.4896321}
+    stat: 8
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free202
+    tier: 2
+    normalizedPos: {x: -2.7184236, y: -0.22812444}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free203
+    tier: 2
+    normalizedPos: {x: 2.7070627, y: -0.22812444}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free204
+    tier: 2
+    normalizedPos: {x: 2.3184175, y: -1.409606}
+    stat: 15
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free205
+    tier: 2
+    normalizedPos: {x: 0.6006061, y: -2.6610432}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free206
+    tier: 2
+    normalizedPos: {x: -0.6041939, y: -2.6454973}
+    stat: 4
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  - nodeId: free207
+    tier: 2
+    normalizedPos: {x: -2.34566, y: -1.4092318}
+    stat: 14
+    maxPoints: 1
+    grantPoints: 10
+    isNotable: 0
+  edges:
+  - fromNodeId: center
+    toNodeId: free0
+  - fromNodeId: center
+    toNodeId: free4
+  - fromNodeId: center
+    toNodeId: free1
+  - fromNodeId: center
+    toNodeId: free2
+  - fromNodeId: center
+    toNodeId: free3
+  - fromNodeId: free4
+    toNodeId: free11
+  - fromNodeId: free4
+    toNodeId: free12
+  - fromNodeId: free1
+    toNodeId: free12
+  - fromNodeId: free1
+    toNodeId: free13
+  - fromNodeId: free1
+    toNodeId: free14
+  - fromNodeId: free2
+    toNodeId: free14
+  - fromNodeId: free2
+    toNodeId: free5
+  - fromNodeId: free2
+    toNodeId: free6
+  - fromNodeId: free3
+    toNodeId: free6
+  - fromNodeId: free3
+    toNodeId: free7
+  - fromNodeId: free3
+    toNodeId: free8
+  - fromNodeId: free0
+    toNodeId: free8
+  - fromNodeId: free0
+    toNodeId: free9
+  - fromNodeId: free11
+    toNodeId: free16
+  - fromNodeId: free11
+    toNodeId: free17
+  - fromNodeId: free9
+    toNodeId: free18
+  - fromNodeId: free9
+    toNodeId: free19
+  - fromNodeId: free7
+    toNodeId: free20
+  - fromNodeId: free7
+    toNodeId: free21
+  - fromNodeId: free5
+    toNodeId: free22
+  - fromNodeId: free5
+    toNodeId: free23
+  - fromNodeId: free13
+    toNodeId: free24
+  - fromNodeId: free13
+    toNodeId: free15
+  - fromNodeId: free8
+    toNodeId: free40
+  - fromNodeId: free6
+    toNodeId: free39
+  - fromNodeId: free14
+    toNodeId: free38
+  - fromNodeId: free12
+    toNodeId: free37
+  - fromNodeId: free13
+    toNodeId: free49
+  - fromNodeId: free24
+    toNodeId: free50
+  - fromNodeId: free15
+    toNodeId: free50
+  - fromNodeId: free49
+    toNodeId: free50
+  - fromNodeId: free11
+    toNodeId: free51
+  - fromNodeId: free16
+    toNodeId: free52
+  - fromNodeId: free17
+    toNodeId: free52
+  - fromNodeId: free51
+    toNodeId: free52
+  - fromNodeId: free18
+    toNodeId: free44
+  - fromNodeId: free43
+    toNodeId: free44
+  - fromNodeId: free9
+    toNodeId: free43
+  - fromNodeId: free19
+    toNodeId: free44
+  - fromNodeId: free7
+    toNodeId: free45
+  - fromNodeId: free20
+    toNodeId: free46
+  - fromNodeId: free21
+    toNodeId: free46
+  - fromNodeId: free45
+    toNodeId: free46
+  - fromNodeId: free5
+    toNodeId: free47
+  - fromNodeId: free23
+    toNodeId: free48
+  - fromNodeId: free22
+    toNodeId: free48
+  - fromNodeId: free47
+    toNodeId: free48
+  - fromNodeId: free0
+    toNodeId: free42
+  - fromNodeId: free4
+    toNodeId: free42
+  - fromNodeId: free42
+    toNodeId: free53
+  - fromNodeId: free44
+    toNodeId: free59
+  - fromNodeId: free44
+    toNodeId: free58
+  - fromNodeId: free58
+    toNodeId: free66
+  - fromNodeId: free59
+    toNodeId: free66
+  - fromNodeId: free46
+    toNodeId: free57
+  - fromNodeId: free46
+    toNodeId: free56
+  - fromNodeId: free56
+    toNodeId: free67
+  - fromNodeId: free67
+    toNodeId: free57
+  - fromNodeId: free48
+    toNodeId: free55
+  - fromNodeId: free48
+    toNodeId: free54
+  - fromNodeId: free54
+    toNodeId: free68
+  - fromNodeId: free68
+    toNodeId: free55
+  - fromNodeId: free50
+    toNodeId: free63
+  - fromNodeId: free50
+    toNodeId: free62
+  - fromNodeId: free62
+    toNodeId: free64
+  - fromNodeId: free64
+    toNodeId: free63
+  - fromNodeId: free52
+    toNodeId: free61
+  - fromNodeId: free52
+    toNodeId: free60
+  - fromNodeId: free60
+    toNodeId: free65
+  - fromNodeId: free61
+    toNodeId: free65
+  - fromNodeId: g0s0
+    toNodeId: g6s0
+  - fromNodeId: g0s0
+    toNodeId: g7s0
+  - fromNodeId: g7s0
+    toNodeId: g2s0
+  - fromNodeId: g6s0
+    toNodeId: g2s0
+  - fromNodeId: g6s0
+    toNodeId: g1s0
+  - fromNodeId: g7s0
+    toNodeId: g1s0
+  - fromNodeId: g3s0
+    toNodeId: g8s0
+  - fromNodeId: g3s0
+    toNodeId: g9s0
+  - fromNodeId: g9s0
+    toNodeId: g4s0
+  - fromNodeId: g8s0
+    toNodeId: g4s0
+  - fromNodeId: g8s0
+    toNodeId: g5s0
+  - fromNodeId: g9s0
+    toNodeId: g5s0
+  - fromNodeId: g20s0
+    toNodeId: g12s0
+  - fromNodeId: g20s0
+    toNodeId: g10s0
+  - fromNodeId: g10s0
+    toNodeId: g11s0
+  - fromNodeId: g11s0
+    toNodeId: g15s0
+  - fromNodeId: g15s0
+    toNodeId: g16s0
+  - fromNodeId: g16s0
+    toNodeId: g18s0
+  - fromNodeId: g17s0
+    toNodeId: g18s0
+  - fromNodeId: g13s0
+    toNodeId: g14s0
+  - fromNodeId: g14s0
+    toNodeId: g17s0
+  - fromNodeId: g12s0
+    toNodeId: g13s0
+  - fromNodeId: g18s0
+    toNodeId: g19s0
+  - fromNodeId: free65
+    toNodeId: g0s0
+  - fromNodeId: free66
+    toNodeId: g3s0
+  - fromNodeId: g2s0
+    toNodeId: g11s0
+  - fromNodeId: g5s0
+    toNodeId: g13s0
+  - fromNodeId: g0s1
+    toNodeId: g6s1
+  - fromNodeId: g0s2
+    toNodeId: g6s2
+  - fromNodeId: g0s4
+    toNodeId: g6s4
+  - fromNodeId: g0s1
+    toNodeId: g7s1
+  - fromNodeId: g0s2
+    toNodeId: g7s2
+  - fromNodeId: g0s4
+    toNodeId: g7s4
+  - fromNodeId: g7s1
+    toNodeId: g2s1
+  - fromNodeId: g7s2
+    toNodeId: g2s2
+  - fromNodeId: g7s3
+    toNodeId: g2s3
+  - fromNodeId: g7s4
+    toNodeId: g2s4
+  - fromNodeId: g6s1
+    toNodeId: g2s1
+  - fromNodeId: g6s2
+    toNodeId: g2s2
+  - fromNodeId: g6s3
+    toNodeId: g2s3
+  - fromNodeId: g6s4
+    toNodeId: g2s4
+  - fromNodeId: g6s1
+    toNodeId: g1s1
+  - fromNodeId: g6s2
+    toNodeId: g1s2
+  - fromNodeId: g6s3
+    toNodeId: g1s3
+  - fromNodeId: g6s4
+    toNodeId: g1s4
+  - fromNodeId: g7s1
+    toNodeId: g1s1
+  - fromNodeId: g7s2
+    toNodeId: g1s2
+  - fromNodeId: g7s3
+    toNodeId: g1s3
+  - fromNodeId: g7s4
+    toNodeId: g1s4
+  - fromNodeId: g3s1
+    toNodeId: g8s1
+  - fromNodeId: g3s4
+    toNodeId: g8s4
+  - fromNodeId: g3s1
+    toNodeId: g9s1
+  - fromNodeId: g3s4
+    toNodeId: g9s4
+  - fromNodeId: g9s1
+    toNodeId: g4s1
+  - fromNodeId: g9s2
+    toNodeId: g4s2
+  - fromNodeId: g9s3
+    toNodeId: g4s3
+  - fromNodeId: g9s4
+    toNodeId: g4s4
+  - fromNodeId: g8s1
+    toNodeId: g4s1
+  - fromNodeId: g8s2
+    toNodeId: g4s2
+  - fromNodeId: g8s3
+    toNodeId: g4s3
+  - fromNodeId: g8s4
+    toNodeId: g4s4
+  - fromNodeId: g8s1
+    toNodeId: g5s1
+  - fromNodeId: g8s2
+    toNodeId: g5s2
+  - fromNodeId: g8s3
+    toNodeId: g5s3
+  - fromNodeId: g8s4
+    toNodeId: g5s4
+  - fromNodeId: g9s1
+    toNodeId: g5s1
+  - fromNodeId: g9s2
+    toNodeId: g5s2
+  - fromNodeId: g9s3
+    toNodeId: g5s3
+  - fromNodeId: g9s4
+    toNodeId: g5s4
+  - fromNodeId: g20s1
+    toNodeId: g12s1
+  - fromNodeId: g20s2
+    toNodeId: g12s2
+  - fromNodeId: g20s3
+    toNodeId: g12s3
+  - fromNodeId: g20s4
+    toNodeId: g12s4
+  - fromNodeId: g20s1
+    toNodeId: g10s1
+  - fromNodeId: g20s2
+    toNodeId: g10s2
+  - fromNodeId: g20s3
+    toNodeId: g10s3
+  - fromNodeId: g20s4
+    toNodeId: g10s4
+  - fromNodeId: g10s1
+    toNodeId: g11s1
+  - fromNodeId: g10s2
+    toNodeId: g11s2
+  - fromNodeId: g10s3
+    toNodeId: g11s3
+  - fromNodeId: g10s4
+    toNodeId: g11s4
+  - fromNodeId: g11s1
+    toNodeId: g15s1
+  - fromNodeId: g11s2
+    toNodeId: g15s2
+  - fromNodeId: g11s3
+    toNodeId: g15s3
+  - fromNodeId: g11s4
+    toNodeId: g15s4
+  - fromNodeId: g15s1
+    toNodeId: g16s1
+  - fromNodeId: g15s2
+    toNodeId: g16s2
+  - fromNodeId: g15s3
+    toNodeId: g16s3
+  - fromNodeId: g15s4
+    toNodeId: g16s4
+  - fromNodeId: g16s1
+    toNodeId: g18s1
+  - fromNodeId: g16s2
+    toNodeId: g18s2
+  - fromNodeId: g16s3
+    toNodeId: g18s3
+  - fromNodeId: g16s4
+    toNodeId: g18s4
+  - fromNodeId: g17s1
+    toNodeId: g18s1
+  - fromNodeId: g17s2
+    toNodeId: g18s2
+  - fromNodeId: g17s3
+    toNodeId: g18s3
+  - fromNodeId: g17s4
+    toNodeId: g18s4
+  - fromNodeId: g13s1
+    toNodeId: g14s1
+  - fromNodeId: g13s2
+    toNodeId: g14s2
+  - fromNodeId: g13s3
+    toNodeId: g14s3
+  - fromNodeId: g13s4
+    toNodeId: g14s4
+  - fromNodeId: g14s1
+    toNodeId: g17s1
+  - fromNodeId: g14s2
+    toNodeId: g17s2
+  - fromNodeId: g14s3
+    toNodeId: g17s3
+  - fromNodeId: g14s4
+    toNodeId: g17s4
+  - fromNodeId: g12s1
+    toNodeId: g13s1
+  - fromNodeId: g12s2
+    toNodeId: g13s2
+  - fromNodeId: g12s3
+    toNodeId: g13s3
+  - fromNodeId: g12s4
+    toNodeId: g13s4
+  - fromNodeId: g18s1
+    toNodeId: g19s1
+  - fromNodeId: g18s2
+    toNodeId: g19s2
+  - fromNodeId: g18s3
+    toNodeId: g19s3
+  - fromNodeId: g18s4
+    toNodeId: g19s4
+  - fromNodeId: g2s1
+    toNodeId: g11s1
+  - fromNodeId: g2s2
+    toNodeId: g11s2
+  - fromNodeId: g2s3
+    toNodeId: g11s3
+  - fromNodeId: g2s4
+    toNodeId: g11s4
+  - fromNodeId: g5s1
+    toNodeId: g13s1
+  - fromNodeId: g5s2
+    toNodeId: g13s2
+  - fromNodeId: g5s3
+    toNodeId: g13s3
+  - fromNodeId: g5s4
+    toNodeId: g13s4
+  - fromNodeId: free65
+    toNodeId: g3s1
+  - fromNodeId: free64
+    toNodeId: g0s1
+  - fromNodeId: free68
+    toNodeId: g0s2
+  - fromNodeId: free67
+    toNodeId: g3s4
+  - fromNodeId: free66
+    toNodeId: g0s4
+  - fromNodeId: g17s0
+    toNodeId: g22s0
+  - fromNodeId: g16s0
+    toNodeId: g21s0
+  - fromNodeId: g22s0
+    toNodeId: g24s0
+  - fromNodeId: g21s0
+    toNodeId: g23s0
+  - fromNodeId: g39s4
+    toNodeId: g38s4
+  - fromNodeId: g38s4
+    toNodeId: g37s4
+  - fromNodeId: g32s0
+    toNodeId: g37s4
+  - fromNodeId: g37s4
+    toNodeId: g34s0
+  - fromNodeId: g31s0
+    toNodeId: g32s0
+  - fromNodeId: g23s0
+    toNodeId: g25s0
+  - fromNodeId: g24s0
+    toNodeId: g26s0
+  - fromNodeId: g9s0
+    toNodeId: g33s0
+  - fromNodeId: g7s4
+    toNodeId: g40s4
+  - fromNodeId: g40s4
+    toNodeId: g39s4
+  - fromNodeId: g33s0
+    toNodeId: g31s0
+  - fromNodeId: g37s4
+    toNodeId: g36s4
+  - fromNodeId: g36s4
+    toNodeId: g35s0
+  - fromNodeId: g34s0
+    toNodeId: g35s0
+  - fromNodeId: g25s0
+    toNodeId: g27s0
+  - fromNodeId: g26s0
+    toNodeId: g27s0
+  - fromNodeId: g27s0
+    toNodeId: g29s0
+  - fromNodeId: g27s0
+    toNodeId: g28s0
+  - fromNodeId: g28s0
+    toNodeId: g30s0
+  - fromNodeId: g29s0
+    toNodeId: g30s0
+  - fromNodeId: g22s0
+    toNodeId: g31s0
+  - fromNodeId: g7s0
+    toNodeId: g9s1
+  - fromNodeId: g9s0
+    toNodeId: g7s4
+  - fromNodeId: g6s4
+    toNodeId: g8s4
+  - fromNodeId: g6s3
+    toNodeId: g8s3
+  - fromNodeId: g6s2
+    toNodeId: g8s2
+  - fromNodeId: g6s1
+    toNodeId: g8s1
+  - fromNodeId: g22s1
+    toNodeId: g24s1
+  - fromNodeId: g22s2
+    toNodeId: g24s2
+  - fromNodeId: g22s3
+    toNodeId: g24s3
+  - fromNodeId: g22s4
+    toNodeId: g24s4
+  - fromNodeId: g21s1
+    toNodeId: g23s1
+  - fromNodeId: g21s2
+    toNodeId: g23s2
+  - fromNodeId: g21s3
+    toNodeId: g23s3
+  - fromNodeId: g21s4
+    toNodeId: g23s4
+  - fromNodeId: g39s0
+    toNodeId: g38s0
+  - fromNodeId: g39s2
+    toNodeId: g38s2
+  - fromNodeId: g39s3
+    toNodeId: g38s3
+  - fromNodeId: g38s0
+    toNodeId: g37s0
+  - fromNodeId: g38s1
+    toNodeId: g37s1
+  - fromNodeId: g38s2
+    toNodeId: g37s2
+  - fromNodeId: g38s3
+    toNodeId: g37s3
+  - fromNodeId: g32s1
+    toNodeId: g37s0
+  - fromNodeId: g32s2
+    toNodeId: g37s1
+  - fromNodeId: g32s3
+    toNodeId: g37s2
+  - fromNodeId: g32s4
+    toNodeId: g37s3
+  - fromNodeId: g37s0
+    toNodeId: g34s1
+  - fromNodeId: g37s1
+    toNodeId: g34s2
+  - fromNodeId: g37s2
+    toNodeId: g34s3
+  - fromNodeId: g37s3
+    toNodeId: g34s4
+  - fromNodeId: g31s1
+    toNodeId: g32s1
+  - fromNodeId: g31s2
+    toNodeId: g32s2
+  - fromNodeId: g31s3
+    toNodeId: g32s3
+  - fromNodeId: g31s4
+    toNodeId: g32s4
+  - fromNodeId: g23s1
+    toNodeId: g25s1
+  - fromNodeId: g24s1
+    toNodeId: g26s1
+  - fromNodeId: g40s0
+    toNodeId: g39s0
+  - fromNodeId: g40s2
+    toNodeId: g39s2
+  - fromNodeId: g40s3
+    toNodeId: g39s3
+  - fromNodeId: g33s1
+    toNodeId: g31s1
+  - fromNodeId: g33s2
+    toNodeId: g31s2
+  - fromNodeId: g33s3
+    toNodeId: g31s3
+  - fromNodeId: g33s4
+    toNodeId: g31s4
+  - fromNodeId: g37s0
+    toNodeId: g36s0
+  - fromNodeId: g37s1
+    toNodeId: g36s1
+  - fromNodeId: g37s2
+    toNodeId: g36s2
+  - fromNodeId: g37s3
+    toNodeId: g36s3
+  - fromNodeId: g36s0
+    toNodeId: g35s1
+  - fromNodeId: g36s1
+    toNodeId: g35s2
+  - fromNodeId: g36s2
+    toNodeId: g35s3
+  - fromNodeId: g36s3
+    toNodeId: g35s4
+  - fromNodeId: g34s1
+    toNodeId: g35s1
+  - fromNodeId: g34s2
+    toNodeId: g35s2
+  - fromNodeId: g34s3
+    toNodeId: g35s3
+  - fromNodeId: g34s4
+    toNodeId: g35s4
+  - fromNodeId: g25s1
+    toNodeId: g27s1
+  - fromNodeId: g26s1
+    toNodeId: g27s1
+  - fromNodeId: g27s1
+    toNodeId: g29s1
+  - fromNodeId: g27s2
+    toNodeId: g29s2
+  - fromNodeId: g27s3
+    toNodeId: g29s3
+  - fromNodeId: g27s4
+    toNodeId: g29s4
+  - fromNodeId: g27s1
+    toNodeId: g28s1
+  - fromNodeId: g27s2
+    toNodeId: g28s2
+  - fromNodeId: g27s3
+    toNodeId: g28s3
+  - fromNodeId: g27s4
+    toNodeId: g28s4
+  - fromNodeId: g28s1
+    toNodeId: g30s1
+  - fromNodeId: g28s2
+    toNodeId: g30s2
+  - fromNodeId: g28s3
+    toNodeId: g30s3
+  - fromNodeId: g28s4
+    toNodeId: g30s4
+  - fromNodeId: g29s1
+    toNodeId: g30s1
+  - fromNodeId: g29s2
+    toNodeId: g30s2
+  - fromNodeId: g29s3
+    toNodeId: g30s3
+  - fromNodeId: g29s4
+    toNodeId: g30s4
+  - fromNodeId: g22s1
+    toNodeId: g31s1
+  - fromNodeId: g22s2
+    toNodeId: g31s2
+  - fromNodeId: g22s3
+    toNodeId: g31s3
+  - fromNodeId: g22s4
+    toNodeId: g31s4
+  - fromNodeId: g39s4
+    toNodeId: g21s4
+  - fromNodeId: g17s1
+    toNodeId: g22s1
+  - fromNodeId: g16s1
+    toNodeId: g21s1
+  - fromNodeId: g7s0
+    toNodeId: g40s0
+  - fromNodeId: g9s1
+    toNodeId: g33s1
+  - fromNodeId: g39s0
+    toNodeId: g21s0
+  - fromNodeId: g7s1
+    toNodeId: g40s1
+  - fromNodeId: g9s2
+    toNodeId: g33s2
+  - fromNodeId: g40s1
+    toNodeId: free139
+  - fromNodeId: free139
+    toNodeId: g21s1
+  - fromNodeId: g38s1
+    toNodeId: free139
+  - fromNodeId: g40s2
+    toNodeId: g7s2
+  - fromNodeId: g21s2
+    toNodeId: g39s2
+  - fromNodeId: g33s3
+    toNodeId: g9s3
+  - fromNodeId: g40s3
+    toNodeId: g7s3
+  - fromNodeId: g9s4
+    toNodeId: g33s4
+  - fromNodeId: g39s3
+    toNodeId: g21s3
+  - fromNodeId: free67
+    toNodeId: free140
+  - fromNodeId: free140
+    toNodeId: g6s3
+  - fromNodeId: free140
+    toNodeId: g7s3
+  - fromNodeId: free141
+    toNodeId: g9s2
+  - fromNodeId: free141
+    toNodeId: g8s2
+  - fromNodeId: free141
+    toNodeId: free64
+  - fromNodeId: free142
+    toNodeId: g8s3
+  - fromNodeId: free142
+    toNodeId: g9s3
+  - fromNodeId: free142
+    toNodeId: free68
+  - fromNodeId: g17s2
+    toNodeId: g22s2
+  - fromNodeId: g16s2
+    toNodeId: g21s2
+  - fromNodeId: g16s3
+    toNodeId: g21s3
+  - fromNodeId: g17s3
+    toNodeId: g22s3
+  - fromNodeId: g24s3
+    toNodeId: free145
+  - fromNodeId: free145
+    toNodeId: g27s3
+  - fromNodeId: g23s3
+    toNodeId: free146
+  - fromNodeId: free146
+    toNodeId: g27s3
+  - fromNodeId: g23s2
+    toNodeId: free147
+  - fromNodeId: free147
+    toNodeId: g27s2
+  - fromNodeId: g24s2
+    toNodeId: free144
+  - fromNodeId: free144
+    toNodeId: g27s2
+  - fromNodeId: g17s4
+    toNodeId: g22s4
+  - fromNodeId: g24s4
+    toNodeId: free149
+  - fromNodeId: g23s4
+    toNodeId: free148
+  - fromNodeId: g21s4
+    toNodeId: g16s4
+  - fromNodeId: free148
+    toNodeId: g27s4
+  - fromNodeId: free149
+    toNodeId: g27s4
+  - fromNodeId: g8s0
+    toNodeId: g6s0
+  - fromNodeId: free184
+    toNodeId: free37
+  - fromNodeId: free38
+    toNodeId: free182
+  - fromNodeId: free39
+    toNodeId: free181
+  - fromNodeId: free40
+    toNodeId: free179
+  - fromNodeId: free53
+    toNodeId: free177
+  - fromNodeId: free6
+    toNodeId: free190
+  - fromNodeId: free190
+    toNodeId: free181
+  - fromNodeId: free189
+    toNodeId: free182
+  - fromNodeId: free189
+    toNodeId: free14
+  - fromNodeId: free188
+    toNodeId: free184
+  - fromNodeId: free188
+    toNodeId: free12
+  - fromNodeId: free42
+    toNodeId: free187
+  - fromNodeId: free187
+    toNodeId: free177
+  - fromNodeId: free186
+    toNodeId: free179
+  - fromNodeId: free186
+    toNodeId: free8
+  - fromNodeId: free42
+    toNodeId: free191
+  - fromNodeId: free191
+    toNodeId: free177
+  - fromNodeId: free12
+    toNodeId: free195
+  - fromNodeId: free195
+    toNodeId: free184
+  - fromNodeId: free14
+    toNodeId: free194
+  - fromNodeId: free194
+    toNodeId: free182
+  - fromNodeId: free6
+    toNodeId: free193
+  - fromNodeId: free193
+    toNodeId: free181
+  - fromNodeId: free8
+    toNodeId: free192
+  - fromNodeId: free192
+    toNodeId: free179
+  - fromNodeId: g38s1
+    toNodeId: free202
+  - fromNodeId: free202
+    toNodeId: g23s1
+  - fromNodeId: g32s2
+    toNodeId: free207
+  - fromNodeId: free207
+    toNodeId: g24s2
+  - fromNodeId: g38s2
+    toNodeId: free206
+  - fromNodeId: free206
+    toNodeId: g23s2
+  - fromNodeId: g32s3
+    toNodeId: free205
+  - fromNodeId: free205
+    toNodeId: g24s3
+  - fromNodeId: g38s3
+    toNodeId: free204
+  - fromNodeId: free204
+    toNodeId: g23s3
+  - fromNodeId: g32s4
+    toNodeId: free203
+  - fromNodeId: free203
+    toNodeId: g24s4
+  - fromNodeId: g38s4
+    toNodeId: free197
+  - fromNodeId: free197
+    toNodeId: g23s4
+  - fromNodeId: g32s0
+    toNodeId: free199
+  - fromNodeId: free199
+    toNodeId: g24s0
+  - fromNodeId: free200
+    toNodeId: g38s0
+  - fromNodeId: free200
+    toNodeId: g23s0
+  - fromNodeId: free198
+    toNodeId: g32s1
+  - fromNodeId: free198
+    toNodeId: g24s1
