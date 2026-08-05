@@ -1,0 +1,204 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b12ce1e3165124eb031e13224a64f7, type: 3}
+  m_Name: Vela
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Data.CharacterData
+  id: vela
+  category: 0
+  idleAnimation: {fileID: 7400000, guid: df8834b1e7e55eb4999bf0fb0923eec2, type: 2}
+  runAnimation: {fileID: 7400000, guid: 8a3801aef6f510241940d3dd44c21e34, type: 2}
+  dragAnimation: {fileID: 7400000, guid: ffb41ab6ecb90764eb6a1af7dd490440, type: 2}
+  attackAnimation: {fileID: 7400000, guid: 190be340d81c9734689e683a436d29f1, type: 2}
+  deathAnimation: {fileID: 7400000, guid: 85aae9d87215b8a4b9eeae5a455e15b2, type: 2}
+  deathIdleAnimation: {fileID: 7400000, guid: 4fd50557698cdde42a5e0fc48d1d33a6, type: 2}
+  supremeAnimation: {fileID: 7400000, guid: da1094f775a4fd449960146fc2839fe1, type: 2}
+  stunAnimation: {fileID: 7400000, guid: 3c1acc1c379659a4197471942b94105e, type: 2}
+  victoryAnimation: {fileID: 7400000, guid: 4132a9ca3cbd275408b5a0b08cea0c88, type: 2}
+  extraAnimations:
+  - key: transform
+    clip: {fileID: 7400000, guid: e65bc6bb334774c4697c8266ca965a8f, type: 2}
+  animationProfiles:
+  - key: jaguarete
+    idleAnimation: {fileID: 7400000, guid: 1a82d852981d382428d107e40fb1b3f7, type: 2}
+    runAnimation: {fileID: 7400000, guid: be34ad7359e7fd64fb29c28a65765c32, type: 2}
+    dragAnimation: {fileID: 7400000, guid: bb147640858a9d847b6696134a622a29, type: 2}
+    attackAnimation: {fileID: 7400000, guid: fdc9595dbb8083c44a81270f455ee869, type: 2}
+    deathAnimation: {fileID: 7400000, guid: e45ca71ccade139438fec906c7bf0383, type: 2}
+    deathIdleAnimation: {fileID: 7400000, guid: b98bfaf9575b4ca4697ca111e96e9dc9, type: 2}
+    supremeAnimation: {fileID: 7400000, guid: 06788a459d6e33e409839cadebc102ad, type: 2}
+    stunAnimation: {fileID: 7400000, guid: db9b8e6f202a40f43b8f353c6493bf1d, type: 2}
+    victoryAnimation: {fileID: 7400000, guid: 7ec40a7d76181aa4cb60677ed3f63d99, type: 2}
+  forms:
+  - key: jaguarete
+    baseSkill: {fileID: 11400000, guid: 3eb0a0d70ed80254bb27c0a655d8f1de, type: 2}
+    supremeSkill: {fileID: 11400000, guid: 2d3bb7cd281e58c4789840f68715e470, type: 2}
+    animationProfileKey: jaguarete
+  visualScale: 1
+  animClipTunings: []
+  overheadHeight: 1.3
+  selectionRingScale: 0.9
+  selectionRingOffsetY: -1
+  primaryType: 11
+  secondaryType: 8
+  defaultSprite: {fileID: 21300000, guid: 4660af439b0321840adf61bc2b601d6d, type: 3}
+  cardPortrait: {fileID: -3887987941403465634, guid: 1d4dda8633186324cbdd165510928125, type: 3}
+  portrait2x1: {fileID: -454152413, guid: 1d4dda8633186324cbdd165510928125, type: 3}
+  displayName: Vela
+  lore: "Guerreiro-xam\xE3 das margens do grande rio, Vela empunha a lan\xE7a Tupi
+    e carrega o esp\xEDrito da on\xE7a-pintada. Quando a f\xFAria transborda, a Jaguaret\xE9
+    Aba desperta em sua pele: presas, garras e o instinto ancestral da mata tomam
+    seu corpo."
+  baseSkill: {fileID: 11400000, guid: c52cbb2f4523c15448a6f534b2ebf554, type: 2}
+  supremeSkill: {fileID: 11400000, guid: 7d70edda1b6dc384e8ed0c72fde06726, type: 2}
+  passiveSkill: {fileID: 11400000, guid: c33b26823f8300f48a6e6c77e08376f0, type: 2}
+  defaultBuild:
+    label: 
+    artifactId: baixo_paul
+    allocations:
+    - nodeId: free0
+      points: 1
+    - nodeId: free9
+      points: 1
+    - nodeId: free43
+      points: 1
+    - nodeId: free44
+      points: 1
+    - nodeId: free59
+      points: 1
+    - nodeId: free66
+      points: 1
+    - nodeId: free42
+      points: 1
+    - nodeId: free191
+      points: 1
+    - nodeId: free187
+      points: 1
+    - nodeId: free53
+      points: 1
+    - nodeId: free177
+      points: 1
+    - nodeId: g0s4
+      points: 1
+    - nodeId: g2s4
+      points: 1
+    - nodeId: g1s4
+      points: 1
+    - nodeId: g7s4
+      points: 1
+    - nodeId: g40s4
+      points: 1
+    - nodeId: g39s4
+      points: 1
+    - nodeId: g38s4
+      points: 1
+    - nodeId: g37s4
+      points: 1
+    - nodeId: g36s4
+      points: 1
+    - nodeId: g35s0
+      points: 1
+    - nodeId: g32s0
+      points: 1
+    - nodeId: free199
+      points: 1
+    - nodeId: g24s0
+      points: 1
+    - nodeId: g26s0
+      points: 1
+    - nodeId: g27s0
+      points: 1
+    - nodeId: g29s0
+      points: 1
+    - nodeId: g30s0
+      points: 1
+    - nodeId: g11s4
+      points: 1
+    - nodeId: g15s4
+      points: 1
+    - nodeId: g16s4
+      points: 1
+    - nodeId: g18s4
+      points: 1
+    - nodeId: g19s4
+      points: 1
+    - nodeId: g21s4
+      points: 1
+    - nodeId: g23s4
+      points: 1
+    - nodeId: free148
+      points: 1
+    - nodeId: g27s4
+      points: 1
+    - nodeId: g28s4
+      points: 1
+    - nodeId: g30s4
+      points: 1
+    - nodeId: g3s0
+      points: 1
+    - nodeId: g9s0
+      points: 1
+    - nodeId: g8s0
+      points: 1
+    - nodeId: g5s0
+      points: 1
+    - nodeId: g6s0
+      points: 1
+    - nodeId: g2s0
+      points: 1
+    - nodeId: g11s0
+      points: 1
+    - nodeId: g15s0
+      points: 1
+    - nodeId: g16s0
+      points: 1
+    - nodeId: g18s0
+      points: 1
+    - nodeId: g19s0
+      points: 1
+    - nodeId: g33s0
+      points: 1
+    - nodeId: free8
+      points: 1
+    - nodeId: free192
+      points: 1
+    - nodeId: free179
+      points: 1
+    - nodeId: free186
+      points: 1
+    - nodeId: free58
+      points: 1
+    - nodeId: free19
+      points: 1
+    - nodeId: free18
+      points: 1
+    - nodeId: free1
+      points: 1
+    - nodeId: free12
+      points: 1
+  tags: 1
+  capabilities: -1
+  maxSummons: 0
+  statPoints:
+  - type: 4
+    points: 9
+  - type: 1
+    points: 6
+  - type: 17
+    points: 6
+  - type: 16
+    points: 3
+  - type: 0
+    points: 6
+  - type: 8
+    points: 5
+  - type: 2
+    points: 5

@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289f280abb13f7a4395c4aba81bc683c, type: 3}
+  m_Name: CamisaAntisocial
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Combat.ArtifactData
+  displayName: Camisa Antisocial
+  description: "As invoca\xE7\xF5es do portador causam dano f\xEDsico adicional ao
+    atingir, com base na Vida M\xE1xima delas."
+  id: camisa_antisocial
+  category: 1
+  icon: {fileID: -4269856886256974734, guid: ce599654bbf300a4f952e3a963dfd203, type: 3}
+  statGrants: []
+  onHitEffects: []
+  onBattleStartEffects: []
+  summonOnHitEffects:
+  - {fileID: 2909525963798811458}
+--- !u!114 &2909525963798811458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8307511ba6f654548afcd47326481f3b, type: 3}
+  m_Name: CamisaSummonOnHit
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Combat.DealDamageEffect
+  description: "{shift:Invoca\xE7\xF5es do portador: +{v:scalings.0.percent:MaxHealth}
+    da Vida M\xE1xima como dano f\xEDsico ao atingir}"
+  target:
+    side: 0
+    filter:
+      requireTags: 0
+      excludeTags: 0
+      onlyTargetable: 0
+    criterion: 0
+    count: 0
+    radiusMode: 0
+    radius: 0
+    lineWidth: 0
+    lineLength: 0
+  baseDamage: 0
+  scalings:
+  - stat: 4
+    percent: 1
+  damageType: 0
+  cannotCrit: 0
+  ignoreTypeAdvantage: 0

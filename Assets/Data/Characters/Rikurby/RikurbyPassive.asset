@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dac534f58e2713c4c9434c761113e473, type: 3}
+  m_Name: RikurbyPassive
+  m_EditorClassIdentifier: Assembly-CSharp::RikurbyPassive
+  displayName: 
+  description: "A cada {v:attacksPerSummonByRank.0::flat}/{v:attacksPerSummonByRank.1::flat}/{v:attacksPerSummonByRank.2::flat}
+    ataques recebidos (por rank), Rikurby invoca um Little Rick para lutar ao seu
+    lado, at\xE9 {v:maxLiveSummons::flat} vivos. Sempre que Rikurby recebe cura,
+    seus Little Ricks s\xE3o curados em {v:healSharePercentByRank.0::flat}%/{v:healSharePercentByRank.1::flat}%/{v:healSharePercentByRank.2::flat}%
+    desse valor."
+  icon: {fileID: -249917534404993761, guid: e6d2de0066acc954bbe129a029b4636a, type: 3}
+  attacksPerSummonByRank: 0a0000000800000006000000
+  maxLiveSummons: 8
+  summonData: {fileID: 11400000, guid: 5b729760725dd1d469bf28e406093791, type: 2}
+  spawnSpread: 1
+  healSharePercentByRank:
+  - 10
+  - 20
+  - 30

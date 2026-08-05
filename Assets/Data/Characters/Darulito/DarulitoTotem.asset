@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d657dea3a8ac34fb24fd87689602bb, type: 3}
+  m_Name: DarulitoTotem
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Data.SummonData
+  id: darulitototem
+  category: 0
+  idleAnimation: {fileID: 7400000, guid: 5537a11f33c9baa41b557953ec00a87d, type: 2}
+  runAnimation: {fileID: 0}
+  dragAnimation: {fileID: 0}
+  attackAnimation: {fileID: 0}
+  deathAnimation: {fileID: 0}
+  deathIdleAnimation: {fileID: 0}
+  supremeAnimation: {fileID: 0}
+  stunAnimation: {fileID: 0}
+  victoryAnimation: {fileID: 0}
+  extraAnimations: []
+  animationProfiles: []
+  forms: []
+  visualScale: 1.3
+  animClipTunings: []
+  overheadHeight: 2.25
+  selectionRingScale: 0.9
+  selectionRingOffsetY: -0.98
+  primaryType: 2
+  secondaryType: 0
+  defaultSprite: {fileID: 21300000, guid: a7075efa19fb09c43a7b129298b7f629, type: 3}
+  cardPortrait: {fileID: 162926329, guid: 70a5adb5cb87e7f4c8dba79b1fcf7445, type: 3}
+  portrait2x1: {fileID: 0}
+  displayName: "Totem da Liberta\xE7\xE3o"
+  lore: 
+  baseSkill: {fileID: 0}
+  supremeSkill: {fileID: 11400000, guid: 3e3055e15ea44f749c4975391045017c, type: 2}
+  passiveSkill: {fileID: 0}
+  defaultBuild:
+    label: Default
+    artifactId: 
+    allocations: []
+  tags: 2
+  capabilities: 4
+  maxSummons: 0
+  statPoints: []
+  fixedStats:
+  - type: 4
+    value: 100
+  - type: 6
+    value: 5
+  summonStatProfile: {fileID: 11400000, guid: 12a31ff472664dfdbaea5234721b8fe8, type: 2}

@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1737839739493768104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d29c0f4c417b4b4bab3a8e369fc948a, type: 3}
+  m_Name: EnergyShieldEnergy
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Combat.GainEnergyEffect
+  description: '{shift:+{v:amount::flat} de energia a todos os aliados}'
+  target:
+    side: 2
+    filter:
+      requireTags: 0
+      excludeTags: 0
+      onlyTargetable: 0
+    criterion: 0
+    count: 0
+    radiusMode: 0
+    radius: 0
+    lineWidth: 0
+    lineLength: 0
+  amount: 10
+--- !u!114 &-677174597094755889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b003c57a00002584abc9e6d5d9945686, type: 3}
+  m_Name: EnergyShieldGrant
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Combat.GrantShieldEffect
+  description: "{shift:Escudo de {v:scalings.0.percent:MaxHealth} da Vida M\xE1xima
+    a todos os aliados}"
+  target:
+    side: 2
+    filter:
+      requireTags: 0
+      excludeTags: 0
+      onlyTargetable: 0
+    criterion: 0
+    count: 0
+    radiusMode: 0
+    radius: 0
+    lineWidth: 0
+    lineLength: 0
+  shieldId: energyshield
+  baseAmount: 0
+  scalings:
+  - stat: 4
+    percent: 20
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289f280abb13f7a4395c4aba81bc683c, type: 3}
+  m_Name: EnergyShield
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Combat.ArtifactData
+  displayName: Energy Shield
+  description: "No in\xEDcio do combate, concede escudo (com base na Vida M\xE1xima
+    do portador) e energia a todos os aliados."
+  id: energy_shield
+  category: 1
+  icon: {fileID: -1988710036292870707, guid: d76deaf8d227c6e49b5ae6872c09f1ca, type: 3}
+  statGrants: []
+  onHitEffects: []
+  onBattleStartEffects:
+  - {fileID: -677174597094755889}
+  - {fileID: -1737839739493768104}
+  summonOnHitEffects: []

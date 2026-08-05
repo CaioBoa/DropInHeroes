@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a41da8e6b40c4d39e0f1a2b3c4d5a13, type: 3}
+  m_Name: HamiPassive
+  m_EditorClassIdentifier:
+  displayName: "F\xFAria Ardente"
+  description: "Os ataques de Hami causam dano f\xEDsico adicional e convertem parte
+    do Poder M\xE1gico em Ataque at\xE9 o fim do combate."
+  icon: {fileID: 1167065530826424638, guid: e7357db5120a0b745b059dd817a93e78, type: 3}
+  bonusDamageScaling: 0.5
+  attackGainPercent: 5

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6413ba703a30c0847a6724bc8e95b1a3, type: 3}
+  m_Name: MardaBaseAttack
+  m_EditorClassIdentifier:
+  displayName: "Sinfonia Horrenda"
+  description: "Atira um proj\xE9til causando {kw:dano_magico}, com chance de {kw:reducao_cura}.
+    (100% do Poder M\xE1gico)"
+  icon: {fileID: 5616028261963863137, guid: 28ba66de01828464f9c3e66cc2feb031, type: 3}
+  skillModifiers: []
+  projectile:
+    clip: {fileID: 7400000, guid: e0f45108747682a47a2bf7ce23b35784, type: 2}
+    speedBase: 0
+    speedPerSpeed: 3
+    scale: 0.25
+    sortingOrder: 50
+    faceTravelDirection: 1
+  magicScaling: 1
+  healReductionChance: 0.15
+  healReceivedReduction: -25
+  healReductionDuration: 5

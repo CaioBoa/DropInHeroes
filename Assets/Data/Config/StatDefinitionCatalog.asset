@@ -1,0 +1,452 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6ab7adc60f3f146af7376887274afd, type: 3}
+  m_Name: StatDefinitionCatalog
+  m_EditorClassIdentifier: 
+  statDefinitions:
+  - type: 0
+    definition:
+      id: attack
+      displayName: Attack
+      description: 
+      icon: {fileID: 5304372456901084517, guid: 24d84587e01c5a14ab847f6d32a8fa43, type: 3}
+      statPointValue: 5
+      isPercent: 0
+      hasColor: 0
+      color: {r: 1, g: 0, b: 0, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 1
+    definition:
+      id: defense
+      displayName: Defense
+      description: 
+      icon: {fileID: 5961770762729462907, guid: 7013bb7f694977d49b5fd197633295bb, type: 3}
+      statPointValue: 5
+      isPercent: 0
+      hasColor: 0
+      color: {r: 0.9756374, g: 1, b: 0, a: 1}
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 2
+    definition:
+      id: speed
+      displayName: Speed
+      description: 
+      icon: {fileID: 6443552889832449473, guid: 682d1f9cc31d8094f9162d17509b141d, type: 3}
+      statPointValue: 0.05
+      isPercent: 0
+      hasColor: 0
+      color: {r: 0, g: 0.6747103, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 3
+    definition:
+      id: range
+      displayName: Range
+      description: 
+      icon: {fileID: -9208761201745400335, guid: c7bcf5c1f22c7634b9358099343df548, type: 3}
+      statPointValue: 2.5
+      isPercent: 0
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 4
+    definition:
+      id: maxHealth
+      displayName: Maximum Health
+      description: 
+      icon: {fileID: 1564688358316481467, guid: 203dc8c4c6284764a8633295d5b00326, type: 3}
+      statPointValue: 50
+      isPercent: 0
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 5
+    definition:
+      id: maxEnergy
+      displayName: Maximum Energy
+      description: 
+      icon: {fileID: 6194782629927844608, guid: 0a40eea8b373bc044bb9afc8a1a3274d, type: 3}
+      statPointValue: 0
+      isPercent: 0
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 6
+    definition:
+      id: energyRegeneration
+      displayName: Energy Regeneration
+      description: 
+      icon: {fileID: 6194782629927844608, guid: 0a40eea8b373bc044bb9afc8a1a3274d, type: 3}
+      statPointValue: 0.05
+      isPercent: 0
+      hasColor: 0
+      color: {r: 1, g: 0, b: 0.99647784, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 7
+    definition:
+      id: criticalRate
+      displayName: Critical Rate
+      description: 
+      icon: {fileID: 7882751542646762197, guid: 0af99d4b7959c9e4aaaa2236d9b3eeaf, type: 3}
+      statPointValue: 1
+      isPercent: 1
+      hasColor: 0
+      color: {r: 0.85816, g: 1, b: 0, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 1
+      maxValue: 100
+  - type: 8
+    definition:
+      id: criticalDamage
+      displayName: Critical Damage
+      description: 
+      icon: {fileID: -1103853758700021917, guid: 825cd4aca4dc78549920acccc2950210, type: 3}
+      statPointValue: 2
+      isPercent: 1
+      hasColor: 0
+      color: {r: 0.82641506, g: 0.35323235, b: 0, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 9
+    definition:
+      id: criticalDamageResistance
+      displayName: Critical Damage Resistance
+      description: 
+      icon: {fileID: 0}
+      statPointValue: 0
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 10
+    definition:
+      id: penetration
+      displayName: Penetration
+      description: 
+      icon: {fileID: 2700815807617178084, guid: 066eed1131286e74bafc0d1c31cf4125, type: 3}
+      statPointValue: 0.5
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 1
+      maxValue: 100
+  - type: 11
+    definition:
+      id: penetrationResistance
+      displayName: Penetration Resistance
+      description: 
+      icon: {fileID: 0}
+      statPointValue: 0
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 1
+      maxValue: 100
+  - type: 12
+    definition:
+      id: damageBonus
+      displayName: Damage Bonus
+      description: 
+      icon: {fileID: 0}
+      statPointValue: 0
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 0
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 13
+    definition:
+      id: damageReduction
+      displayName: Damage Reduction
+      description: 
+      icon: {fileID: 0}
+      statPointValue: 0
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 14
+    definition:
+      id: effectiveness
+      displayName: Effectiveness
+      description: 
+      icon: {fileID: 2650424430676459032, guid: cc9eda47f4f4adc409ab791252417418, type: 3}
+      statPointValue: 2
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 15
+    definition:
+      id: effectivenessResistance
+      displayName: Effectiveness Resistance
+      description: 
+      icon: {fileID: 6693351876008021017, guid: 203fa0bda8e0180488461befbdfc7888, type: 3}
+      statPointValue: 2
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 16
+    definition:
+      id: magicalPower
+      displayName: Magical Power
+      description: 
+      icon: {fileID: -5816642994671486895, guid: 8455f9e9711d69a41b4920308d465348, type: 3}
+      statPointValue: 5
+      isPercent: 0
+      hasColor: 0
+      color: {r: 0.6092825, g: 0, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 17
+    definition:
+      id: magicalDefense
+      displayName: Magical Defense
+      description: 
+      icon: {fileID: 5096565634234354106, guid: 136c8509d6376594db43b22f58d4804b, type: 3}
+      statPointValue: 5
+      isPercent: 0
+      hasColor: 0
+      color: {r: 0, g: 1, b: 0.8379359, a: 1}
+      hasMinValue: 1
+      minValue: 1
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 18
+    definition:
+      id: magicalPenetration
+      displayName: Magical Penetration
+      description: 
+      icon: {fileID: 237172855612655901, guid: 4a40557fce72d854db2fb5a756423fb3, type: 3}
+      statPointValue: 0.5
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 19
+    definition:
+      id: magicalPenetrationResistance
+      displayName: Magical Penetration Resistance
+      description: 
+      icon: {fileID: 0}
+      statPointValue: 0
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 20
+    definition:
+      id: control
+      displayName: Control
+      description: 
+      icon: {fileID: 2475397778277690376, guid: 2d240b3cf8ae7b447b5d000d60e3cc3f, type: 3}
+      statPointValue: 1
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 21
+    definition:
+      id: tenacity
+      displayName: Tenacity
+      description: 
+      icon: {fileID: -1734464451387533371, guid: 50023dc64c693cf41aee06b9b46622a2, type: 3}
+      statPointValue: 1
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 22
+    definition:
+      id: lifesteal
+      displayName: Lifesteal
+      description: 
+      icon: {fileID: -6599895244811192684, guid: f1a8a98c07181a341b69264ac93107fd, type: 3}
+      statPointValue: 0.5
+      isPercent: 1
+      hasColor: 0
+      color: {r: 0.3433962, g: 0, b: 0.09495039, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 23
+    definition:
+      id: accuracy
+      displayName: Accuracy
+      description: 
+      icon: {fileID: 5310107814943453232, guid: f7bc86c2ddebf464680c3efbce95d40f, type: 3}
+      statPointValue: 2
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 24
+    definition:
+      id: dodge
+      displayName: Dodge
+      description: 
+      icon: {fileID: -1848363448260978870, guid: 86ddf2153205ab44196ae8a3ff4d6d08, type: 3}
+      statPointValue: 2
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 25
+    definition:
+      id: heal_bonus
+      displayName: "B\xF4nus de Cura"
+      description: 'Aumenta a cura que esta unidade CAUSA (self, aliados, lifesteal).
+        Base 100: 0 = 100%.'
+      icon: {fileID: 8847773858092745476, guid: 4669c4cd6319a5441a2e2955be3a999b, type: 3}
+      statPointValue: 1
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 0
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 26
+    definition:
+      id: heal_received
+      displayName: Cura Recebida
+      description: 'Altera a cura que esta unidade RECEBE (de si, aliados, lifesteal).
+        Base 100: 0 = 100%.'
+      icon: {fileID: -1760323088316556625, guid: 84864e64b6d16bc4d803722b001daa89, type: 3}
+      statPointValue: 1
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 0
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 27
+    definition:
+      id: shield_bonus
+      displayName: "B\xF4nus de Escudo"
+      description: 'Aumenta o escudo que esta unidade CONCEDE. Base 100: 0 = 100%.'
+      icon: {fileID: -5600720650594706321, guid: 89727d8d6def658458a2276aafbfc9b8, type: 3}
+      statPointValue: 1
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 0
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 28
+    definition:
+      id: shield_received
+      displayName: Escudo Recebido
+      description: 'Altera o escudo que esta unidade RECEBE. Base 100: 0 = 100%.'
+      icon: {fileID: -2088875961786424620, guid: 89a25c2908f81874994013cbf949ad23, type: 3}
+      statPointValue: 1
+      isPercent: 1
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 0
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  resourceDefinitions:
+  - type: 0
+    definition:
+      id: health
+      displayName: Health
+      description: 
+      icon: {fileID: 1564688358316481467, guid: 203dc8c4c6284764a8633295d5b00326, type: 3}
+      statPointValue: 1
+      isPercent: 0
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0
+  - type: 1
+    definition:
+      id: energy
+      displayName: Energy
+      description: 
+      icon: {fileID: 6194782629927844608, guid: 0a40eea8b373bc044bb9afc8a1a3274d, type: 3}
+      statPointValue: 1
+      isPercent: 0
+      hasColor: 0
+      color: {r: 1, g: 1, b: 1, a: 1}
+      hasMinValue: 1
+      minValue: 0
+      hasMaxValue: 0
+      maxValue: 0

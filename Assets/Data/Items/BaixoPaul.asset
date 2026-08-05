@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-1678231497237534399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d29c0f4c417b4b4bab3a8e369fc948a, type: 3}
+  m_Name: BaixoPaulOnHit
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Combat.GainEnergyEffect
+  description: '{shift:+{v:amount::flat} de energia ao atingir}'
+  target:
+    side: 1
+    filter:
+      requireTags: 0
+      excludeTags: 0
+      onlyTargetable: 0
+    criterion: 0
+    count: 0
+    radiusMode: 0
+    radius: 0
+    lineWidth: 0
+    lineLength: 0
+  amount: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289f280abb13f7a4395c4aba81bc683c, type: 3}
+  m_Name: BaixoPaul
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Combat.ArtifactData
+  displayName: Baixo Paul
+  description: Os ataques do portador regeneram energia ao atingir.
+  id: baixo_paul
+  category: 1
+  icon: {fileID: 3182245696332442579, guid: f55cb4bae776a364d903629660914346, type: 3}
+  statGrants: []
+  onHitEffects:
+  - {fileID: -1678231497237534399}
+  onBattleStartEffects: []
+  summonOnHitEffects: []

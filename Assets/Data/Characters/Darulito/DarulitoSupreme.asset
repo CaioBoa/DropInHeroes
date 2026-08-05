@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ca619fb6f0fa44396d7a426961dbd3, type: 3}
+  m_Name: DarulitoSupreme
+  m_EditorClassIdentifier:
+  displayName: "Totem da Libertação"
+  description: "Invoca o Totem da Libertação e concede um escudo a todos os aliados."
+  icon: {fileID: -5607002033401898055, guid: 7ead8a84722e8084aa4f298e8534b3b4, type: 3}
+  skillModifiers: []
+  energyCost: 50
+  animationSpeedReference: 2.5
+  shieldDefenseScaling: 2
+  shieldMagicDefenseScaling: 2
+  shieldId: darulito_supreme_shield
+  totemData: {fileID: 11400000, guid: cb36a1be00e0e1645a1fc41475cd6beb, type: 2}
+  spawnOffset: 1.5

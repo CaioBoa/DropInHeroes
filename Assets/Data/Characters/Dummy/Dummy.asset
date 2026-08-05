@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b12ce1e3165124eb031e13224a64f7, type: 3}
+  m_Name: Dummy
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Data.CharacterData
+  id: dummy
+  category: 0
+  idleAnimation: {fileID: 0}
+  runAnimation: {fileID: 0}
+  dragAnimation: {fileID: 0}
+  attackAnimation: {fileID: 0}
+  deathAnimation: {fileID: 0}
+  deathIdleAnimation: {fileID: 0}
+  supremeAnimation: {fileID: 0}
+  stunAnimation: {fileID: 0}
+  victoryAnimation: {fileID: 0}
+  extraAnimations: []
+  animationProfiles: []
+  visualScale: 1
+  overheadHeight: 1.14
+  selectionRingScale: 0.9
+  selectionRingOffsetY: -0.45
+  primaryType: 0
+  secondaryType: 0
+  defaultSprite: {fileID: 0}
+  cardPortrait: {fileID: 0}
+  portrait2x1: {fileID: 0}
+  displayName: Dummy
+  lore: 
+  baseSkill: {fileID: 0}
+  supremeSkill: {fileID: 0}
+  passiveSkill: {fileID: 0}
+  defaultBuild:
+    label: 
+    artifactId: 
+    allocations: []
+  tags: 1
+  capabilities: 0
+  maxSummons: 0
+  statPoints: []

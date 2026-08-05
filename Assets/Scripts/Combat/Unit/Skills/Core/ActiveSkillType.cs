@@ -1,6 +1,12 @@
-public enum ActiveSkillType
+using DropInHeroes.Data;
+using DropInHeroes.Utils;
+
+namespace DropInHeroes.Combat
 {
-    Base,
-    Supreme,
-    Trigger
+
+    public enum ActiveSkillType
+    {
+        Base,
+        Supreme
+    }
 }

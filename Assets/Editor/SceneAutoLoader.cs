@@ -2,49 +2,55 @@
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using DropInHeroes.Core;
+using DropInHeroes.Utils;
 
-[InitializeOnLoad]
-public static class SceneAutoLoader
+namespace DropInHeroes.Editor
 {
-    private const string LOADING_SCENE_PATH = "Assets/Scenes/Loading.unity";
-    private const string PREVIOUS_SCENE_KEY = "SceneAutoLoader.PreviousScene";
 
-    static SceneAutoLoader()
+    [InitializeOnLoad]
+    public static class SceneAutoLoader
     {
-        EditorApplication.playModeStateChanged += OnPlayModeChanged;
-    }
+        private const string BOOT_SCENE_PATH = "Assets/Scenes/" + SceneNames.MainMenu + ".unity";
+        private const string PREVIOUS_SCENE_KEY = "SceneAutoLoader.PreviousScene";
 
-    private static void OnPlayModeChanged(PlayModeStateChange state)
-    {
-        switch (state)
+        static SceneAutoLoader()
         {
-            case PlayModeStateChange.ExitingEditMode:
-                // Salvar cena atual antes de entrar em Play Mode
-                string currentScene = EditorSceneManager.GetActiveScene().path;
-                
-                if (!string.IsNullOrEmpty(currentScene))
-                {
-                    EditorPrefs.SetString(PREVIOUS_SCENE_KEY, currentScene);
-                }
+            EditorApplication.playModeStateChanged += OnPlayModeChanged;
+        }
 
-                // Trocar para LoadingScene
-                if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
-                {
-                    EditorSceneManager.OpenScene(LOADING_SCENE_PATH);
-                }
-                break;
-
-            case PlayModeStateChange.EnteredEditMode:
-                // RESTAURAR cena original quando sair do Play Mode
-                string previousScene = EditorPrefs.GetString(PREVIOUS_SCENE_KEY, string.Empty);
+        private static void OnPlayModeChanged(PlayModeStateChange state)
+        {
+            switch (state)
+            {
+                case PlayModeStateChange.ExitingEditMode:
+                    // Salvar cena atual antes de entrar em Play Mode
+                    string currentScene = EditorSceneManager.GetActiveScene().path;
                 
-                if (!string.IsNullOrEmpty(previousScene))
-                {
-                    EditorSceneManager.OpenScene(previousScene);
-                    EditorPrefs.DeleteKey(PREVIOUS_SCENE_KEY); // Limpar após restaurar
-                }
-                break;
+                    if (!string.IsNullOrEmpty(currentScene))
+                    {
+                        EditorPrefs.SetString(PREVIOUS_SCENE_KEY, currentScene);
+                    }
+
+                    // Trocar para a cena de boot (MainMenu)
+                    if (EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
+                    {
+                        EditorSceneManager.OpenScene(BOOT_SCENE_PATH);
+                    }
+                    break;
+
+                case PlayModeStateChange.EnteredEditMode:
+                    // RESTAURAR cena original quando sair do Play Mode
+                    string previousScene = EditorPrefs.GetString(PREVIOUS_SCENE_KEY, string.Empty);
+                
+                    if (!string.IsNullOrEmpty(previousScene))
+                    {
+                        EditorSceneManager.OpenScene(previousScene);
+                        EditorPrefs.DeleteKey(PREVIOUS_SCENE_KEY); // Limpar após restaurar
+                    }
+                    break;
+            }
         }
     }
+    #endif
 }
-#endif

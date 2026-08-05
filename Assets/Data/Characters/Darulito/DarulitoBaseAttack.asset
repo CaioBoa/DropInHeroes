@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a5c0d0000000000000000000000b4, type: 3}
+  m_Name: DarulitoBaseAttack
+  m_EditorClassIdentifier:
+  displayName: Mordida do Bronquiossauro
+  description: "Darulito golpeia o inimigo causando {kw:dano_fisico} (100% do Ataque
+    + 25% da Defesa + 25% da Defesa Mágica)."
+  icon: {fileID: -6262573298045334438, guid: 1c179646d36149f4ca9f5f65b913a71e, type: 3}
+  skillModifiers: []
+  attackScaling: 1
+  defenseScaling: 0.25
+  magicDefenseScaling: 0.25

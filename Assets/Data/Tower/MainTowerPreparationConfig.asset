@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a84aef0c34357ce44854e47570656ebe, type: 3}
+  m_Name: MainTowerPreparationConfig
+  m_EditorClassIdentifier: 
+  maxUnitsOnField: 3
+  swapDetectionRadius: 1.5
+  dragAlpha: 0.6
+  footprintDragOffset: -1
+  footprintPlacedOffset: 0
+  footprintScale: 1.5
+  dropLerpDuration: 0.5
+  swapLerpDuration: 0.15
+  carouselCardPadding: 20
+  sideCardWidthMultiplier: 0.6
+  sideCardHeightMultiplier: 0.8
+  carouselFriction: 5
+  dragDirectionThreshold: 10

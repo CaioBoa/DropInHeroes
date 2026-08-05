@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d657dea3a8ac34fb24fd87689602bb, type: 3}
+  m_Name: LittleRick
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Data.SummonData
+  id: littlerick
+  category: 0
+  idleAnimation: {fileID: 7400000, guid: 29b98bbfdaf034f4f8af98e999a212b2, type: 2}
+  runAnimation: {fileID: 7400000, guid: 7fb9788f2769d114a8dd4ee3193b1864, type: 2}
+  dragAnimation: {fileID: 0}
+  attackAnimation: {fileID: 7400000, guid: 40be03f6d138f744d8d15f0b95a2cad2, type: 2}
+  deathAnimation: {fileID: 0}
+  deathIdleAnimation: {fileID: 0}
+  supremeAnimation: {fileID: 0}
+  stunAnimation: {fileID: 0}
+  victoryAnimation: {fileID: 0}
+  extraAnimations: []
+  animationProfiles: []
+  forms: []
+  visualScale: 0.59
+  animClipTunings: []
+  overheadHeight: 0.03
+  selectionRingScale: 0.41
+  selectionRingOffsetY: -0.99
+  primaryType: 1
+  secondaryType: 11
+  defaultSprite: {fileID: -4107540741265224313, guid: 5267ba5bb8ab127439699da44e76555a, type: 3}
+  cardPortrait: {fileID: 550443007, guid: 5267ba5bb8ab127439699da44e76555a, type: 3}
+  portrait2x1: {fileID: 0}
+  displayName: Little Rick
+  lore: 
+  baseSkill: {fileID: 11400000, guid: 7e22184b2c445584a9b9e0bf8f4ed859, type: 2}
+  supremeSkill: {fileID: 0}
+  passiveSkill: {fileID: 0}
+  defaultBuild:
+    label: Default
+    artifactId: 
+    allocations: []
+  tags: 2
+  capabilities: 3
+  maxSummons: 0
+  statPoints: []
+  fixedStats:
+  - type: 0
+    value: 10
+  - type: 4
+    value: 100
+  - type: 2
+    value: 3
+  - type: 3
+    value: 1.5
+  - type: 23
+    value: 100
+  summonStatProfile: {fileID: 11400000, guid: ab8fe5043e9e47f1b1a5f3590c84f5fd, type: 2}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a5c0d0000000000000000000000b2, type: 3}
+  m_Name: RikurbySupreme
+  m_EditorClassIdentifier:
+  displayName:
+  description: "Salta para o meio dos inimigos, causa {kw:dano_fisico} em área, aplica
+    {kw:atordoamento} e se cura por inimigo atingido."
+  icon: {fileID: -3120202703585385882, guid: 108b291bcf098e340b3f8dae8d807361, type: 3}
+  skillModifiers: []
+  energyCost: 50
+  animationSpeedReference: 2.5
+  leapDuration: 0.3
+  aoeRadius: 2.5
+  damageAttackScaling: 12
+  damageHealthScaling: 0.4
+  healHealthScaling: 0.2
+  stunDuration: 3
+  stunChance: 1
+  hitVfxClip: {fileID: 7400000, guid: 7ac2b678f2400e648bba73993547075b, type: 2}

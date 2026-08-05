@@ -1,0 +1,186 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b12ce1e3165124eb031e13224a64f7, type: 3}
+  m_Name: Darulito
+  m_EditorClassIdentifier: 
+  id: darulito
+  category: 0
+  idleAnimation: {fileID: 7400000, guid: b4a9916eb6674c54eb804d4f88404bc8, type: 2}
+  runAnimation: {fileID: 7400000, guid: 80781b45935799e4da4488dac8d5d9a4, type: 2}
+  dragAnimation: {fileID: 7400000, guid: 4aa152f181264e2459588cc8a65be8a0, type: 2}
+  attackAnimation: {fileID: 7400000, guid: 4fdf3de64e782a040a841ce722b6bb61, type: 2}
+  deathAnimation: {fileID: 7400000, guid: c154f12693a220c4b8cfa7ffcaade6df, type: 2}
+  deathIdleAnimation: {fileID: 7400000, guid: 5b84c438f7a5aac40a59b86463299f1f, type: 2}
+  supremeAnimation: {fileID: 7400000, guid: 265398cddd0993d4a83805e75ceec5f2, type: 2}
+  stunAnimation: {fileID: 7400000, guid: 76d732623d068b74ba78c4f3267c412c, type: 2}
+  victoryAnimation: {fileID: 7400000, guid: eba70a1be483a6d478a16b3f3be985bb, type: 2}
+  extraAnimations: []
+  animationProfiles: []
+  forms: []
+  visualScale: 1.11
+  animClipTunings: []
+  overheadHeight: 2.11
+  selectionRingScale: 0.95
+  selectionRingOffsetY: -0.99
+  primaryType: 4
+  secondaryType: 8
+  defaultSprite: {fileID: 4191962132373332672, guid: 3489f667b1f360a4cb6ecaed889c1da0, type: 3}
+  cardPortrait: {fileID: -1941773202, guid: 3c31a697a228cbd40a6fb0a9c4b051eb, type: 3}
+  portrait2x1: {fileID: 824511888321987426, guid: 3c31a697a228cbd40a6fb0a9c4b051eb, type: 3}
+  displayName: Darulito
+  lore: "Nas eras em que o amanh\xE3 era apenas uma promessa sombria, ergueu-se Darulito,
+    o her\xF3i de mente colossal e passos firmes. Ao lado de seus irm\xE3os de sangue
+    latino, homens e mulheres feitos de sol e coragem, ele desafiou o pr\xF3prio
+    Maligno sob o c\xE9u em chamas. Com a for\xE7a de um intelecto ancestral e o
+    calor de uma uni\xE3o indom\xE1vel, eles baniram as trevas, esculpindo na rocha
+    do tempo o direito da humanidade de voltar a sonhar."
+  baseSkill: {fileID: 11400000, guid: c3a3feb2b4d811142bfcbebe352cc07b, type: 2}
+  supremeSkill: {fileID: 11400000, guid: cf4eb817f1c7070489360eddeb9838d9, type: 2}
+  passiveSkill: {fileID: 11400000, guid: 48e6a6ef8e85a214983de46c7ca5032e, type: 2}
+  defaultBuild:
+    label: Default
+    artifactId: divine
+    allocations:
+    - nodeId: free3
+      points: 1
+    - nodeId: free7
+      points: 1
+    - nodeId: free45
+      points: 1
+    - nodeId: free46
+      points: 1
+    - nodeId: free57
+      points: 1
+    - nodeId: free67
+      points: 1
+    - nodeId: free1
+      points: 1
+    - nodeId: free12
+      points: 1
+    - nodeId: free195
+      points: 1
+    - nodeId: free184
+      points: 1
+    - nodeId: free13
+      points: 1
+    - nodeId: free49
+      points: 1
+    - nodeId: free50
+      points: 1
+    - nodeId: free62
+      points: 1
+    - nodeId: free64
+      points: 1
+    - nodeId: free6
+      points: 1
+    - nodeId: free193
+      points: 1
+    - nodeId: free181
+      points: 1
+    - nodeId: free56
+      points: 1
+    - nodeId: free63
+      points: 1
+    - nodeId: g0s1
+      points: 1
+    - nodeId: g7s1
+      points: 1
+    - nodeId: g2s1
+      points: 1
+    - nodeId: g11s1
+      points: 1
+    - nodeId: g15s1
+      points: 1
+    - nodeId: g16s1
+      points: 1
+    - nodeId: g21s1
+      points: 1
+    - nodeId: g23s1
+      points: 1
+    - nodeId: g25s1
+      points: 1
+    - nodeId: g27s1
+      points: 1
+    - nodeId: g28s1
+      points: 1
+    - nodeId: g30s1
+      points: 1
+    - nodeId: free141
+      points: 1
+    - nodeId: g9s2
+      points: 1
+    - nodeId: g5s2
+      points: 1
+    - nodeId: g13s2
+      points: 1
+    - nodeId: g14s2
+      points: 1
+    - nodeId: g17s2
+      points: 1
+    - nodeId: g22s2
+      points: 1
+    - nodeId: g24s2
+      points: 1
+    - nodeId: free144
+      points: 1
+    - nodeId: g27s2
+      points: 1
+    - nodeId: g29s2
+      points: 1
+    - nodeId: g30s2
+      points: 1
+    - nodeId: free140
+      points: 1
+    - nodeId: g6s3
+      points: 1
+    - nodeId: g2s3
+      points: 1
+    - nodeId: g11s3
+      points: 1
+    - nodeId: g15s3
+      points: 1
+    - nodeId: g16s3
+      points: 1
+    - nodeId: g18s3
+      points: 1
+    - nodeId: g17s3
+      points: 1
+    - nodeId: g22s3
+      points: 1
+    - nodeId: g24s3
+      points: 1
+    - nodeId: free145
+      points: 1
+    - nodeId: g27s3
+      points: 1
+    - nodeId: g29s3
+      points: 1
+    - nodeId: g30s3
+      points: 1
+    - nodeId: g26s1
+      points: 1
+    - nodeId: g24s1
+      points: 1
+  tags: 1
+  capabilities: -1
+  maxSummons: 1
+  statPoints:
+  - type: 1
+    points: 7
+  - type: 17
+    points: 7
+  - type: 4
+    points: 4
+  - type: 16
+    points: 2
+  - type: 15
+    points: 10

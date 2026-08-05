@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a41da8e6b40c4d19e0f1a2b3c4d5a11, type: 3}
+  m_Name: HamiBaseAttack
+  m_EditorClassIdentifier:
+  displayName: Sopro Arcano
+  description: "Hami dispara um sopro arcano causando {kw:dano_magico} (100% do Poder
+    M\xE1gico), com chance de {kw:incendiar}."
+  icon: {fileID: -2934245683627386461, guid: 98de73a51cf035d42a8d6a787ad6b6d0, type: 3}
+  skillModifiers: []
+  projectile:
+    clip: {fileID: 7400000, guid: 40df26889e5970a46838487421ed3ec9, type: 2}
+    speedBase: 0
+    speedPerSpeed: 4
+    scale: 0.3
+    sortingOrder: 50
+    faceTravelDirection: 1
+  magicScaling: 1
+  incendiarChance: 0.15
+  incendiarDps: 15
+  incendiarDuration: 5

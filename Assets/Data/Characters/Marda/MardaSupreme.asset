@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6413ba703a30c0847a6724bc8e95b1a4, type: 3}
+  m_Name: MardaSupreme
+  m_EditorClassIdentifier:
+  displayName: "Sinfonia da Ru\xEDna"
+  description: "Tenta reduzir o Ataque, o Poder M\xE1gico e a Velocidade de todos os
+    inimigos."
+  icon: {fileID: -3827139482827759137, guid: 9a8e5fe7c5fa59148a548fcfd321ccd1, type: 3}
+  skillModifiers: []
+  energyCost: 50
+  animationSpeedReference: 2.5
+  debuffPercent: -0.4
+  chance: 0.85
+  duration: 10
+  debuffVfxClip: {fileID: 7400000, guid: 08824cb1edce72e4cb370d076c281aa0, type: 2}

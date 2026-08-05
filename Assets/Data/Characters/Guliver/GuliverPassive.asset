@@ -9,7 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 777dfbf94424e2643a2c6a1d11337ad3, type: 3}
+  m_Script: {fileID: 11500000, guid: a11ada8e6b40c4d19e0f1a2b3c4d5e01, type: 3}
   m_Name: GuliverPassive
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   displayName: "Vontade do Her\xF3i"
+  description: 'Reduz o dano recebido pelos aliados de Guliver e redireciona parte
+    do dano deles para si.{shift: Redução 5%/10%/15%; redirecionamento 15%/20%/25%
+    (por rank).}'
+  icon: {fileID: 2888078289152546724, guid: 36cdcb3a81200694ea539b605ba257ba, type: 3}
+  damageReductionByRank:
+  - 0.05
+  - 0.1
+  - 0.15
+  damageShareByRank:
+  - 0.15
+  - 0.2
+  - 0.25

@@ -1,38 +1,44 @@
 using UnityEngine;
+using DropInHeroes.Data;
+using DropInHeroes.Utils;
 
-/// <summary>
-/// Interface para objetos que podem ser arrastados
-/// Fornece API consistente para operações de drag
-/// </summary>
-public interface IDraggable
+namespace DropInHeroes.Combat
 {
-    /// <summary>
-    /// Inicia uma operação de drag na posição especificada
-    /// </summary>
-    void StartDrag(Vector2 position);
 
     /// <summary>
-    /// Atualiza a posição durante o drag
+    /// Interface para objetos que podem ser arrastados
+    /// Fornece API consistente para operações de drag
     /// </summary>
-    void UpdateDrag(Vector2 position);
+    public interface IDraggable
+    {
+        /// <summary>
+        /// Inicia uma operação de drag na posição especificada
+        /// </summary>
+        void StartDrag(Vector2 position);
 
-    /// <summary>
-    /// Finaliza o drag (personagem cai até posição final)
-    /// </summary>
-    void EndDrag();
+        /// <summary>
+        /// Atualiza a posição durante o drag
+        /// </summary>
+        void UpdateDrag(Vector2 position);
 
-    /// <summary>
-    /// Cancela o drag e retorna à posição inicial
-    /// </summary>
-    void CancelDrag();
+        /// <summary>
+        /// Finaliza o drag (personagem cai até posição final)
+        /// </summary>
+        void EndDrag();
 
-    /// <summary>
-    /// Verifica se o objeto está sendo arrastado atualmente
-    /// </summary>
-    bool IsDragging { get; }
+        /// <summary>
+        /// Cancela o drag e retorna à posição inicial
+        /// </summary>
+        void CancelDrag();
 
-    /// <summary>
-    /// Posição atual do objeto
-    /// </summary>
-    Vector2 CurrentPosition { get; }
+        /// <summary>
+        /// Verifica se o objeto está sendo arrastado atualmente
+        /// </summary>
+        bool IsDragging { get; }
+
+        /// <summary>
+        /// Posição atual do objeto
+        /// </summary>
+        Vector2 CurrentPosition { get; }
+    }
 }

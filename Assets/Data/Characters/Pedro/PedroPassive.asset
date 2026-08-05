@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed40da8e6b40c4d39e0f1a2b3c4d5b3, type: 3}
+  m_Name: PedroPassive
+  m_EditorClassIdentifier:
+  displayName: Caralio
+  description: "No in\xEDcio do combate, Pedro concede Vigor e um escudo a todos os
+    aliados."
+  icon: {fileID: -6935228201125405616, guid: d6d995a31d853b04ea113c60b90bad6a, type: 3}
+  vigorAttack: 0.3
+  vigorSpeed: 0.3
+  vigorDurationByRank:
+  - 6
+  - 9
+  - 14
+  shieldMagicScaling: 5
+  shieldAttackScaling: 2

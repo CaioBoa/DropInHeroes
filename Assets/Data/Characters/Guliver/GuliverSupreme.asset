@@ -9,8 +9,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 411f2c1ae53660948b60621535c0988b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6011a77ac6b40c4d29e0f1a2b3c4d5a2, type: 3}
   m_Name: GuliverSupreme
-  m_EditorClassIdentifier: 
-  displayName: "Ben\xE7\xE3o do Her\xF3i"
-  skillType: 1
+  m_EditorClassIdentifier:
+  displayName: Investida Divina
+  description: "Salta para o meio dos inimigos, causa {kw:dano_fisico} em \xE1rea e
+    cura a si e aos aliados, concedendo-lhes Defesa."
+  icon: {fileID: -225284079913750039, guid: d34c5b8956f483c429e310024cac7909, type: 3}
+  skillModifiers: []
+  energyCost: 60
+  animationSpeedReference: 2.5
+  leapDuration: 0.2
+  aoeRadius: 4
+  damageAttackScaling: 6
+  damageHealthScaling: 0.6
+  healMaxHealthScaling: 0.15
+  healMagicScaling: 5
+  defenseBuff: 0.3
+  buffDuration: 10
+  hitVfxClip: {fileID: 7400000, guid: 27c04b9cbcda564429a00525912ed02e, type: 2}

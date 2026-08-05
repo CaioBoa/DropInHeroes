@@ -1,65 +1,76 @@
 using UnityEngine;
+using DropInHeroes.Data;
+using DropInHeroes.Utils;
 
-public class EnergyBarModule : IUnitModule
+namespace DropInHeroes.Combat
 {
-    private UnitController controller;
-    private StatsModule stats;
-    private EnergyBar energyBar;
 
-    public void Initialize(UnitController unitController)
+    public class EnergyBarModule : IUnitModule
     {
-        controller = unitController;
-        stats = controller.GetModule<StatsModule>();
+        private UnitController controller;
+        private StatsModule stats;
+        private EnergyBar energyBar;
 
-        energyBar = controller.GetComponentInChildren<EnergyBar>(true);
-
-        if (energyBar == null)
+        public void Initialize(UnitController unitController)
         {
-            DebugManager.LogWarning("EnergyBar não encontrado no prefab!", DebugCategory.Combat);
-            return;
+            controller = unitController;
+            stats = controller.GetModule<StatsModule>();
+
+            energyBar = controller.GetComponentInChildren<EnergyBar>(true);
+
+            if (energyBar == null)
+            {
+                DebugManager.LogWarning("EnergyBar não encontrado no prefab!", DebugCategory.Combat);
+                return;
+            }
+
+            energyBar.Initialize();
+
+            var energyResource = stats?.GetResourceObject(ResourceType.Energy);
+            if (energyResource != null)
+                energyResource.OnValueChanged += OnEnergyChanged;
+
+            energyBar.Hide();
         }
 
-        energyBar.Initialize();
+        private void OnEnergyChanged(float currentEnergy)
+        {
+            if (energyBar == null || stats == null) return;
 
-        var energyResource = stats?.GetResourceObject(ResourceType.Energy);
-        if (energyResource != null)
-            energyResource.OnValueChanged += OnEnergyChanged;
+            float percent = stats.MaxEnergy > 0 ? stats.CurrentEnergy / stats.MaxEnergy : 0;
+            energyBar.SetEnergyPercent(percent);
+        }
 
-        energyBar.Hide();
-    }
+        public void OnEnabled()
+        {
+            if (energyBar != null && stats != null)
+            {
+                float percent = stats.MaxEnergy > 0 ? stats.CurrentEnergy / stats.MaxEnergy : 0f;
+                energyBar.SnapToPercent(percent);
+            }
+            energyBar?.Show();
+        }
 
-    private void OnEnergyChanged(float currentEnergy)
-    {
-        if (energyBar == null || stats == null) return;
+        public void OnDisabled()
+        {
+            energyBar?.Hide();
+        }
 
-        float percent = stats.MaxEnergy > 0 ? stats.CurrentEnergy / stats.MaxEnergy : 0;
-        energyBar.SetEnergyPercent(percent);
-    }
+        public void Cleanup()
+        {
+            var energyResource = stats?.GetResourceObject(ResourceType.Energy);
+            if (energyResource != null)
+                energyResource.OnValueChanged -= OnEnergyChanged;
 
-    public void OnEnabled()
-    {
-        energyBar?.Show();
-    }
+            energyBar = null;
+            stats = null;
+            controller = null;
+        }
 
-    public void OnDisabled()
-    {
-        energyBar?.Hide();
-    }
-
-    public void Cleanup()
-    {
-        var energyResource = stats?.GetResourceObject(ResourceType.Energy);
-        if (energyResource != null)
-            energyResource.OnValueChanged -= OnEnergyChanged;
-
-        energyBar = null;
-        stats = null;
-        controller = null;
-    }
-
-    public void ResetForPool()
-    {
-        energyBar?.ResetToEmpty();
-        energyBar?.Hide();
+        public void ResetForPool()
+        {
+            energyBar?.ResetToEmpty();
+            energyBar?.Hide();
+        }
     }
 }

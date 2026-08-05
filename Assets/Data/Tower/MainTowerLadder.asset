@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49eafff399f84b84ea5237e6c3fe8dba, type: 3}
+  m_Name: MainTowerLadder
+  m_EditorClassIdentifier: 
+  phases:
+  - displayName: Primeiro Andar
+    enemies:
+    - characterId: marda
+      spawnPosition: {x: 1, y: 0}
+      rank: 1
+  - displayName: Segundo Andar
+    enemies:
+    - characterId: marda
+      spawnPosition: {x: 1, y: 0}
+      rank: 1
+    - characterId: rikurby
+      spawnPosition: {x: 0, y: 0}
+      rank: 1
+  - displayName: Terceiro Andar
+    enemies:
+    - characterId: marda
+      spawnPosition: {x: 1, y: 0}
+      rank: 2
+    - characterId: rikurby
+      spawnPosition: {x: 0, y: 0}
+      rank: 1
+  - displayName: Quarto Andar
+    enemies:
+    - characterId: marda
+      spawnPosition: {x: 1, y: 0}
+      rank: 2
+    - characterId: rikurby
+      spawnPosition: {x: 0, y: 0}
+      rank: 1
+    - characterId: hami
+      spawnPosition: {x: 1, y: 1}
+      rank: 1
+  - displayName: Quinto Andar
+    enemies:
+    - characterId: marda
+      spawnPosition: {x: 1, y: 0}
+      rank: 3
+    - characterId: marda
+      spawnPosition: {x: 0, y: 0}
+      rank: 3
+    - characterId: hami
+      spawnPosition: {x: 1, y: 1}
+      rank: 3
+  - displayName: Sexto Andar
+    enemies:
+    - characterId: rikurby
+      spawnPosition: {x: 1, y: 0}
+      rank: 3
+    - characterId: hami
+      spawnPosition: {x: 0, y: 0}
+      rank: 3
+    - characterId: guliver
+      spawnPosition: {x: 1, y: 1}
+      rank: 3
+  - displayName: Setimo Andar
+    enemies:
+    - characterId: darulito
+      spawnPosition: {x: 1, y: 0}
+      rank: 3
+    - characterId: guliver
+      spawnPosition: {x: 0, y: 0}
+      rank: 3
+    - characterId: hami
+      spawnPosition: {x: 1, y: 1}
+      rank: 3
+  - displayName: Oitavo Andar
+    enemies:
+    - characterId: darulito
+      spawnPosition: {x: 1, y: 0}
+      rank: 3
+    - characterId: rikurby
+      spawnPosition: {x: 0, y: 0}
+      rank: 3
+    - characterId: vela
+      spawnPosition: {x: 1, y: 1}
+      rank: 3
+  - displayName: Topo da Torre
+    enemies:
+    - characterId: vela
+      spawnPosition: {x: 1, y: 0}
+      rank: 3
+    - characterId: guliver
+      spawnPosition: {x: 0, y: 0}
+      rank: 3
+    - characterId: darulito
+      spawnPosition: {x: 1, y: 1}
+      rank: 3

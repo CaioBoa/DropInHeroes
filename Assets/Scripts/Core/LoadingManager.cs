@@ -3,214 +3,149 @@ using UnityEngine.SceneManagement;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using DropInHeroes.Data;
+using DropInHeroes.UI;
+using DropInHeroes.Utils;
 
-public class LoadingManager : MonoBehaviour
+namespace DropInHeroes.Core
 {
-    [Header("Loading Settings")]
-    [SerializeField] private string gameSceneName = "Game";
-    [SerializeField] private string battleSceneName = "Battle";
-    [SerializeField] private float minimumLoadTime = 2f;
 
-    [Header("References")]
-    [SerializeField] private LoadingUI loadingUI;
-
-    private float currentProgress = 0f;
-    private CancellationTokenSource cancellationTokenSource;
-    private Scene battleScene;
-
-    private void OnEnable()
+    public class LoadingManager : MonoBehaviour
     {
-        // Inscrever-se nos eventos (ainda podemos usar eventos junto com async!)
-        DataManager.OnInitializationProgress += OnDataManagerProgress;
-    }
+        [Header("Loading Settings")]
+        [SerializeField] private float minimumLoadTime = 2f;
 
-    private void OnDisable()
-    {
-        // Desinscrever
-        DataManager.OnInitializationProgress -= OnDataManagerProgress;
-    }
+        [Header("References")]
+        [SerializeField] private LoadingUI loadingUI;
 
-    private async void Start()
-    {
-        cancellationTokenSource = new CancellationTokenSource();
+        private float currentProgress = 0f;
+        private CancellationTokenSource cancellationTokenSource;
 
-        try
+        private void OnEnable()
         {
-            await LoadGameSequence(cancellationTokenSource.Token);
-        }
-        catch (OperationCanceledException)
-        {
-            DebugManager.LogWarning("Carregamento cancelado", DebugCategory.Initialization);
-        }
-        catch (Exception e)
-        {
-            DebugManager.LogError($"Erro durante carregamento: {e.Message}", DebugCategory.Initialization);
-            UpdateProgress(0f, $"ERRO: {e.Message}");
-        }
-    }
-
-    private async Task LoadGameSequence(CancellationToken cancellationToken)
-    {
-        float startTime = Time.time;
-
-        // === FASE 1: Inicializar ===
-        UpdateProgress(0.1f, "Inicializando sistemas...");
-
-        if (DataManager.Instance == null)
-        {
-            throw new InvalidOperationException("DataManager não encontrado na cena!");
+            DataManager.OnInitializationProgress += OnDataManagerProgress;
         }
 
-        // === FASE 2: Aguardar DataManager (async/await style!) ===
-        UpdateProgress(0.2f, "Carregando base de dados...");
-
-        // Aguardar com timeout de 10 segundos
-        bool success = await DataManager.Instance.WaitForInitialization(10f);
-
-        if (!success)
+        private void OnDisable()
         {
-            throw new TimeoutException("DataManager demorou demais para inicializar!");
+            DataManager.OnInitializationProgress -= OnDataManagerProgress;
         }
 
-        DebugManager.Log("DataManager pronto!", DebugCategory.Initialization);
-
-        // === FASE 3: Pre-carregar recursos de batalha ===
-        await PreloadBattleScene(cancellationToken);
-        UpdateProgress(0.6f, "Preparando Componentes de Batalha...");
-
-        // === FASE 4: Garantir tempo mínimo ===
-        float elapsedTime = Time.time - startTime;
-        if (elapsedTime < minimumLoadTime)
+        private async void Start()
         {
-            float remainingTime = minimumLoadTime - elapsedTime;
-            UpdateProgress(0.9f, "Preparando...");
+            cancellationTokenSource = new CancellationTokenSource();
 
-            // Delay async
-            await Task.Delay(TimeSpan.FromSeconds(remainingTime), cancellationToken);
+            try
+            {
+                await LoadGameSequence(cancellationTokenSource.Token);
+            }
+            catch (OperationCanceledException)
+            {
+                DebugManager.LogWarning("Carregamento cancelado", DebugCategory.Initialization);
+            }
+            catch (Exception e)
+            {
+                DebugManager.LogError($"Erro durante carregamento: {e.Message}", DebugCategory.Initialization);
+                UpdateProgress(0f, $"ERRO: {e.Message}");
+            }
         }
 
-        // === FASE 5: Carregar cena ===
-        UpdateProgress(1f, "Iniciando jogo...");
-        await Task.Delay(500, cancellationToken);
-
-        // Carregar cena de forma assíncrona
-        await LoadScene(gameSceneName, cancellationToken);
-    }
-
-    private async Task PreloadBattleScene(CancellationToken cancellationToken)
-    {
-        DebugManager.Log($"Pré-carregando {battleSceneName}...", DebugCategory.Initialization);
-
-        // Carregar scene de forma aditiva
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(battleSceneName, LoadSceneMode.Additive);
-        asyncLoad.allowSceneActivation = true;
-
-        while (!asyncLoad.isDone)
+        private async Task LoadGameSequence(CancellationToken cancellationToken)
         {
-            cancellationToken.ThrowIfCancellationRequested();
-            await Task.Yield();
+            float startTime = Time.time;
+
+            UpdateProgress(0.1f, "Inicializando sistemas...");
+
+            if (DataManager.Instance == null)
+            {
+                throw new InvalidOperationException("DataManager não encontrado na cena!");
+            }
+
+            UpdateProgress(0.2f, "Carregando base de dados...");
+
+            bool success = await DataManager.Instance.WaitForInitialization(10f);
+            if (!success)
+            {
+                throw new TimeoutException("DataManager demorou demais para inicializar!");
+            }
+
+            DebugManager.Log("DataManager pronto!", DebugCategory.Initialization);
+            UpdateProgress(0.7f, "Preparando...");
+
+            float elapsedTime = Time.time - startTime;
+            if (elapsedTime < minimumLoadTime)
+            {
+                float remainingTime = minimumLoadTime - elapsedTime;
+                await Task.Delay(TimeSpan.FromSeconds(remainingTime), cancellationToken);
+            }
+
+            UpdateProgress(1f, "Iniciando jogo...");
+            await Task.Delay(500, cancellationToken);
+
+            await LoadScene(LoadingRequest.TargetScene, cancellationToken);
         }
 
-        battleScene = SceneManager.GetSceneByName(battleSceneName);
-
-        // Inicializar BattleManager ANTES de desativar
-        BattleManager battleManager = FindFirstObjectByType<BattleManager>();
-        if (battleManager != null)
+        private async Task LoadScene(string sceneName, CancellationToken cancellationToken)
         {
-            battleManager.Initialize();
-            DebugManager.Log("BattleManager inicializado!", DebugCategory.Initialization);
-        }
-        else
-        {
-            DebugManager.LogError("BattleManager não encontrado na Battle scene!", DebugCategory.Initialization);
-        }
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            asyncLoad.allowSceneActivation = false;
 
-        // DESATIVAR todos os root objects APÓS inicializar
-        foreach (GameObject rootObj in battleScene.GetRootGameObjects())
-        {
-            rootObj.SetActive(false);
-        }
+            while (asyncLoad.progress < 0.9f)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                float sceneProgress = asyncLoad.progress / 0.9f;
+                DebugManager.Log($"Carregando cena: {sceneProgress * 100:F0}%", DebugCategory.Initialization);
+                await Task.Yield();
+            }
 
-        DebugManager.Log($"{battleSceneName} pré-carregada e desativada!", DebugCategory.Initialization);
-    }
+            asyncLoad.allowSceneActivation = true;
 
-    /// <summary>
-    /// Carrega cena de forma assíncrona
-    /// </summary>
-    private async Task LoadScene(string sceneName, CancellationToken cancellationToken)
-    {
-        // Iniciar operação assíncrona do Unity (Additive para não destruir Battle scene!)
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            while (!asyncLoad.isDone)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                await Task.Yield();
+            }
 
-        // Prevenir ativação automática (queremos controlar quando ativar)
-        asyncLoad.allowSceneActivation = false;
+            Scene loadedScene = SceneManager.GetSceneByName(sceneName);
+            if (loadedScene.IsValid())
+            {
+                SceneManager.SetActiveScene(loadedScene);
+            }
 
-        // Aguardar carregamento (90% = pronto para ativar)
-        while (asyncLoad.progress < 0.9f)
-        {
-            cancellationToken.ThrowIfCancellationRequested();
+            Scene loadingScene = gameObject.scene;
+            if (loadingScene.IsValid() && loadingScene.name != sceneName)
+            {
+                await SceneManager.UnloadSceneAsync(loadingScene);
+                DebugManager.Log($"Scene '{loadingScene.name}' descarregada", DebugCategory.Initialization);
+            }
 
-            // Atualizar progresso
-            float sceneProgress = asyncLoad.progress / 0.9f;
-            DebugManager.Log($"Carregando cena: {sceneProgress * 100:F0}%", DebugCategory.Initialization);
-
-            // Aguardar próximo frame
-            await Task.Yield();
+            DebugManager.Log("Cena carregada!", DebugCategory.Initialization);
         }
 
-        // Ativar cena
-        asyncLoad.allowSceneActivation = true;
-
-        // Aguardar ativação completa
-        while (!asyncLoad.isDone)
+        private void OnDataManagerProgress(float progress)
         {
-            cancellationToken.ThrowIfCancellationRequested();
-            await Task.Yield();
+            // Mapear progresso do DataManager para faixa 0.2 - 0.7
+            float mappedProgress = 0.2f + (progress * 0.5f);
+            currentProgress = Mathf.Max(currentProgress, mappedProgress);
+            UpdateProgress(currentProgress, "Carregando dados do jogo...");
         }
 
-        // Definir como Active Scene (importante para additive loading)
-        Scene loadedScene = SceneManager.GetSceneByName(sceneName);
-        if (loadedScene.IsValid())
+        private void UpdateProgress(float progress, string message)
         {
-            SceneManager.SetActiveScene(loadedScene);
+            currentProgress = progress;
+
+            if (loadingUI != null)
+            {
+                loadingUI.UpdateProgress(progress, message);
+            }
+
+            DebugManager.Log($"{progress * 100:F0}% - {message}", DebugCategory.Initialization);
         }
 
-        // Descarregar a scene de Loading (não é mais necessária)
-        Scene loadingScene = gameObject.scene;
-        if (loadingScene.IsValid() && loadingScene.name != sceneName)
+        private void OnDestroy()
         {
-            await SceneManager.UnloadSceneAsync(loadingScene);
-            DebugManager.Log($"Scene '{loadingScene.name}' descarregada", DebugCategory.Initialization);
+            cancellationTokenSource?.Cancel();
+            cancellationTokenSource?.Dispose();
         }
-
-        DebugManager.Log("Cena carregada!", DebugCategory.Initialization);
-    }
-
-    // Callback de progresso (evento do DataManager)
-    private void OnDataManagerProgress(float progress)
-    {
-        // Mapear progresso do DataManager para faixa 0.2 - 0.6
-        float mappedProgress = 0.2f + (progress * 0.4f);
-        currentProgress = Mathf.Max(currentProgress, mappedProgress);
-        UpdateProgress(currentProgress, "Carregando dados do jogo...");
-    }
-
-    private void UpdateProgress(float progress, string message)
-    {
-        currentProgress = progress;
-
-        if (loadingUI != null)
-        {
-            loadingUI.UpdateProgress(progress, message);
-        }
-
-        DebugManager.Log($"{progress * 100:F0}% - {message}", DebugCategory.Initialization);
-    }
-
-    private void OnDestroy()
-    {
-        // Cancelar operações async
-        cancellationTokenSource?.Cancel();
-        cancellationTokenSource?.Dispose();
     }
 }

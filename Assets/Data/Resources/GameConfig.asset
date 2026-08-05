@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec97c47d399c0046bfb403ccdad886a, type: 3}
+  m_Name: GameConfig
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Data.GameConfig
+  statDefinitions: {fileID: 11400000, guid: 6570185fa90e8b24c8b1ff4cee94143c, type: 2}
+  baseStats: {fileID: 11400000, guid: 5a4fd45454d71d34b87fd750b573ed1f, type: 2}
+  keywords: {fileID: 11400000, guid: 179ffba056efdca4584bdcaf0dc2febc, type: 2}
+  theme: {fileID: 11400000, guid: 033cecba93124994fadfd2bc15841edb, type: 2}

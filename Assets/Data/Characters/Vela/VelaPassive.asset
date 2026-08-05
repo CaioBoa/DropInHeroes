@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a5c0d0000000000000000000000a5, type: 3}
+  m_Name: VelaPassive
+  m_EditorClassIdentifier:
+  displayName: "Jaguaret\xE9 Aba"
+  description: "Acertos cr\xEDticos concedem ac\xFAmulos de {kw:jaguarete}. Aos 20
+    ac\xFAmulos, Vela desperta a forma Jaguaret\xE9 Aba (permanente no combate),
+    trocando suas habilidades. Aprimoramentos por forma (crescem com o rank): forma
+    Aba — Regenera\xE7\xE3o de Energia e b\xF4nus de cura; forma Jaguaret\xE9
+    Aba — Roubo de Vida e Ataque."
+  icon: {fileID: -7571465328117268554, guid: f3f81ec45e5a1764993a6731efb45d48, type: 3}
+  stackConditionId: jaguarete_stacks
+  critsToTransformByRank: 14000000100000000c000000
+  targetFormKey: jaguarete
+  transformAnimationKey: transform
+  baseFormConditionId: aba_bonus
+  baseFormBonus:
+  - stat: 6
+    asPercent: 1
+    valuesByRank:
+    - 0.3
+    - 0.4
+    - 0.5
+  baseFormHealDoneByRank:
+  - 1.1
+  - 1.2
+  - 1.3
+  targetFormConditionId: jaguarete_bonus
+  targetFormBonus:
+  - stat: 22
+    asPercent: 0
+    valuesByRank:
+    - 15
+    - 20
+    - 25
+  - stat: 0
+    asPercent: 1
+    valuesByRank:
+    - 0.2
+    - 0.35
+    - 0.5
+  targetFormHealDoneByRank: []

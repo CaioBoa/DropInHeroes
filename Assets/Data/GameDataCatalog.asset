@@ -15,24 +15,22 @@ MonoBehaviour:
   characters:
     allData:
     - {fileID: 11400000, guid: 67626a84333a0c24e88a5e9ab2d089f0, type: 2}
+    - {fileID: 11400000, guid: cb36a1be00e0e1645a1fc41475cd6beb, type: 2}
     - {fileID: 11400000, guid: 0a86f2be6b3cf744fa2840658c0bc1d3, type: 2}
-    - {fileID: 11400000, guid: d0809f7d4a1159140b7df32eea8b8d94, type: 2}
-    - {fileID: 11400000, guid: 68f1e920c618d6945a5f5310060f4b95, type: 2}
+    - {fileID: 11400000, guid: 51d9b276707a9204e838de6b7605b749, type: 2}
     - {fileID: 11400000, guid: 0b21cc3c9aaa6c2488553b9aa35e038a, type: 2}
-    - {fileID: 11400000, guid: 0ecc5301e49dfef4fb0ceadee8f0a99f, type: 2}
-    - {fileID: 11400000, guid: 2dfd423cfcb6db349a6b4eaec24d15a5, type: 2}
+    - {fileID: 11400000, guid: 5b729760725dd1d469bf28e406093791, type: 2}
     - {fileID: 11400000, guid: b8b9b9f657dcbe8438fca7c2d5949d73, type: 2}
-    - {fileID: 11400000, guid: ecacd36fe9f7d5f449475167b80e7797, type: 2}
-  dialogues:
+    - {fileID: 11400000, guid: 4d20a6bd2f7472a44a051de4790b5213, type: 2}
+    - {fileID: 11400000, guid: 7a3f8b1274cfcd94ebf86eabe92d9e0f, type: 2}
+  artifacts:
     allData:
-    - {fileID: 11400000, guid: 94339dd2063f3224aac00f3f840277cd, type: 2}
-    - {fileID: 11400000, guid: aff0a034341b1be4a9dc97b2449bf57e, type: 2}
-    - {fileID: 11400000, guid: 80602d402442d8e46bbe37880b75ea00, type: 2}
-    - {fileID: 11400000, guid: 81c0fdbb37f93e04a95aa958f319cea3, type: 2}
-    - {fileID: 11400000, guid: 90fcdce202f17a94d9ea4bc791c628de, type: 2}
-    - {fileID: 11400000, guid: ef28c721d1eb894449ef8f4b897adb62, type: 2}
-    - {fileID: 11400000, guid: 609db06b8444d674db0b9cd280181f5c, type: 2}
-    - {fileID: 11400000, guid: 796887cd0717b384a83c04c965940698, type: 2}
-  battles:
+    - {fileID: 11400000, guid: 922eb061a9a9dc940ac61aa97c976e79, type: 2}
+    - {fileID: 11400000, guid: 275f1af5371a0fc47a9ce1848fe0d73d, type: 2}
+    - {fileID: 11400000, guid: 1437d118664dd854d9c00613f3289a1a, type: 2}
+    - {fileID: 11400000, guid: 89df405d6f541624781cc4e50e8cc9b3, type: 2}
+    - {fileID: 11400000, guid: d0c354cf0a4f16f43b8b93351e09c86d, type: 2}
+  statTrees:
     allData:
-    - {fileID: 11400000, guid: de6a6f6b0af074946ae79ecd10a253b1, type: 2}
+    - {fileID: 11400000, guid: 74958b525bd5c8540a799817f98a0738, type: 2}
+  statusCatalog: {fileID: 11400000, guid: 5ca7a1090b1c2d3e4f5a6b7c8d9e0f11, type: 2}

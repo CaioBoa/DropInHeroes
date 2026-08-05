@@ -1,5 +1,12 @@
-public enum ResourceType
+using DropInHeroes.Data;
+using DropInHeroes.Utils;
+
+namespace DropInHeroes.Combat
 {
-    Health,
-    Energy
+
+    public enum ResourceType
+    {
+        Health,
+        Energy
+    }
 }

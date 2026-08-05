@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae78baeaa86960488239695fc06ccdc, type: 3}
+  m_Name: DarulitoPassive
+  m_EditorClassIdentifier:
+  displayName:
+  description: "Enquanto Darulito estiver vivo, aliados recebem resistência a penetração
+    e a penetração mágica (30/40/50 por rank); Darulito converte 1% do Poder Mágico
+    em Regeneração de Energia."
+  icon: {fileID: -7479502769558314024, guid: b9eaf04cf52a5404895aee7691e1c6e7, type: 3}
+  penResistanceByRank:
+  - 30
+  - 40
+  - 50
+  magicPenResistanceByRank:
+  - 30
+  - 40
+  - 50
+  energyRegenPercentOfMagic: 0.01

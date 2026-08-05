@@ -1,210 +1,144 @@
+using System;
 using UnityEngine;
 using UnityEditor;
 using System.IO;
+using DropInHeroes.Core;
+using DropInHeroes.Utils;
 
-public class BatchRenamer : EditorWindow
+namespace DropInHeroes.Editor
 {
-    private string findText = "";
-    private string replaceText = "";
-    private string prefix = "";
-    private string suffix = "";
-    private bool addNumbers = false;
-    private int startNumber = 0;
 
-    [MenuItem("Tools/Batch Renamer")]
-    public static void ShowWindow()
+    public class BatchRenamer : EditorWindow
     {
-        GetWindow<BatchRenamer>("Batch Renamer");
-    }
+        private string findText = "";
+        private string replaceText = "";
+        private string prefix = "";
+        private string suffix = "";
+        private bool addNumbers = false;
+        private int startNumber = 0;
 
-    private void OnGUI()
-    {
-        GUILayout.Label("Batch Rename Tool", EditorStyles.boldLabel);
-        
-        EditorGUILayout.Space();
-        EditorGUILayout.HelpBox($"Selecionados: {Selection.objects.Length} arquivos", MessageType.Info);
-        
-        EditorGUILayout.Space();
-        GUILayout.Label("Find and Replace", EditorStyles.boldLabel);
-        findText = EditorGUILayout.TextField("Encontrar:", findText);
-        replaceText = EditorGUILayout.TextField("Substituir por:", replaceText);
-        
-        if (GUILayout.Button("Replace"))
+        [MenuItem("Tools/Batch Renamer")]
+        public static void ShowWindow()
         {
-            FindAndReplace();
+            GetWindow<BatchRenamer>("Batch Renamer");
         }
-        
-        EditorGUILayout.Space();
-        EditorGUILayout.Space();
-        
-        GUILayout.Label("Prefix/Suffix", EditorStyles.boldLabel);
-        prefix = EditorGUILayout.TextField("Prefixo:", prefix);
-        suffix = EditorGUILayout.TextField("Sufixo:", suffix);
-        
-        if (GUILayout.Button("Add Prefix/Suffix"))
-        {
-            AddPrefixSuffix();
-        }
-        
-        EditorGUILayout.Space();
-        EditorGUILayout.Space();
-        
-        GUILayout.Label("Numbering", EditorStyles.boldLabel);
-        addNumbers = EditorGUILayout.Toggle("Adicionar Números", addNumbers);
-        startNumber = EditorGUILayout.IntField("Começar em:", startNumber);
-        
-        if (GUILayout.Button("Apply Numbers"))
-        {
-            ApplyNumbering();
-        }
-        
-        EditorGUILayout.Space();
-        
-        if (GUILayout.Button("Remove Numbers (at end)"))
-        {
-            RemoveTrailingNumbers();
-        }
-    }
 
-    private void FindAndReplace()
-    {
-        if (string.IsNullOrEmpty(findText))
+        private void OnGUI()
         {
-            EditorUtility.DisplayDialog("Erro", "Campo 'Encontrar' não pode estar vazio", "OK");
-            return;
-        }
+            GUILayout.Label("Batch Rename Tool", EditorStyles.boldLabel);
         
-        int count = 0;
+            EditorGUILayout.Space();
+            EditorGUILayout.HelpBox($"Selecionados: {Selection.objects.Length} arquivos", MessageType.Info);
         
-        foreach (Object obj in Selection.objects)
-        {
-            string path = AssetDatabase.GetAssetPath(obj);
-            if (string.IsNullOrEmpty(path)) continue;
-            
-            string oldName = Path.GetFileNameWithoutExtension(path);
-            
-            if (oldName.Contains(findText))
+            EditorGUILayout.Space();
+            GUILayout.Label("Find and Replace", EditorStyles.boldLabel);
+            findText = EditorGUILayout.TextField("Encontrar:", findText);
+            replaceText = EditorGUILayout.TextField("Substituir por:", replaceText);
+        
+            if (GUILayout.Button("Replace"))
             {
-                string newName = oldName.Replace(findText, replaceText);
-                string result = AssetDatabase.RenameAsset(path, newName);
-                
-                if (string.IsNullOrEmpty(result))
-                {
-                    count++;
-                }
-                else
-                {
-                    Debug.LogError($"Erro ao renomear {oldName}: {result}");
-                }
+                FindAndReplace();
+            }
+        
+            EditorGUILayout.Space();
+            EditorGUILayout.Space();
+        
+            GUILayout.Label("Prefix/Suffix", EditorStyles.boldLabel);
+            prefix = EditorGUILayout.TextField("Prefixo:", prefix);
+            suffix = EditorGUILayout.TextField("Sufixo:", suffix);
+        
+            if (GUILayout.Button("Add Prefix/Suffix"))
+            {
+                AddPrefixSuffix();
+            }
+        
+            EditorGUILayout.Space();
+            EditorGUILayout.Space();
+        
+            GUILayout.Label("Numbering", EditorStyles.boldLabel);
+            addNumbers = EditorGUILayout.Toggle("Adicionar Números", addNumbers);
+            startNumber = EditorGUILayout.IntField("Começar em:", startNumber);
+        
+            if (GUILayout.Button("Apply Numbers"))
+            {
+                ApplyNumbering();
+            }
+        
+            EditorGUILayout.Space();
+        
+            if (GUILayout.Button("Remove Numbers (at end)"))
+            {
+                RemoveTrailingNumbers();
             }
         }
-        
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-        
-        EditorUtility.DisplayDialog("Concluído", $"{count} arquivos renomeados", "OK");
-    }
 
-    private void AddPrefixSuffix()
-    {
-        if (string.IsNullOrEmpty(prefix) && string.IsNullOrEmpty(suffix))
+        private void FindAndReplace()
         {
-            EditorUtility.DisplayDialog("Erro", "Adicione um prefixo ou sufixo", "OK");
-            return;
-        }
-        
-        int count = 0;
-        
-        foreach (Object obj in Selection.objects)
-        {
-            string path = AssetDatabase.GetAssetPath(obj);
-            if (string.IsNullOrEmpty(path)) continue;
-            
-            string oldName = Path.GetFileNameWithoutExtension(path);
-            string newName = prefix + oldName + suffix;
-            
-            string result = AssetDatabase.RenameAsset(path, newName);
-            
-            if (string.IsNullOrEmpty(result))
+            if (string.IsNullOrEmpty(findText))
             {
-                count++;
+                EditorUtility.DisplayDialog("Erro", "Campo 'Encontrar' não pode estar vazio", "OK");
+                return;
             }
-            else
-            {
-                Debug.LogError($"Erro ao renomear {oldName}: {result}");
-            }
-        }
-        
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-        
-        EditorUtility.DisplayDialog("Concluído", $"{count} arquivos renomeados", "OK");
-    }
 
-    private void ApplyNumbering()
-    {
-        int count = 0;
-        int currentNumber = startNumber;
-        
-        foreach (Object obj in Selection.objects)
-        {
-            string path = AssetDatabase.GetAssetPath(obj);
-            if (string.IsNullOrEmpty(path)) continue;
-            
-            string oldName = Path.GetFileNameWithoutExtension(path);
-            string newName = $"{oldName}_{currentNumber:D2}"; // D2 = 2 dígitos (01, 02, 03...)
-            
-            string result = AssetDatabase.RenameAsset(path, newName);
-            
-            if (string.IsNullOrEmpty(result))
-            {
-                count++;
-                currentNumber++;
-            }
-            else
-            {
-                Debug.LogError($"Erro ao renomear {oldName}: {result}");
-            }
+            RenameSelected(oldName => oldName.Contains(findText) ? oldName.Replace(findText, replaceText) : oldName);
         }
-        
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-        
-        EditorUtility.DisplayDialog("Concluído", $"{count} arquivos renomeados", "OK");
-    }
 
-    private void RemoveTrailingNumbers()
-    {
-        int count = 0;
-        
-        foreach (Object obj in Selection.objects)
+        private void AddPrefixSuffix()
         {
-            string path = AssetDatabase.GetAssetPath(obj);
-            if (string.IsNullOrEmpty(path)) continue;
-            
-            string oldName = Path.GetFileNameWithoutExtension(path);
-            
+            if (string.IsNullOrEmpty(prefix) && string.IsNullOrEmpty(suffix))
+            {
+                EditorUtility.DisplayDialog("Erro", "Adicione um prefixo ou sufixo", "OK");
+                return;
+            }
+
+            RenameSelected(oldName => prefix + oldName + suffix);
+        }
+
+        private void ApplyNumbering()
+        {
+            int n = startNumber;
+            RenameSelected(oldName => $"{oldName}_{n++:D2}"); // D2 = 2 dígitos (01, 02, 03...)
+        }
+
+        private void RemoveTrailingNumbers()
+        {
             // Remove números e underscore no final (ex: "sprite_01" -> "sprite")
-            string newName = System.Text.RegularExpressions.Regex.Replace(oldName, @"_\d+$", "");
-            
-            if (newName != oldName)
+            RenameSelected(oldName => System.Text.RegularExpressions.Regex.Replace(oldName, @"_\d+$", ""));
+        }
+
+        /// <summary>
+        /// Renomeia cada asset selecionado aplicando 'transform' ao nome (sem extensão). Pula o asset
+        /// quando o transform retorna nulo/vazio ou o mesmo nome. Envolve em StartAssetEditing para
+        /// evitar reimportações intermediárias. Centraliza o boilerplate das quatro ações.
+        /// </summary>
+        private static void RenameSelected(Func<string, string> transform)
+        {
+            int count = 0;
+            try
             {
-                string result = AssetDatabase.RenameAsset(path, newName);
-                
-                if (string.IsNullOrEmpty(result))
+                AssetDatabase.StartAssetEditing();
+                foreach (UnityEngine.Object obj in Selection.objects)
                 {
-                    count++;
-                }
-                else
-                {
-                    Debug.LogError($"Erro ao renomear {oldName}: {result}");
+                    string path = AssetDatabase.GetAssetPath(obj);
+                    if (string.IsNullOrEmpty(path)) continue;
+
+                    string oldName = Path.GetFileNameWithoutExtension(path);
+                    string newName = transform(oldName);
+                    if (string.IsNullOrEmpty(newName) || newName == oldName) continue;
+
+                    string error = AssetDatabase.RenameAsset(path, newName);
+                    if (string.IsNullOrEmpty(error)) count++;
+                    else Debug.LogError($"Erro ao renomear {oldName}: {error}");
                 }
             }
+            finally
+            {
+                AssetDatabase.StopAssetEditing();
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+            }
+
+            EditorUtility.DisplayDialog("Concluído", $"{count} arquivos renomeados", "OK");
         }
-        
-        AssetDatabase.SaveAssets();
-        AssetDatabase.Refresh();
-        
-        EditorUtility.DisplayDialog("Concluído", $"{count} arquivos renomeados", "OK");
     }
 }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a5c0d0000000000000000000000b1, type: 3}
+  m_Name: RikurbyBaseAttack
+  m_EditorClassIdentifier:
+  displayName:
+  description: 'Rikurby golpeia o inimigo causando {kw:dano_fisico} (150% do Ataque).'
+  icon: {fileID: -6267368822919433095, guid: 48860cfb070194a4b9f5cd84956ddf24, type: 3}
+  skillModifiers: []
+  attackScaling: 1.5

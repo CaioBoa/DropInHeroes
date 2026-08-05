@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a41da8e6b40c4d29e0f1a2b3c4d5a12, type: 3}
+  m_Name: HamiSupreme
+  m_EditorClassIdentifier:
+  displayName: Onda Infernal
+  description: "Hami lan\xE7a uma onda infernal em linha, causando {kw:dano_magico}
+    aos inimigos e ignorando 50% da Defesa M\xE1gica deles."
+  icon: {fileID: 2964317532479718251, guid: 3ae94c31403a5774c8a6090cbfb6e033, type: 3}
+  skillModifiers: []
+  energyCost: 50
+  animationSpeedReference: 2.5
+  penetrationBonus: 50
+  damageScaling: 5
+  lineWidth: 2
+  lineLength: 7
+  waveVfxClip: {fileID: 7400000, guid: 06a64d771475821428a3908d82c36bba, type: 2}

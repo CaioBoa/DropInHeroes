@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e999001a03962eb40bfbfeaa78b5073f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6011a77ac6b40c4d19e0f1a2b3c4d5a1, type: 3}
   m_Name: GuliverBaseAttack
-  m_EditorClassIdentifier: 
-  displayName: "Corte do Her\xF3i"
-  skillType: 0
+  m_EditorClassIdentifier:
+  displayName: "Corte Her\xF3ico"
+  description: 'Guliver desfere um golpe com sua espada, causando {kw:dano_fisico}.{shift:
+    (100% do Ataque + 5% da {kw:vida_maxima})}'
+  icon: {fileID: 3489287779742943943, guid: 269ec1da3cb8901449a5318c34141992, type: 3}
+  attackScaling: 1
+  healthScaling: 0.05

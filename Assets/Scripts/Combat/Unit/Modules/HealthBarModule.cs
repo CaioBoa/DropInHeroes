@@ -1,66 +1,101 @@
 using UnityEngine;
+using DropInHeroes.Data;
+using DropInHeroes.Utils;
 
-public class HealthBarModule : IUnitModule
+namespace DropInHeroes.Combat
 {
-    private UnitController controller;
-    private StatsModule stats;
-    private HealthBar healthBar;
 
-    public void Initialize(UnitController unitController)
+    public class HealthBarModule : IUnitModule
     {
-        controller = unitController;
-        stats = controller.GetModule<StatsModule>();
+        private UnitController controller;
+        private StatsModule stats;
+        private ShieldModule shield;
+        private HealthBar healthBar;
 
-        healthBar = controller.GetComponentInChildren<HealthBar>(true);
-
-        if (healthBar == null)
+        public void Initialize(UnitController unitController)
         {
-            DebugManager.LogWarning("HealthBar não encontrado no prefab!", DebugCategory.Combat);
-            return;
+            controller = unitController;
+            stats = controller.GetModule<StatsModule>();
+            shield = controller.GetModule<ShieldModule>();
+
+            healthBar = controller.GetComponentInChildren<HealthBar>(true);
+
+            if (healthBar == null)
+            {
+                DebugManager.LogWarning("HealthBar não encontrado no prefab!", DebugCategory.Combat);
+                return;
+            }
+
+            bool isPlayer = controller.IsPlayerUnit();
+            healthBar.Initialize(isPlayer);
+
+            var healthResource = stats?.GetResourceObject(ResourceType.Health);
+            if (healthResource != null)
+                healthResource.OnValueChanged += OnHealthChanged;
+
+            // Escudo absorve ANTES da vida: quando ele muda sem a vida mudar (dano só no escudo,
+            // ganho/quebra de escudo), a barra precisa refletir a fatia azul mesmo assim.
+            if (shield != null)
+                shield.OnChanged += RefreshBar;
+
+            healthBar.Hide();
         }
 
-        bool isPlayer = controller.IsPlayerUnit();
-        healthBar.Initialize(isPlayer);
+        private void OnHealthChanged(float _) => RefreshBar();
 
-        var healthResource = stats?.GetResourceObject(ResourceType.Health);
-        if (healthResource != null)
-            healthResource.OnValueChanged += OnHealthChanged;
+        private void RefreshBar()
+        {
+            if (healthBar == null || stats == null) return;
+            ComputeNorms(out float healthNorm, out float shieldTopNorm);
+            healthBar.SetHealth(healthNorm, shieldTopNorm);
+        }
 
-        healthBar.Hide();
-    }
+        // Escala TOTAL = maxHP + escudo (reescala): a vida ocupa HP/total, o escudo a fatia até
+        // (HP+escudo)/total. Sem escudo, total = maxHP e o comportamento é o de sempre.
+        private void ComputeNorms(out float healthNorm, out float shieldTopNorm)
+        {
+            float hp = stats.CurrentHealth;
+            float shieldAmount = shield != null ? shield.TotalShield : 0f;
+            float total = stats.MaxHealth + shieldAmount;
+            if (total <= 0f) { healthNorm = 0f; shieldTopNorm = 0f; return; }
+            healthNorm = hp / total;
+            shieldTopNorm = (hp + shieldAmount) / total;
+        }
 
-    private void OnHealthChanged(float currentHealth)
-    {
-        if (healthBar == null || stats == null) return;
+        public void OnEnabled()
+        {
+            if (healthBar != null && stats != null)
+            {
+                ComputeNorms(out float healthNorm, out float shieldTopNorm);
+                healthBar.SnapToHealth(healthNorm, shieldTopNorm);
+            }
+            healthBar?.Show();
+        }
 
-        float percent = stats.MaxHealth > 0 ? stats.CurrentHealth / stats.MaxHealth : 0;
-        healthBar.SetHealthPercent(percent);
-    }
+        public void OnDisabled()
+        {
+            healthBar?.Hide();
+        }
 
-    public void OnEnabled()
-    {
-        healthBar?.Show();
-    }
+        public void Cleanup()
+        {
+            var healthResource = stats?.GetResourceObject(ResourceType.Health);
+            if (healthResource != null)
+                healthResource.OnValueChanged -= OnHealthChanged;
 
-    public void OnDisabled()
-    {
-        healthBar?.Hide();
-    }
+            if (shield != null)
+                shield.OnChanged -= RefreshBar;
 
-    public void Cleanup()
-    {
-        var healthResource = stats?.GetResourceObject(ResourceType.Health);
-        if (healthResource != null)
-            healthResource.OnValueChanged -= OnHealthChanged;
+            healthBar = null;
+            stats = null;
+            shield = null;
+            controller = null;
+        }
 
-        healthBar = null;
-        stats = null;
-        controller = null;
-    }
-
-    public void ResetForPool()
-    {
-        healthBar?.ResetToFull();
-        healthBar?.Hide();
+        public void ResetForPool()
+        {
+            healthBar?.ResetToFull();
+            healthBar?.Hide();
+        }
     }
 }

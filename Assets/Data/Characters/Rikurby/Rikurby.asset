@@ -1,0 +1,187 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b12ce1e3165124eb031e13224a64f7, type: 3}
+  m_Name: Rikurby
+  m_EditorClassIdentifier: 
+  id: rikurby
+  category: 0
+  idleAnimation: {fileID: 7400000, guid: 4910ad2aa03061e49b7614d42b0c11fc, type: 2}
+  runAnimation: {fileID: 7400000, guid: c5e92b5cdeb19b24f9bd9aff1e732175, type: 2}
+  dragAnimation: {fileID: 7400000, guid: ff6f297de4513c94095ab49e92243e80, type: 2}
+  attackAnimation: {fileID: 7400000, guid: 75dd546c91185c34d891147b398a57e6, type: 2}
+  deathAnimation: {fileID: 7400000, guid: 4cfa29726d0b9be45b81e9b50961c2d6, type: 2}
+  deathIdleAnimation: {fileID: 7400000, guid: 8a19a1dd5c1c40a4e844b9c822912582, type: 2}
+  supremeAnimation: {fileID: 7400000, guid: 263bc568674585949922ba82a5e35b53, type: 2}
+  stunAnimation: {fileID: 7400000, guid: 51d427199c7148e40bc215f26c1351e7, type: 2}
+  victoryAnimation: {fileID: 7400000, guid: 01417f3e120ecdb459f0b0d468e82ad8, type: 2}
+  extraAnimations: []
+  animationProfiles: []
+  forms: []
+  visualScale: 1
+  animClipTunings: []
+  overheadHeight: 1.73
+  selectionRingScale: 0.94
+  selectionRingOffsetY: -1
+  primaryType: 1
+  secondaryType: 11
+  defaultSprite: {fileID: 346742082931922304, guid: d39e77c3e3a4e0a42bb75b95b21abd91, type: 3}
+  cardPortrait: {fileID: 144458586, guid: 94a3b91ecbaaf704e8e31da688ec86ab, type: 3}
+  portrait2x1: {fileID: 8711755818734183509, guid: 94a3b91ecbaaf704e8e31da688ec86ab, type: 3}
+  displayName: Rikurby
+  lore: "Escondido nas sombras de uma sociedade que s\xF3 sabia julgar sua apar\xEAncia
+    grotesca, o monstro cansou-se de mendigar a aceita\xE7\xE3o que o mundo sempre
+    lhe negou. Rejeitado pelos homens e banido para as margens da civiliza\xE7\xE3o,
+    ele transformou sua solid\xE3o em imp\xE9rio e sua dor em mercadoria, tornando-se
+    o senhor do submundo do tr\xE1fico. Hoje, aqueles que antes o escorra\xE7avam
+    sob a luz do dia imploram por seus segredos na calada da noite, curvando-se diante
+    do monstro que o pr\xF3prio preconceito deles criou."
+  baseSkill: {fileID: 11400000, guid: b86cd0f4544d41b44908b4e0b31e5f65, type: 2}
+  supremeSkill: {fileID: 11400000, guid: 8adaefa5abb9dd7428be8f9175215439, type: 2}
+  passiveSkill: {fileID: 11400000, guid: 6b40667195ee9284d8088b9bc041521c, type: 2}
+  defaultBuild:
+    label: Default
+    artifactId: camisa_antisocial
+    allocations:
+    - nodeId: free2
+      points: 1
+    - nodeId: free5
+      points: 1
+    - nodeId: free47
+      points: 1
+    - nodeId: free48
+      points: 1
+    - nodeId: free55
+      points: 1
+    - nodeId: free68
+      points: 1
+    - nodeId: free0
+      points: 1
+    - nodeId: free9
+      points: 1
+    - nodeId: free43
+      points: 1
+    - nodeId: free44
+      points: 1
+    - nodeId: free59
+      points: 1
+    - nodeId: free66
+      points: 1
+    - nodeId: free3
+      points: 1
+    - nodeId: free7
+      points: 1
+    - nodeId: free45
+      points: 1
+    - nodeId: free46
+      points: 1
+    - nodeId: free57
+      points: 1
+    - nodeId: free67
+      points: 1
+    - nodeId: free1
+      points: 1
+    - nodeId: free13
+      points: 1
+    - nodeId: free140
+      points: 1
+    - nodeId: g7s3
+      points: 1
+    - nodeId: g2s3
+      points: 1
+    - nodeId: g11s3
+      points: 1
+    - nodeId: g15s3
+      points: 1
+    - nodeId: g16s3
+      points: 1
+    - nodeId: g21s3
+      points: 1
+    - nodeId: g23s3
+      points: 1
+    - nodeId: free146
+      points: 1
+    - nodeId: g27s3
+      points: 1
+    - nodeId: g28s3
+      points: 1
+    - nodeId: g30s3
+      points: 1
+    - nodeId: free145
+      points: 1
+    - nodeId: g24s3
+      points: 1
+    - nodeId: free205
+      points: 1
+    - nodeId: g32s3
+      points: 1
+    - nodeId: g37s2
+      points: 1
+    - nodeId: g36s2
+      points: 1
+    - nodeId: g35s3
+      points: 1
+    - nodeId: g38s2
+      points: 1
+    - nodeId: free206
+      points: 1
+    - nodeId: g39s2
+      points: 1
+    - nodeId: g0s4
+      points: 1
+    - nodeId: g7s4
+      points: 1
+    - nodeId: g1s4
+      points: 1
+    - nodeId: g6s4
+      points: 1
+    - nodeId: g1s3
+      points: 1
+    - nodeId: g6s3
+      points: 1
+    - nodeId: g18s3
+      points: 1
+    - nodeId: g19s3
+      points: 1
+    - nodeId: g40s2
+      points: 1
+    - nodeId: g29s3
+      points: 1
+    - nodeId: g22s3
+      points: 1
+    - nodeId: g31s3
+      points: 1
+    - nodeId: g0s2
+      points: 1
+    - nodeId: g6s2
+      points: 1
+    - nodeId: g8s2
+      points: 1
+    - nodeId: free141
+      points: 1
+    - nodeId: g4s2
+      points: 1
+    - nodeId: g5s2
+      points: 1
+  tags: 1
+  capabilities: -1
+  maxSummons: 8
+  statPoints:
+  - type: 0
+    points: 6
+  - type: 4
+    points: 8
+  - type: 1
+    points: 3
+  - type: 17
+    points: 3
+  - type: 20
+    points: 10

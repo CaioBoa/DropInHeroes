@@ -23,19 +23,167 @@ MonoBehaviour:
   supremeAnimation: {fileID: 7400000, guid: 4b8ebb7b9ffdc3340a84513eed2acf98, type: 2}
   stunAnimation: {fileID: 7400000, guid: 09b386719cf5e7a40be8bf84e579517d, type: 2}
   victoryAnimation: {fileID: 7400000, guid: 2593d7f04e1ec874fa2d2ba7d5a6cddf, type: 2}
-  extraAnimation1: {fileID: 0}
-  extraAnimation2: {fileID: 0}
-  defaultSprite: {fileID: 21300000, guid: d444bbad6a91b2249a2ebbbe18df40f5, type: 3}
-  dialoguePortrait: {fileID: -1687662815032365482, guid: 2b223f1eede939446946eb9a9a1ae673, type: 3}
-  cardPortrait: {fileID: -162364808, guid: 2b223f1eede939446946eb9a9a1ae673, type: 3}
+  extraAnimations: []
+  animationProfiles: []
+  forms: []
+  visualScale: 0.95
+  animClipTunings: []
+  overheadHeight: 0.91
+  selectionRingScale: 0.61
+  selectionRingOffsetY: -1.01
+  primaryType: 4
+  secondaryType: 0
+  defaultSprite: {fileID: -2446746245980225889, guid: f1e78dd4f0844fd4cb36b57079afe7e7, type: 3}
+  cardPortrait: {fileID: -1486197312, guid: 1e36d43190bbf6443af5c9763997c6d5, type: 3}
+  portrait2x1: {fileID: 4524199631213794761, guid: 1e36d43190bbf6443af5c9763997c6d5, type: 3}
   displayName: Guliver
+  lore: "Entre p\xE1ginas gastas e f\xF3rmulas anotadas \xE0s pressas, o jovem estudante
+    fitava o horizonte, carregando nos olhos o brilho audaz de quem sonha em ser
+    her\xF3i. Ele ainda n\xE3o cruzara espadas nem desafiara imp\xE9rios, mas sua
+    mente j\xE1 desenhava o amanh\xE3 com a tinta da coragem. Mal sabe o mundo que,
+    sob o uniforme simples da juventude, pulsa um cora\xE7\xE3o pronto para o extraordin\xE1rio,
+    guardado por um destino magn\xEDfico onde a gl\xF3ria e um futuro brilhante j\xE1
+    o aguardam de bra\xE7os abertos."
   baseSkill: {fileID: 11400000, guid: d469abc48e176884c826fe411fff8d71, type: 2}
   supremeSkill: {fileID: 11400000, guid: 2dd12e5ab259fbb468c3dd1278bf14a7, type: 2}
   passiveSkill: {fileID: 11400000, guid: b3999f1c4082fb24ea673c4b1fc866e7, type: 2}
-  baseAttack: 10
-  baseDefense: 0
-  baseSpeed: 3
-  baseRange: 1.5
-  baseMaxHealth: 100
-  baseMaxEnergy: 50
-  baseEnergyRegeneration: 5
+  defaultBuild:
+    label: Default
+    artifactId: energy_shield
+    allocations:
+    - nodeId: free2
+      points: 1
+    - nodeId: free5
+      points: 1
+    - nodeId: free47
+      points: 1
+    - nodeId: free48
+      points: 1
+    - nodeId: free55
+      points: 1
+    - nodeId: free68
+      points: 1
+    - nodeId: free3
+      points: 1
+    - nodeId: free7
+      points: 1
+    - nodeId: free45
+      points: 1
+    - nodeId: free46
+      points: 1
+    - nodeId: free57
+      points: 1
+    - nodeId: free67
+      points: 1
+    - nodeId: free6
+      points: 1
+    - nodeId: free193
+      points: 1
+    - nodeId: free181
+      points: 1
+    - nodeId: free54
+      points: 1
+    - nodeId: free22
+      points: 1
+    - nodeId: free23
+      points: 1
+    - nodeId: free1
+      points: 1
+    - nodeId: free13
+      points: 1
+    - nodeId: g0s2
+      points: 1
+    - nodeId: g2s2
+      points: 1
+    - nodeId: g11s2
+      points: 1
+    - nodeId: g15s2
+      points: 1
+    - nodeId: g16s2
+      points: 1
+    - nodeId: g18s2
+      points: 1
+    - nodeId: g17s2
+      points: 1
+    - nodeId: g22s2
+      points: 1
+    - nodeId: g24s2
+      points: 1
+    - nodeId: free144
+      points: 1
+    - nodeId: g27s2
+      points: 1
+    - nodeId: g29s2
+      points: 1
+    - nodeId: g30s2
+      points: 1
+    - nodeId: free140
+      points: 1
+    - nodeId: g6s3
+      points: 1
+    - nodeId: g1s3
+      points: 1
+    - nodeId: g2s3
+      points: 1
+    - nodeId: g7s3
+      points: 1
+    - nodeId: g11s3
+      points: 1
+    - nodeId: g15s3
+      points: 1
+    - nodeId: g16s3
+      points: 1
+    - nodeId: g18s3
+      points: 1
+    - nodeId: g19s3
+      points: 1
+    - nodeId: g6s2
+      points: 1
+    - nodeId: g8s2
+      points: 1
+    - nodeId: g7s2
+      points: 1
+    - nodeId: g40s2
+      points: 1
+    - nodeId: g39s2
+      points: 1
+    - nodeId: g38s2
+      points: 1
+    - nodeId: g37s2
+      points: 1
+    - nodeId: g34s3
+      points: 1
+    - nodeId: g35s3
+      points: 1
+    - nodeId: g32s3
+      points: 1
+    - nodeId: g31s3
+      points: 1
+    - nodeId: g22s3
+      points: 1
+    - nodeId: g24s3
+      points: 1
+    - nodeId: free145
+      points: 1
+    - nodeId: g27s3
+      points: 1
+    - nodeId: g29s3
+      points: 1
+    - nodeId: g30s3
+      points: 1
+  tags: 1
+  capabilities: -1
+  maxSummons: 0
+  statPoints:
+  - type: 4
+    points: 13
+  - type: 1
+    points: 4
+  - type: 17
+    points: 4
+  - type: 0
+    points: 1
+  - type: 15
+    points: 5
+  - type: 21
+    points: 5

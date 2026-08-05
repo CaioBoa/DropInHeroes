@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 289f280abb13f7a4395c4aba81bc683c, type: 3}
+  m_Name: KentMelao
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Combat.ArtifactData
+  displayName: "Kent Mel\xE3o"
+  description: "Os ataques do portador causam dano m\xE1gico adicional com base no
+    Poder M\xE1gico."
+  id: kent_melao
+  category: 1
+  icon: {fileID: 6631514867642376896, guid: c4529b23df8daf8489c16f6d4cc4994b, type: 3}
+  statGrants: []
+  onHitEffects:
+  - {fileID: 7866503351091758326}
+  onBattleStartEffects: []
+  summonOnHitEffects: []
+--- !u!114 &7866503351091758326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8307511ba6f654548afcd47326481f3b, type: 3}
+  m_Name: KentOnHit
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Combat.DealDamageEffect
+  description: "{shift:Ataques: +{v:scalings.0.percent:MagicalPower} do Poder M\xE1gico
+    como dano m\xE1gico ao atingir}"
+  target:
+    side: 0
+    filter:
+      requireTags: 0
+      excludeTags: 0
+      onlyTargetable: 0
+    criterion: 0
+    count: 0
+    radiusMode: 0
+    radius: 0
+    lineWidth: 0
+    lineLength: 0
+  baseDamage: 0
+  scalings:
+  - stat: 16
+    percent: 50
+  damageType: 1
+  cannotCrit: 0
+  ignoreTypeAdvantage: 0

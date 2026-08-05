@@ -1,61 +1,69 @@
 using UnityEngine;
 using System.Collections.Generic;
+using DropInHeroes.Data;
+using DropInHeroes.Utils;
 
-[CreateAssetMenu(fileName = "StatDefinitionCatalog", menuName = "Game/System/Stat Definitions")]
-public class StatDefinitionCatalog : ScriptableObject
+namespace DropInHeroes.Combat
 {
-    [Header("Stat Definitions")]
-    [SerializeField] private List<StatDefinitionEntry> statDefinitions = new List<StatDefinitionEntry>();
 
-    [Header("Resource Definitions")]
-    [SerializeField] private List<ResourceDefinitionEntry> resourceDefinitions = new List<ResourceDefinitionEntry>();
-
-    private Dictionary<StatType, StatDefinition> statLookup;
-    private Dictionary<ResourceType, StatDefinition> resourceLookup;
-    private bool isInitialized;
-
-    public void Initialize()
+    [CreateAssetMenu(fileName = "StatDefinitionCatalog", menuName = "Game/System/Stat Definitions")]
+    public class StatDefinitionCatalog : ScriptableObject
     {
-        if (isInitialized) return;
+        [Header("Stat Definitions")]
+        [SerializeField] private List<StatDefinitionEntry> statDefinitions = new List<StatDefinitionEntry>();
 
-        statLookup = new Dictionary<StatType, StatDefinition>();
-        foreach (var entry in statDefinitions)
+        [Header("Resource Definitions")]
+        [SerializeField] private List<ResourceDefinitionEntry> resourceDefinitions = new List<ResourceDefinitionEntry>();
+
+        private Dictionary<StatType, StatDefinition> statLookup;
+        private Dictionary<ResourceType, StatDefinition> resourceLookup;
+        private bool isInitialized;
+
+        public void Initialize()
         {
-            statLookup[entry.type] = entry.definition;
+            // Guard pelos lookups (não pela flag): após reimport/reload do asset os dicionários
+            // podem voltar a null com isInitialized ainda true — reconstruir nesse caso.
+            if (statLookup != null && resourceLookup != null) return;
+
+            statLookup = new Dictionary<StatType, StatDefinition>();
+            foreach (var entry in statDefinitions)
+            {
+                statLookup[entry.type] = entry.definition;
+            }
+
+            resourceLookup = new Dictionary<ResourceType, StatDefinition>();
+            foreach (var entry in resourceDefinitions)
+            {
+                resourceLookup[entry.type] = entry.definition;
+            }
+
+            isInitialized = true;
         }
 
-        resourceLookup = new Dictionary<ResourceType, StatDefinition>();
-        foreach (var entry in resourceDefinitions)
+        public StatDefinition GetStatDefinition(StatType type)
         {
-            resourceLookup[entry.type] = entry.definition;
+            if (statLookup == null) Initialize();
+            return statLookup.TryGetValue(type, out var def) ? def : null;
         }
 
-        isInitialized = true;
+        public StatDefinition GetResourceDefinition(ResourceType type)
+        {
+            if (resourceLookup == null) Initialize();
+            return resourceLookup.TryGetValue(type, out var def) ? def : null;
+        }
     }
 
-    public StatDefinition GetStatDefinition(StatType type)
+    [System.Serializable]
+    public class StatDefinitionEntry
     {
-        if (!isInitialized) Initialize();
-        return statLookup.TryGetValue(type, out var def) ? def : null;
+        public StatType type;
+        public StatDefinition definition;
     }
 
-    public StatDefinition GetResourceDefinition(ResourceType type)
+    [System.Serializable]
+    public class ResourceDefinitionEntry
     {
-        if (!isInitialized) Initialize();
-        return resourceLookup.TryGetValue(type, out var def) ? def : null;
+        public ResourceType type;
+        public StatDefinition definition;
     }
-}
-
-[System.Serializable]
-public class StatDefinitionEntry
-{
-    public StatType type;
-    public StatDefinition definition;
-}
-
-[System.Serializable]
-public class ResourceDefinitionEntry
-{
-    public ResourceType type;
-    public StatDefinition definition;
 }

@@ -1,0 +1,184 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b12ce1e3165124eb031e13224a64f7, type: 3}
+  m_Name: Pedro
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Data.CharacterData
+  id: pedro
+  category: 0
+  idleAnimation: {fileID: 7400000, guid: 4485e7ed6f7e8e44ca6ba1819cd059c7, type: 2}
+  runAnimation: {fileID: 7400000, guid: 1086ef56ce6e1b3449b5a3dd768ee123, type: 2}
+  dragAnimation: {fileID: 7400000, guid: 3bb1b18e163fbd04786cc1ccf9205b1a, type: 2}
+  attackAnimation: {fileID: 7400000, guid: 9d5371ba10aad004f9b7381d20f62330, type: 2}
+  deathAnimation: {fileID: 7400000, guid: 9cfc7a5af906b6a49ab04517a4a4fb88, type: 2}
+  deathIdleAnimation: {fileID: 7400000, guid: 8b28bfd8b6e58244d9d654d37ab0df96, type: 2}
+  supremeAnimation: {fileID: 7400000, guid: 553c60288e49dbf4daed3fa6e889d349, type: 2}
+  stunAnimation: {fileID: 7400000, guid: 1ce5471009f088d49bfa65072a37be57, type: 2}
+  victoryAnimation: {fileID: 7400000, guid: 32cf7230d418dc7449d0c7696ae28b57, type: 2}
+  extraAnimations: []
+  animationProfiles: []
+  forms: []
+  visualScale: 0.8
+  animClipTunings: []
+  overheadHeight: 1.3
+  selectionRingScale: 0.48
+  selectionRingOffsetY: -1
+  primaryType: 7
+  secondaryType: 0
+  defaultSprite: {fileID: 21300000, guid: 5b9e536e83a778544832de62d1ba9374, type: 3}
+  cardPortrait: {fileID: -6470145383457220403, guid: d531f6487fe849540a9104c7cbf0f4c7, type: 3}
+  portrait2x1: {fileID: 2116216325, guid: d531f6487fe849540a9104c7cbf0f4c7, type: 3}
+  displayName: Pedro
+  lore: "Um sujeito comum de camisa polo branca que um dia decidiu que resolveria
+    tudo no soco. Ningu\xE9m sabe por que seus golpes t\xEAm nomes t\xE3o estranhos
+    \u2014 s\xF3 sabem que o Soco Loiro d\xF3i, e que \xE9 bom t\xEA-lo do seu lado
+    quando o Caralio come\xE7a."
+  baseSkill: {fileID: 11400000, guid: 3b5e24e0c2746d8449bfba513c24503e, type: 2}
+  supremeSkill: {fileID: 11400000, guid: bfb0f1384d489f841b8d7f1f4da25cbe, type: 2}
+  passiveSkill: {fileID: 11400000, guid: be665ceb7ae175e41a873a2db4b3f566, type: 2}
+  defaultBuild:
+    label: 
+    artifactId: energy_shield
+    allocations:
+    - nodeId: free2
+      points: 1
+    - nodeId: free14
+      points: 1
+    - nodeId: free189
+      points: 1
+    - nodeId: free182
+      points: 1
+    - nodeId: free38
+      points: 1
+    - nodeId: free1
+      points: 1
+    - nodeId: free12
+      points: 1
+    - nodeId: free195
+      points: 1
+    - nodeId: free184
+      points: 1
+    - nodeId: free0
+      points: 1
+    - nodeId: free9
+      points: 1
+    - nodeId: free43
+      points: 1
+    - nodeId: free44
+      points: 1
+    - nodeId: free59
+      points: 1
+    - nodeId: free66
+      points: 1
+    - nodeId: free5
+      points: 1
+    - nodeId: free22
+      points: 1
+    - nodeId: free48
+      points: 1
+    - nodeId: free55
+      points: 1
+    - nodeId: free68
+      points: 1
+    - nodeId: free142
+      points: 1
+    - nodeId: g8s3
+      points: 1
+    - nodeId: g5s3
+      points: 1
+    - nodeId: g9s3
+      points: 1
+    - nodeId: g0s4
+      points: 1
+    - nodeId: g7s4
+      points: 1
+    - nodeId: g9s0
+      points: 1
+    - nodeId: g33s0
+      points: 1
+    - nodeId: g31s0
+      points: 1
+    - nodeId: g22s0
+      points: 1
+    - nodeId: g24s0
+      points: 1
+    - nodeId: g26s0
+      points: 1
+    - nodeId: g27s0
+      points: 1
+    - nodeId: g29s0
+      points: 1
+    - nodeId: g30s0
+      points: 1
+    - nodeId: g32s0
+      points: 1
+    - nodeId: g37s4
+      points: 1
+    - nodeId: g36s4
+      points: 1
+    - nodeId: g35s0
+      points: 1
+    - nodeId: g33s3
+      points: 1
+    - nodeId: g31s3
+      points: 1
+    - nodeId: g32s3
+      points: 1
+    - nodeId: g37s2
+      points: 1
+    - nodeId: g34s3
+      points: 1
+    - nodeId: g35s3
+      points: 1
+    - nodeId: g40s4
+      points: 1
+    - nodeId: g39s4
+      points: 1
+    - nodeId: g2s4
+      points: 1
+    - nodeId: g6s4
+      points: 1
+    - nodeId: g1s4
+      points: 1
+    - nodeId: g11s4
+      points: 1
+    - nodeId: g15s4
+      points: 1
+    - nodeId: g16s4
+      points: 1
+    - nodeId: g18s4
+      points: 1
+    - nodeId: g19s4
+      points: 1
+    - nodeId: g13s3
+      points: 1
+    - nodeId: g14s3
+      points: 1
+    - nodeId: g6s3
+      points: 1
+    - nodeId: g2s3
+      points: 1
+    - nodeId: g11s3
+      points: 1
+  tags: 1
+  capabilities: -1
+  maxSummons: 0
+  statPoints:
+  - type: 0
+    points: 8
+  - type: 16
+    points: 6
+  - type: 4
+    points: 7
+  - type: 1
+    points: 5
+  - type: 2
+    points: 4

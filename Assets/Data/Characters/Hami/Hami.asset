@@ -1,0 +1,191 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0b12ce1e3165124eb031e13224a64f7, type: 3}
+  m_Name: Hami
+  m_EditorClassIdentifier: Assembly-CSharp::DropInHeroes.Data.CharacterData
+  id: hami
+  category: 0
+  idleAnimation: {fileID: 7400000, guid: 79c465f0d4b856d49a230bf0630a217b, type: 2}
+  runAnimation: {fileID: 7400000, guid: dedc9d7c66f6e3a4988aa9a3f08a8fa2, type: 2}
+  dragAnimation: {fileID: 7400000, guid: 74d15efd5b1d08940b2d5caa205ac4ab, type: 2}
+  attackAnimation: {fileID: 7400000, guid: 521cc49f036a2b24f8578c6409afd312, type: 2}
+  deathAnimation: {fileID: 7400000, guid: c6be56fc48a25bf4a983e775e8065bb9, type: 2}
+  deathIdleAnimation: {fileID: 7400000, guid: 6d694ee2834db20419a12cdd5bfeaf88, type: 2}
+  supremeAnimation: {fileID: 7400000, guid: 8eb463bdfb949de42b2eaa4540ee7da2, type: 2}
+  stunAnimation: {fileID: 7400000, guid: 03b5d8e6c499f8043b38ee5eab3f94ea, type: 2}
+  victoryAnimation: {fileID: 7400000, guid: 0098086a3bea3fe45bc29539139c6cb9, type: 2}
+  extraAnimations: []
+  animationProfiles: []
+  forms: []
+  visualScale: 0.8
+  animClipTunings: []
+  overheadHeight: 0.83
+  selectionRingScale: 0.67
+  selectionRingOffsetY: -0.99
+  primaryType: 1
+  secondaryType: 6
+  defaultSprite: {fileID: 21300000, guid: f45743badb12d1d45880dfd439ac1846, type: 3}
+  cardPortrait: {fileID: -8079206652180155818, guid: 2f227d0301d26c0498438fd850cfa1e0, type: 3}
+  portrait2x1: {fileID: 466677622, guid: 2f227d0301d26c0498438fd850cfa1e0, type: 3}
+  displayName: Hami
+  lore: "Com uma caneca de madeira min\xFAscula amarrada \xE0s costas e o bigode
+    encharcado de espuma, o pequeno hamster aventureiro desafia os limites do seu
+    tamanho em uma busca incans\xE1vel pelo mundo. Ele vaga por tavernas m\xEDsticas
+    e florestas esquecidas, guiado n\xE3o por mapas, mas pelo aroma das mais raras
+    cervejas e o chamado de mist\xE9rios ancestrais. Para esse pequeno beberr\xE3o
+    de cora\xE7\xE3o valente, nenhuma caneca \xE9 grande demais e nenhuma jornada
+    \xE9 perigosa o suficiente quando o pr\xEAmio final \xE9 um gole de magia dourada."
+  baseSkill: {fileID: 11400000, guid: 53f899726c5d6404f8cd587bd9dc4cd8, type: 2}
+  supremeSkill: {fileID: 11400000, guid: 23194994d3bae7347b1e4dbbd66a144c, type: 2}
+  passiveSkill: {fileID: 11400000, guid: ae9508a40f3d5be46a8d660b6bcefb86, type: 2}
+  defaultBuild:
+    label: Default
+    artifactId: kent_melao
+    allocations:
+    - nodeId: free0
+      points: 1
+    - nodeId: free8
+      points: 1
+    - nodeId: free192
+      points: 1
+    - nodeId: free179
+      points: 1
+    - nodeId: free4
+      points: 1
+    - nodeId: free11
+      points: 1
+    - nodeId: free51
+      points: 1
+    - nodeId: free52
+      points: 1
+    - nodeId: free61
+      points: 1
+    - nodeId: free65
+      points: 1
+    - nodeId: free9
+      points: 1
+    - nodeId: free43
+      points: 1
+    - nodeId: free44
+      points: 1
+    - nodeId: free59
+      points: 1
+    - nodeId: free66
+      points: 1
+    - nodeId: free186
+      points: 1
+    - nodeId: free40
+      points: 1
+    - nodeId: free16
+      points: 1
+    - nodeId: free17
+      points: 1
+    - nodeId: free60
+      points: 1
+    - nodeId: g0s4
+      points: 1
+    - nodeId: g6s4
+      points: 1
+    - nodeId: g2s4
+      points: 1
+    - nodeId: g11s4
+      points: 1
+    - nodeId: g15s4
+      points: 1
+    - nodeId: g16s4
+      points: 1
+    - nodeId: g21s4
+      points: 1
+    - nodeId: g23s4
+      points: 1
+    - nodeId: free148
+      points: 1
+    - nodeId: g27s4
+      points: 1
+    - nodeId: g28s4
+      points: 1
+    - nodeId: g30s4
+      points: 1
+    - nodeId: g29s4
+      points: 1
+    - nodeId: free149
+      points: 1
+    - nodeId: g24s4
+      points: 1
+    - nodeId: g18s4
+      points: 1
+    - nodeId: g19s4
+      points: 1
+    - nodeId: g3s1
+      points: 1
+    - nodeId: g9s1
+      points: 1
+    - nodeId: g33s1
+      points: 1
+    - nodeId: g31s1
+      points: 1
+    - nodeId: g32s1
+      points: 1
+    - nodeId: g37s0
+      points: 1
+    - nodeId: g35s1
+      points: 1
+    - nodeId: g34s1
+      points: 1
+    - nodeId: g39s4
+      points: 1
+    - nodeId: g38s4
+      points: 1
+    - nodeId: g37s4
+      points: 1
+    - nodeId: g36s4
+      points: 1
+    - nodeId: g35s0
+      points: 1
+    - nodeId: g8s4
+      points: 1
+    - nodeId: g10s4
+      points: 1
+    - nodeId: g20s4
+      points: 1
+    - nodeId: g12s4
+      points: 1
+    - nodeId: g5s4
+      points: 1
+    - nodeId: g4s4
+      points: 1
+    - nodeId: g3s4
+      points: 1
+    - nodeId: g9s4
+      points: 1
+    - nodeId: g5s1
+      points: 1
+    - nodeId: g13s1
+      points: 1
+  tags: 1
+  capabilities: -1
+  maxSummons: 0
+  statPoints:
+  - type: 0
+    points: 4
+  - type: 16
+    points: 8
+  - type: 4
+    points: 2
+  - type: 17
+    points: 1
+  - type: 1
+    points: 1
+  - type: 3
+    points: 4
+  - type: 2
+    points: 10

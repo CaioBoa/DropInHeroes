@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a5c0d0000000000000000000000a3, type: 3}
+  m_Name: VelaBiteSupreme
+  m_EditorClassIdentifier:
+  displayName: Jaguareté Su
+  description: 'Vela aumenta a própria Precisão e salta sobre o inimigo mais ferido,
+    cravando as presas num bote devastador.'
+  icon: {fileID: -8329474307294017786, guid: c817d9e2d42d23747839a1c0e1cd9c5f, type: 3}
+  skillModifiers: []
+  energyCost: 60
+  animationSpeedReference: 2.5
+  accuracyBonus: 100
+  accuracyDuration: 3
+  leapDuration: 0.3
+  landingGap: 1
+  damageScaling: 14
+  biteVfxClip: {fileID: 7400000, guid: 2cb47bae51b7e954fbc4c17765ad0d8a, type: 2}

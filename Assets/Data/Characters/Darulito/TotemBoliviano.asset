@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce1a5c0d0000000000000000000000b6, type: 3}
+  m_Name: TotemBoliviano
+  m_EditorClassIdentifier:
+  displayName: Totem Boliviano
+  description: "Causa {kw:dano_magico} aos inimigos próximos e purifica os aliados."
+  icon: {fileID: -5837660084040815452, guid: 57484a0ea65a87d4aa8abdeda9fb6c2d, type: 3}
+  skillModifiers: []
+  energyCost: 40
+  animationSpeedReference: 12
+  radius: 3
+  magicScaling: 4
+  cleanseCount: 2
