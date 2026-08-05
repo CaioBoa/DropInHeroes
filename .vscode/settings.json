@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "DropInHeroes.sln"
+    "dotnet.defaultSolution": "DropInHeroes.slnx"
 }

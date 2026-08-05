@@ -1,0 +1,9 @@
+# Configuração de estilo do projeto (raiz).
+root = true
+
+[*.cs]
+# IMPORTANTE: manter SEMPRE block-scoped (namespace X { ... }).
+# O importer de scripts do Unity 6000.4.x NÃO extrai o namespace de declarações
+# file-scoped (namespace X;) → todo MonoBehaviour vira "missing script" em cenas/prefabs.
+# Esta regra faz a IDE/formatter gerar block-scoped e evita a regressão.
+csharp_style_namespace_declarations = block_scoped:warning

@@ -6,14 +6,22 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: d5745f03d5bd2a442ac5657644a04b93
+  - enabled: 1
     path: Assets/Scenes/Loading.unity
     guid: f9d36f8ade8695246bc4e0036b2aa66c
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/TowerPicks.unity
+    guid: eaef8bc6d03b8f64aabd19b4371cec14
   - enabled: 1
-    path: Assets/Scenes/Battle.unity
-    guid: af56681ac25c5744297f23b5b1033c78
+    path: Assets/Scenes/TowerRun.unity
+    guid: 369fbad910b7bef4b8e9d9a4e96f3f70
+  - enabled: 1
+    path: Assets/Scenes/Characters.unity
+    guid: 765603156958594408efb96bd543ee9a
+  - enabled: 1
+    path: Assets/Scenes/Sandbox.unity
+    guid: 8d020cd68278ee348a271dbe23c8ad29
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_UseUCBPForAssetBundles: 0
